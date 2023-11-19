@@ -1966,113 +1966,20 @@
 									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-143 current_page_item active narrow">
 									<a href="{% url 'index' %}" class=" current">Home</a>
 								</li>
-								<li id="nav-menu-item-877"
-									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-sub wide col-3">
-									<a href="shop/index.html">Categories</a>
-									<div class="popup" data-popup-mw="650">
-										<div class="inner" style="background-repeat:no-repeat;max-width:650px;">
-											<ul class="sub-menu porto-wide-sub-menu">
-												<li id="nav-menu-item-835"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sub"
-													data-cols="1"><a class="nolink" href="#">Variations 1</a>
-													<ul class="sub-menu">
-														<li id="nav-menu-item-829"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/accessories/index.html">Full Width
-																Banner</a>
-														</li>
-														<li id="nav-menu-item-1431"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/accessories/watches/index.html">No
-																Sidebar Banner</a>
-														</li>
-														<li id="nav-menu-item-1432"
-															class="menu-item menu-item-type-custom menu-item-object-custom">
-															<a
-																href="https://www.portotheme.com/wordpress/porto/shop6/shop/">Infinite
-																Ajax Scroll</a>
-														</li>
-														<li id="nav-menu-item-1433"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/accessories/index.html">Hidden
-																Filter<span class="tip" style="">NEW</span></a>
-														</li>
-														<li id="nav-menu-item-1434"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/fashion/index.html">Horizontal
-																Filter<span class="tip" style="">NEW</span></a>
-														</li>
-														<li id="nav-menu-item-1557"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/accessories/caps/index.html">Off
-																Canvas Filter<span class="tip" style="">NEW</span></a>
-														</li>
-														<li id="nav-menu-item-1544"
-															class="menu-item menu-item-type-custom menu-item-object-custom">
-															<a
-																href="https://www.portotheme.com/wordpress/porto/shop5/shop/page/2/">Image,
-																Color Swatch<span class="tip" style="">NEW</span></a>
-														</li>
-														<li id="nav-menu-item-1556"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a
-																href="product-category/dress/clothing/hoodies/index.html">With
-																Right Sidebar</a>
-														</li>
-													</ul>
-												</li>
-												<li id="nav-menu-item-1522"
-													class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sub"
-													data-cols="0.9"><a class="nolink" href="#">Variations 2</a>
-													<ul class="sub-menu">
-														<li id="nav-menu-item-1545"
-															class="menu-item menu-item-type-custom menu-item-object-custom">
-															<a
-																href="https://www.portotheme.com/wordpress/porto/shop14/shop/">Quantity
-																Field<span class="tip" style="">NEW</span></a>
-														</li>
-														<li id="nav-menu-item-1435"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/electronics/index.html">3 Columns
-																Mode</a>
-														</li>
-														<li id="nav-menu-item-2221"
-															class="menu-item menu-item-type-post_type menu-item-object-page">
-															<a href="shop/index.html">4 Columns Mode</a>
-														</li>
-														<li id="nav-menu-item-1526"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a
-																href="product-category/fashion/t-shirts-fashion/index.html">5
-																Columns Mode</a>
-														</li>
-														<li id="nav-menu-item-1438"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/fashion/shoes/index.html">6
-																Columns Mode</a>
-														</li>
-														<li id="nav-menu-item-1524"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/accessories/watches/index.html">7
-																Columns Mode</a>
-														</li>
-														<li id="nav-menu-item-1560"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/dress/clothing/index.html">8
-																Columns Mode</a>
-														</li>
-														<li id="nav-menu-item-1439"
-															class="menu-item menu-item-type-taxonomy menu-item-object-product_cat">
-															<a href="product-category/dress/index.html">Full Width
-																Mode</a>
-														</li>
-													</ul>
-												</li>
-												<li id="nav-menu-item-1523"
+								<li id="nav-menu-item-2020"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub narrow">
+									<a class="nolink" href="#">CATEGORIES</a>
+									<div class="popup">
+										<div class="inner" style="">
+											<ul class="sub-menu porto-narrow-sub-menu">
+												{% for i in show_cat %}
+												<li id="nav-menu-item-2021"
 													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1.1"
-													style="background-position: -15px center;background-image:url(../shop20/wp-content/uploads/sites/89/2018/08/menu-banner.jpg);background-repeat:no-repeat;background-size:cover;">
+													data-cols="1"><a
+														href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">{{i.name}}<span class="tip" style="">NEW</span></a>
 												</li>
+												{% endfor %}
+												
 											</ul>
 										</div>
 									</div>
@@ -2206,70 +2113,7 @@
 														href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">Header
 														Builder &#038; Types<span class="tip" style="">NEW</span></a>
 												</li>
-												<li id="nav-menu-item-2241"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/documentation/templates-builder/">Templates
-														Builder<span class="tip" style="">NEW</span></a></li>
-												<li id="nav-menu-item-2242"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/documentation/display-condition/">Display
-														Condition<span class="tip" style="">NEW</span></a></li>
-												<li id="nav-menu-item-2023"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/shortcodes/porto-studio/">Porto
-														Studio<span class="tip" style="">NEW</span></a></li>
-												<li id="nav-menu-item-2219"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/documentation/custom-product-layout/">Custom
-														Product Layout<span class="tip" style="">NEW</span></a></li>
-												<li id="nav-menu-item-2024"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/shortcodes/features/changelog/">What&#8217;s
-														New</a></li>
-												<li id="nav-menu-item-2025"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/shortcodes/top-performance/">Top
-														Performance</a></li>
-												<li id="nav-menu-item-2026"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a target="_blank"
-														href="https://www.portotheme.com/wordpress/porto/documentation/porto-speed-optimize-wizard/">Speed
-														Optimize Wizard</a></li>
-												<li id="nav-menu-item-2027"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a target="_blank"
-														href="https://www.portotheme.com/wordpress/porto/documentation/faq/how-to-import-demo/">One
-														Click Install Demo</a></li>
-												<li id="nav-menu-item-2028"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/corporate20/">Single
-														Page Navigation</a></li>
-												<li id="nav-menu-item-2029"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/shortcodes/live-search/">Live
-														Search</a></li>
-												<li id="nav-menu-item-2033"
-													class="menu-item menu-item-type-post_type menu-item-object-page"
-													data-cols="1"><a href="shop/index.html">Skeleton Screens</a></li>
-												<li id="nav-menu-item-2234"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/shop3/">Mini
-														Cart &#8211; Off Canvas<span class="tip" style="">NEW</span></a>
-												</li>
-												<li id="nav-menu-item-2031"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/shortcodes/">More
-														Features</a></li>
+												
 											</ul>
 										</div>
 									</div>
@@ -2545,84 +2389,18 @@
 					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-143 current_page_item active">
 					<a href="index.html" class=" current ">Home</a>
 				</li>
-				<li id="accordion-menu-item-877"
-					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-sub"><a
-						href="shop/index.html">Categories</a>
+				<li id="accordion-menu-item-2020"
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub"><a
+						class="nolink" href="#">CATEGORIES</a>
 					<span class="arrow" role="button"></span>
 					<ul class="sub-menu">
-						<li id="accordion-menu-item-835"
-							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub">
-							<a class="nolink" href="#">Variations 1</a>
-							<span class="arrow" role="button"></span>
-							<ul class="sub-menu">
-								<li id="accordion-menu-item-829"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/accessories/index.html">Full Width Banner</a></li>
-								<li id="accordion-menu-item-1431"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/accessories/watches/index.html">No Sidebar Banner</a>
-								</li>
-								<li id="accordion-menu-item-1432"
-									class="menu-item menu-item-type-custom menu-item-object-custom"><a
-										href="https://www.portotheme.com/wordpress/porto/shop6/shop/">Infinite Ajax
-										Scroll</a></li>
-								<li id="accordion-menu-item-1433"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/accessories/index.html">Hidden Filter<span class="tip"
-											style="">NEW</span></a></li>
-								<li id="accordion-menu-item-1434"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/fashion/index.html">Horizontal Filter<span class="tip"
-											style="">NEW</span></a></li>
-								<li id="accordion-menu-item-1557"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/accessories/caps/index.html">Off Canvas Filter<span
-											class="tip" style="">NEW</span></a></li>
-								<li id="accordion-menu-item-1544"
-									class="menu-item menu-item-type-custom menu-item-object-custom"><a
-										href="https://www.portotheme.com/wordpress/porto/shop5/shop/page/2/">Image,
-										Color Swatch<span class="tip" style="">NEW</span></a></li>
-								<li id="accordion-menu-item-1556"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/dress/clothing/hoodies/index.html">With Right Sidebar</a>
-								</li>
-							</ul>
-						</li>
-						<li id="accordion-menu-item-1522"
-							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub">
-							<a class="nolink" href="#">Variations 2</a>
-							<span class="arrow" role="button"></span>
-							<ul class="sub-menu">
-								<li id="accordion-menu-item-1545"
-									class="menu-item menu-item-type-custom menu-item-object-custom"><a
-										href="https://www.portotheme.com/wordpress/porto/shop14/shop/">Quantity
-										Field<span class="tip" style="">NEW</span></a></li>
-								<li id="accordion-menu-item-1435"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/electronics/index.html">3 Columns Mode</a></li>
-								<li id="accordion-menu-item-2221"
-									class="menu-item menu-item-type-post_type menu-item-object-page"><a
-										href="shop/index.html">4 Columns Mode</a></li>
-								<li id="accordion-menu-item-1526"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/fashion/t-shirts-fashion/index.html">5 Columns Mode</a>
-								</li>
-								<li id="accordion-menu-item-1438"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/fashion/shoes/index.html">6 Columns Mode</a></li>
-								<li id="accordion-menu-item-1524"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/accessories/watches/index.html">7 Columns Mode</a></li>
-								<li id="accordion-menu-item-1560"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/dress/clothing/index.html">8 Columns Mode</a></li>
-								<li id="accordion-menu-item-1439"
-									class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a
-										href="product-category/dress/index.html">Full Width Mode</a></li>
-							</ul>
-						</li>
-						<li id="accordion-menu-item-1523"
-							class="menu-item menu-item-type-custom menu-item-object-custom hidden-item"></li>
+						{% for i in show_cat %}
+						<li id="accordion-menu-item-2021"
+							class="menu-item menu-item-type-custom menu-item-object-custom"><a
+								href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">{{i.name}}
+								<span class="tip" style="">NEW</span></a></li>
+						{% endfor %}
+						
 					</ul>
 				</li>
 				<li id="accordion-menu-item-2002"
@@ -2716,56 +2494,7 @@
 							class="menu-item menu-item-type-custom menu-item-object-custom"><a
 								href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">Header Builder
 								&#038; Types<span class="tip" style="">NEW</span></a></li>
-						<li id="accordion-menu-item-2241"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/documentation/templates-builder/">Templates
-								Builder<span class="tip" style="">NEW</span></a></li>
-						<li id="accordion-menu-item-2242"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/documentation/display-condition/">Display
-								Condition<span class="tip" style="">NEW</span></a></li>
-						<li id="accordion-menu-item-2023"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shortcodes/porto-studio/">Porto
-								Studio<span class="tip" style="">NEW</span></a></li>
-						<li id="accordion-menu-item-2219"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/documentation/custom-product-layout/">Custom
-								Product Layout<span class="tip" style="">NEW</span></a></li>
-						<li id="accordion-menu-item-2024"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shortcodes/features/changelog/">What&#8217;s
-								New</a></li>
-						<li id="accordion-menu-item-2025"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shortcodes/top-performance/">Top
-								Performance</a></li>
-						<li id="accordion-menu-item-2026"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank"
-								href="https://www.portotheme.com/wordpress/porto/documentation/porto-speed-optimize-wizard/">Speed
-								Optimize Wizard</a></li>
-						<li id="accordion-menu-item-2027"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank"
-								href="https://www.portotheme.com/wordpress/porto/documentation/faq/how-to-import-demo/">One
-								Click Install Demo</a></li>
-						<li id="accordion-menu-item-2028"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/corporate20/">Single Page
-								Navigation</a></li>
-						<li id="accordion-menu-item-2029"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shortcodes/live-search/">Live
-								Search</a></li>
-						<li id="accordion-menu-item-2033"
-							class="menu-item menu-item-type-post_type menu-item-object-page"><a
-								href="shop/index.html">Skeleton Screens</a></li>
-						<li id="accordion-menu-item-2234"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shop3/">Mini Cart &#8211; Off
-								Canvas<span class="tip" style="">NEW</span></a></li>
-						<li id="accordion-menu-item-2031"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shortcodes/">More Features</a></li>
+						
 					</ul>
 				</li>
 				<li id="accordion-menu-item-847" class="menu-item menu-item-type-post_type menu-item-object-page"><a
