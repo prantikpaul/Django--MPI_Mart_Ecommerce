@@ -1,0 +1,304 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+
+
+<div class="woo-page-header page-header-8">
+    <ul class="breadcrumb text-center">
+        <li class="current">
+            <a href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/cart/">Shopping Cart</a>
+        </li>
+        <li class="">
+            <i class="delimiter delimiter-2"></i>
+            <a href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/checkout/">Checkout</a>
+        </li>
+        <li class="disable">
+            <i class="delimiter delimiter-2"></i>
+            <a href="#" class="nolink">Order Complete</a>
+        </li>
+    </ul>
+</div>
+
+<div id="main" class="column1 boxed"><!-- main -->
+
+    <div class="container">
+        <div class="row main-content-wrap">
+
+            <!-- main content -->
+            <div class="main-content col-lg-12">
+
+
+                <div id="content" role="main">
+
+                    <article class="post-208 page type-page status-publish hentry">
+
+                        <h2 class="entry-title" style="display: none;">Cart</h2><span class="vcard"
+                            style="display: none;"><span class="fn"><a
+                                    href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/author/porto_admin/"
+                                    title="Posts by Joe Doe" rel="author">Joe Doe</a></span></span><span class="updated"
+                            style="display:none">2016-06-20T09:22:56+00:00</span>
+                        <div class="page-content">
+                            <div class="woocommerce">
+                                <div class="woocommerce-notices-wrapper"></div>
+                                <div class="cart-v2">
+                                    <div class="row mb-5 pb-2">
+                                        <div class="col-lg-8">
+                                            <div class="align-left">
+                                                <div class="box-content">
+                                                    <form class="woocommerce-cart-form" action="" method="post">
+                                                        {% csrf_token %}
+                                                        <table
+                                                            class="shop_table responsive cart cart-table woocommerce-cart-form__contents"
+                                                            cellspacing="0">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="product-thumbnail">&nbsp;</th>
+                                                                    <th class="product-name"><span>Product</span></th>
+                                                                    <th class="product-price"><span>Price</span></th>
+                                                                    <th class="product-quantity"><span>Quantity</span>
+                                                                    </th>
+                                                                    <th
+                                                                        class="product-subtotal text-center text-md-right">
+                                                                        <span>Subtotal</span>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for i in all_prod %}
+                                                                <tr class="cart_item">
+                                                                    <td class="product-thumbnail">
+                                                                        <div class="position-relative">
+                                                                            <a href="#"><img width="300" height="300"
+                                                                                    src="{{i.product.prod_img.url}}"
+                                                                                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                                    alt="" decoding="async"
+                                                                                    loading="lazy" /></a><a
+                                                                                href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/cart/?remove_item=43dcbb8de576168241963514398bdefe&#038;_wpnonce=3db608e9f8"
+                                                                                class="remove remove-product position-absolute"
+                                                                                aria-label="Remove Brown-Black Men Casual Glasses - Medium from cart"
+                                                                                data-product_id="1380"
+                                                                                data-product_sku="PT0003"
+                                                                                data-cart_id="43dcbb8de576168241963514398bdefe"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="product-name">
+                                                                        <a
+                                                                            href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/brown-black-casual-glasses/?attribute_pa_size=medium">
+                                                                            {{i.product.name}}</a>
+                                                                    </td>
+                                                                    <td class="product-price">
+                                                                        <span
+                                                                            class="woocommerce-Price-amount amount"><bdi><span
+                                                                                    class="woocommerce-Price-currencySymbol">৳
+                                                                                </span>{{i.product.price}}</bdi></span>
+                                                                    </td>
+                                                                    <td class="product-quantity">
+                                                                        <div class="quantity buttons_added">
+                                                                            <button type="button" value="-"
+                                                                                class="minus">-</button>
+                                                                            <input type="number"
+                                                                                id="quantity_655accb6597ad"
+                                                                                class="input-text qty text" step="1"
+                                                                                min="0" max=""
+                                                                                name="cart[43dcbb8de576168241963514398bdefe][qty]"
+                                                                                value="{{i.quantity}}"
+                                                                                aria-label="Product quantity" size="4"
+                                                                                placeholder="" inputmode="numeric" />
+                                                                            <button type="button" value="+"
+                                                                                class="plus">+</button>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="product-subtotal text-center text-md-right"
+                                                                        data-title="Subtotal">
+                                                                        <span
+                                                                            class="woocommerce-Price-amount amount"><bdi><span
+                                                                                    class="woocommerce-Price-currencySymbol">৳
+                                                                                </span>{{i.total_price}}</bdi></span>
+                                                                    </td>
+                                                                </tr>
+
+                                                                {% endfor %}
+
+                                                                <tr>
+                                                                    <td colspan="6" class="actions px-md-2">
+                                                                        <div class="cart_totals_toggle">
+                                                                            <div id="panel-cart-discount"
+                                                                                class="d-sm-flex justify-content-between">
+                                                                                <div class="coupon">
+                                                                                    <input type="text"
+                                                                                        name="coupon_code"
+                                                                                        class="input-text"
+                                                                                        id="coupon_code"
+                                                                                        placeholder="Coupon code"
+                                                                                        value="" />
+                                                                                    <button type="submit"
+                                                                                        class="button wc-action-btn wc-action-sm"
+                                                                                        name="apply_coupon">Apply
+                                                                                        coupon</button>
+                                                                                </div>
+                                                                                <button type="submit"
+                                                                                    class="button wc-action-btn wc-action-sm"
+                                                                                    name="update_cart"
+                                                                                    value="Update cart">Update
+                                                                                    cart</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <input type="hidden" id="woocommerce-cart-nonce"
+                                                                            name="woocommerce-cart-nonce"
+                                                                            value="3db608e9f8" /><input type="hidden"
+                                                                            name="_wp_http_referer"
+                                                                            value="/wordpress/porto/gutenberg-shop4/cart/" />
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+
+                                                        <div class="cart-actions">
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+
+
+                                            <div class="cart-collaterals">
+
+                                                <div class="cart_totals">
+                                                    <div class="cart_totals_toggle">
+                                                        <div class="card card-default">
+                                                            <h4
+                                                                class="card-sub-title text-md text-uppercase m-b-md pb-1">
+                                                                Cart totals</h4>
+                                                            <div id="panel-cart-total">
+                                                                <div class="card-body p-0">
+                                                                    <table class="responsive cart-total"
+                                                                        cellspacing="0">
+                                                                        <tr class="cart-subtotal">
+                                                                            <th>
+                                                                                <h4 class="mb-0">Subtotal</h4>
+                                                                            </th>
+                                                                            <td><span
+                                                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                                                            class="woocommerce-Price-currencySymbol">৳
+                                                                                        </span>{{total_amnt}}</bdi></span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="cart-subtotal">
+                                                                            <th>
+                                                                                <h4 class="mb-0">Shipping</h4>
+                                                                            </th>
+                                                                            <td><span
+                                                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                                                            class="woocommerce-Price-currencySymbol">৳
+                                                                                        </span>100</bdi></span>
+                                                                            </td>
+                                                                        </tr>
+
+
+                                                                        <tr class="">
+                                                                            <th colspan="2">
+                                                                                <h4 class="m-b-sm">Payment</h4>
+                                                                                <form action="">
+                                                                                    <ul id="shipping_method"
+                                                                                            class="woocommerce-shipping-methods mb-2">
+                                                                                            <li>
+                                                                                                <div
+                                                                                                    class="porto-radio ">
+                                                                                                    <input type="radio"
+                                                                                                        name="shipping_method[0]"
+                                                                                                        data-index="0"
+                                                                                                        id="shipping_method_0_local_pickup1"
+                                                                                                        value="local_pickup:1"
+                                                                                                        class="shipping_method porto-control-input"
+                                                                                                        checked='checked' /><label
+                                                                                                        class="porto-control-label"
+                                                                                                        for="shipping_method_0_local_pickup1">Online Payment</label>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <div
+                                                                                                    class="porto-radio ">
+                                                                                                    <input type="radio"
+                                                                                                        name="shipping_method[0]"
+                                                                                                        data-index="0"
+                                                                                                        id="shipping_method_0_flat_rate2"
+                                                                                                        value="flat_rate:2"
+                                                                                                        class="shipping_method porto-control-input" /><label
+                                                                                                        class="porto-control-label"
+                                                                                                        for="shipping_method_0_flat_rate2">Cash On Delivery</label>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        </ul>
+
+
+
+                                                                                    <input type="hidden"
+                                                                                        id="woocommerce-shipping-calculator-nonce"
+                                                                                        name="woocommerce-shipping-calculator-nonce"
+                                                                                        value="21975ae2ab" /><input
+                                                                                        type="hidden"
+                                                                                        name="_wp_http_referer"
+                                                                                        value="/wordpress/porto/gutenberg-shop4/cart/" />
+                                                                                    </section>
+                                                                                </form>
+
+                                                                            </th>
+                                                                        </tr>
+
+
+
+                                                                        <tr class="order-total">
+                                                                            <th>
+                                                                                <h4 class="text-md mb-0">Total</h4>
+                                                                            </th>
+                                                                            <td><strong><span
+                                                                                        class="woocommerce-Price-amount amount"><bdi><span
+                                                                                                class="woocommerce-Price-currencySymbol">&#36;</span>{{total_with_shipping}}</bdi></span></strong>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <div class="wc-proceed-to-checkout">
+                                                                        <a href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/checkout/"
+                                                                            class="btn btn-v-dark w-100 m-t-lg py-3">Proceed
+                                                                            to checkout<i
+                                                                                class="vc_btn3-icon fas fa-arrow-right ps-3"></i></a>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+
+
+            </div><!-- end main content -->
+
+            <div class="sidebar-overlay"></div>
+
+        </div>
+    </div>
+
+
+
+</div><!-- end main -->
+{% endblock %}

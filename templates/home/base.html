@@ -15,6 +15,7 @@
 	<link rel="pingback" href="xmlrpc.php" />
 	<script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
 	<title>{% block title %}Home - MPI Mart{% endblock %}</title>
+	
 
 	<!-- All in One SEO 4.4.3 - aioseo.com -->
 	<meta name="robots" content="max-image-preview:large" />
@@ -1928,7 +1929,7 @@
 							<a href="wishlist/index.html" title="Wishlist" class="my-wishlist"><i
 									class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
 							<div id="mini-cart" class="mini-cart minicart-arrow-alt minicart-offcanvas">
-								<a href="#">
+								<a href="{% url 'view_cart' %}">
 								<div class="cart-head">
 									<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
 											class="cart-items"><i

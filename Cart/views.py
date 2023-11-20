@@ -31,3 +31,22 @@ def add_to_cart(request,id):
         return redirect ('login')
     
     return redirect (request.META['HTTP_REFERER'])
+
+
+def view_cart(request):
+    all_prod=cart.objects.filter(user=request.user)
+    total_amnt=0
+    for i in all_prod :
+        total_amnt+=i.product.price*i.quantity
+    try:
+        if request.method=='POST':
+            ppp=request.POST['coupon_code']
+            print(ppp)
+    except:
+        pass
+    total_with_shipping=total_amnt+100
+
+
+    
+
+    return render (request,'cart/view_cart.html',locals())
