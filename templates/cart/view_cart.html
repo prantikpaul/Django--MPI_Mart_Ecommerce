@@ -1,9 +1,19 @@
 {% extends 'home/base.html' %}
 {% load static %}
-{% block title %}Login{% endblock %}
+{% block title %}Cart{% endblock %}
 
 {% block body %}
 
+<style>
+
+
+/* Styling the X icon */
+.remove-button .icon {
+  font-size: 12px; /* Adjust size as needed */
+  color: rgb(12, 12, 12); /* Change color as desired */
+}
+
+</style>
 
 
 <div class="woo-page-header page-header-8">
@@ -74,14 +84,11 @@
                                                                             <a href="#"><img width="300" height="300"
                                                                                     src="{{i.product.prod_img.url}}"
                                                                                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                                                                                    alt="" decoding="async"
-                                                                                    loading="lazy" /></a><a
-                                                                                href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/cart/?remove_item=43dcbb8de576168241963514398bdefe&#038;_wpnonce=3db608e9f8"
-                                                                                class="remove remove-product position-absolute"
-                                                                                aria-label="Remove Brown-Black Men Casual Glasses - Medium from cart"
-                                                                                data-product_id="1380"
-                                                                                data-product_sku="PT0003"
-                                                                                data-cart_id="43dcbb8de576168241963514398bdefe"></a>
+                                                                                    ></a>
+                                                                            
+                                                                                <a class="position-absolute" href="{% url 'cart_clear' i.product.id  %}"><span class="icon">&#10006;</span></a>
+                                                                                
+                                                                               
                                                                         </div>
                                                                     </td>
                                                                     <td class="product-name">
@@ -96,19 +103,27 @@
                                                                                 </span>{{i.product.price}}</bdi></span>
                                                                     </td>
                                                                     <td class="product-quantity">
+                                                                    
                                                                         <div class="quantity buttons_added">
-                                                                            <button type="button" value="-"
-                                                                                class="minus">-</button>
+                                                                            <form method="POST" action="">
+                                                                            <!-- without this tag quantity - button didn't work !!!!!  -->
+                                                                            
+                                                                            </form>
+                                                                                <form method="POST" action="{% url 'update_cart_qnty' i.product.id 'minus' %}">
+                                                                            {% csrf_token %}
+                                                                            <button type="submit" 
+                                                                                class="minus">+</button>
+                                                                            </form>
                                                                             <input type="number"
-                                                                                id="quantity_655accb6597ad"
-                                                                                class="input-text qty text" step="1"
-                                                                                min="0" max=""
-                                                                                name="cart[43dcbb8de576168241963514398bdefe][qty]"
-                                                                                value="{{i.quantity}}"
-                                                                                aria-label="Product quantity" size="4"
-                                                                                placeholder="" inputmode="numeric" />
-                                                                            <button type="button" value="+"
+                                                                                
+                                                                                class="input-text qty text" 
+                                                                                value="{{i.quantity}}">
+                                                                                
+                                                                            <form method="POST" action="{% url 'update_cart_qnty' i.product.id 'plus' %}">
+                                                                            {% csrf_token %}
+                                                                            <button type="submit" 
                                                                                 class="plus">+</button>
+                                                                            </form>
                                                                         </div>
                                                                     </td>
                                                                     <td class="product-subtotal text-center text-md-right"
@@ -123,29 +138,30 @@
                                                                 {% endfor %}
 
                                                                 <tr>
+                                                                <form method="POST" action="{% url 'add_to_cart' 40 %}">
+                                                                    {% csrf_token %}
                                                                     <td colspan="6" class="actions px-md-2">
                                                                         <div class="cart_totals_toggle">
                                                                             <div id="panel-cart-discount"
                                                                                 class="d-sm-flex justify-content-between">
-                                                                                <div class="coupon">
-                                                                                    <input type="text"
-                                                                                        name="coupon_code"
-                                                                                        class="input-text"
-                                                                                        id="coupon_code"
-                                                                                        placeholder="Coupon code"
-                                                                                        value="" />
-                                                                                    <button type="submit"
-                                                                                        class="button wc-action-btn wc-action-sm"
-                                                                                        name="apply_coupon">Apply
-                                                                                        coupon</button>
-                                                                                </div>
+                                                                                <style>
+                                                                                .right-div {
+                                                                                    float: right;
+                                                                                }</style>
+                                                                                <div class="right-div">
                                                                                 <button type="submit"
                                                                                     class="button wc-action-btn wc-action-sm"
                                                                                     name="update_cart"
                                                                                     value="Update cart">Update
                                                                                     cart</button>
+                                                                                </div>
+                                                                                    <br>
+                                                                                    <br>
+                                                                                    <br>
+                                                                                   
                                                                             </div>
                                                                         </div>
+                                                                    </form>
 
                                                                         <input type="hidden" id="woocommerce-cart-nonce"
                                                                             name="woocommerce-cart-nonce"
@@ -177,6 +193,20 @@
                                                             <h4
                                                                 class="card-sub-title text-md text-uppercase m-b-md pb-1">
                                                                 Cart totals</h4>
+                                                                 <div class="coupon">
+                                                                                    
+                                                                                    <input style="height: 40px; width: 140px;" type="text"
+                                                                                        name="coupon_code"
+                                                                                        class="input-text"
+                                                                                        
+                                                                                        placeholder="Coupon code"
+                                                                                        value="" />
+                                                                                        
+                                                                                    <button type="submit"
+                                                                                        class="button wc-action-btn wc-action-sm"
+                                                                                        name="apply_coupon">Apply
+                                                                                        coupon</button>
+                                                                                </div>
                                                             <div id="panel-cart-total">
                                                                 <div class="card-body p-0">
                                                                     <table class="responsive cart-total"
