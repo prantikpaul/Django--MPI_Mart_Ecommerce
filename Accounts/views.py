@@ -9,74 +9,83 @@ from django.conf import settings
 # Create your views here.
 
 def login(request):
-    if request.method=='POST':
-        Uname=request.POST['uname']
-        Pass=request.POST['pass']
-        login=auth.authenticate(username=Uname,password=Pass)
-        if login:
-            prof=Profile.objects.get(user=login) #profile er nam & user er nam same
-            if prof.is_token_verified is True or prof.sign_in_otp_verify is True:
-                auth.login(request,login)
-                messages.success(request, "User Logged In")
-                return redirect('index')
+    
+    if request.user.is_authenticated:
+         return redirect ('index')
+    else:
+         
+    
+        if request.method=='POST':
+            Uname=request.POST['uname']
+            Pass=request.POST['pass']
+            login=auth.authenticate(username=Uname,password=Pass)
+            if login:
+                prof=Profile.objects.get(user=login) #profile er nam & user er nam same
+                if prof.is_token_verified is True or prof.sign_in_otp_verify is True:
+                    auth.login(request,login)
+                    messages.success(request, "User Logged In")
+                    return redirect('index')
+                else:
+                        messages.warning(request,'Please Verify Your Mail')
+                        return redirect('verify_otp')
             else:
-                    messages.warning(request,'Please Verify Your Mail')
-                    return redirect('verify_otp')
-        else:
-                messages.warning(request,'Invalid Username or password')
+                    messages.warning(request,'Invalid Username or password')
 
     
 
     return render(request,'account/Log_In.html',locals())
 
 def register(request):
-    otpp = random.randint(111111,999999)
-    if request.method=='POST':
-        Fname=request.POST['fname']
-        Lname=request.POST['lname']
-        Uname=request.POST['uname']
-        Email=request.POST['email']
-        Pass=request.POST['pass']
-        Cpass=request.POST['cpass']
-        Add1=request.POST['add1']
-        Add2=request.POST['add2']
-        print(Fname,Lname,Email,Uname,Pass,Cpass)
-        if Pass==Cpass:
-            if User.objects.filter(username=Uname).exists():
-                    messages.warning(request, "⚠️ This Username is alreay taken")
-            elif User.objects.filter(email=Email).exists():
-                messages.warning(request, "⚠️ This email is alreay taken")
-            else:
-                
-                if len(Pass)>7:
-                    
-                    pp=User.objects.create(
-                        first_name=Fname,
-                        last_name=Lname,
-                        username=Uname,
-                        email=Email,
-                        password=Pass,
-                    )
-                    pp.set_password(Pass)
-                    pp.save()
-
-                    auth_token = str(uuid.uuid4())
-
-                    if Add2: # jodi Address 2 thake ->
-                        pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1,Address2=Add2) #creatig a profile on this user
-                        pro_obj.save()
-                        send_mail_registration(Email, auth_token,otpp)
-                        return redirect ('verify_successpp')
-                    else:
-                        pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1) #creatig a profile on this user
-                        pro_obj.save()
-                        send_mail_registration(Email, auth_token,otpp)
-                        return redirect ('verify_otp')
+    if request.user.is_authenticated:
+         return redirect ('index')
+    else:
+        otpp = random.randint(111111,999999)
+        if request.method=='POST':
+            Fname=request.POST['fname']
+            Lname=request.POST['lname']
+            Uname=request.POST['uname']
+            Email=request.POST['email']
+            Pass=request.POST['pass']
+            Cpass=request.POST['cpass']
+            Add1=request.POST['add1']
+            Add2=request.POST['add2']
+            print(Fname,Lname,Email,Uname,Pass,Cpass)
+            if Pass==Cpass:
+                if User.objects.filter(username=Uname).exists():
+                        messages.warning(request, "⚠️ This Username is alreay taken")
+                elif User.objects.filter(email=Email).exists():
+                    messages.warning(request, "⚠️ This email is alreay taken")
                 else:
-                    messages.warning(request, "Password Must contain atleast 8 letters !!")
-        else:
-                messages.warning(request, "Your Password Didn't Match !!")
+                    
+                    if len(Pass)>7:
                         
+                        pp=User.objects.create(
+                            first_name=Fname,
+                            last_name=Lname,
+                            username=Uname,
+                            email=Email,
+                            password=Pass,
+                        )
+                        pp.set_password(Pass)
+                        pp.save()
+
+                        auth_token = str(uuid.uuid4())
+
+                        if Add2: # jodi Address 2 thake ->
+                            pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1,Address2=Add2) #creatig a profile on this user
+                            pro_obj.save()
+                            send_mail_registration(Email, auth_token,otpp)
+                            return redirect ('verify_otp')
+                        else:
+                            pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1) #creatig a profile on this user
+                            pro_obj.save()
+                            send_mail_registration(Email, auth_token,otpp)
+                            return redirect ('verify_otp')
+                    else:
+                        messages.warning(request, "Password Must contain atleast 8 letters !!")
+            else:
+                    messages.warning(request, "Your Password Didn't Match !!")
+                            
     
 
     return render(request,'account/Register.html',locals())
