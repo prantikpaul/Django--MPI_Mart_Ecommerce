@@ -842,7 +842,7 @@
 			/* Adjust the width as needed */
 			height: 26px;
 			/* Adjust the height as needed */
-			background-image: url('{% static ' u5.png' %}');
+			background-image: url('{% static 'u55.png' %}');
 
 			/* You can use other properties like background-color, border-radius, etc. */
 		}
@@ -1929,6 +1929,7 @@
 							<a href="wishlist/index.html" title="Wishlist" class="my-wishlist"><i
 									class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
 							<div id="mini-cart" class="mini-cart minicart-arrow-alt minicart-offcanvas">
+								{% if user.is_authenticated %}
 								<a href="{% url 'view_cart' %}">
 								<div class="cart-head">
 									<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
@@ -1937,6 +1938,16 @@
 										class="cart-items-text"></span>
 								</div>
 								</a>
+								{% else %}
+								<a href="{% url 'empty_cart' %}">
+								<div class="cart-head">
+									<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
+											class="cart-items"><i
+												class="wishlist-count">0</i></span></span><span
+										class="cart-items-text"></span>
+								</div>
+								</a>
+								{% endif %}
 
 							</div>
 						</div>
@@ -2311,10 +2322,17 @@
 	<div class="sticky-demo-wrapper">
 		<div class="sticky-overlay"></div>
 		<div class="sticky-icon-links">
-			<a href="" class="sticky-icon-link" target="_blank">
+		{% if user.is_authenticated %}
+		<a href="{% url 'view_cart' %}" class="sticky-icon-link" target="_blank">
 				<i class="porto-icon-cart"></i>
 				<h4>View Cart</h4>
 			</a>
+		{% else %}
+			<a href="{% url 'empty_cart' %}" class="sticky-icon-link" target="_blank">
+				<i class="porto-icon-cart"></i>
+				<h4>View Cart</h4>
+			</a>
+		{% endif %}
 			{% if user.is_authenticated %}
 			<a href="{% url 'user_profile' %}" class="sticky-icon-link" target="_blank">
 				<i style="height: 26px;width: 26px;" class="custom-icon"></i>

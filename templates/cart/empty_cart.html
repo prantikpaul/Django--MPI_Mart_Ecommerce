@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div class="woo-page-header page-header-8">
+	<ul class="breadcrumb text-center">
+		<li class="current">
+			<a href="index.html">Shopping Cart</a>
+		</li>
+		<li class="">
+			<i class="delimiter delimiter-2"></i>
+			<a href="../checkout/index.html">Checkout</a>
+		</li>
+		<li class="disable">
+			<i class="delimiter delimiter-2"></i>
+			<a href="#" class="nolink">Order Complete</a>
+		</li>
+	</ul>
+</div>
+
+<div id="main" class="column1 boxed"><!-- main -->
+
+	<div class="container">
+		<div class="row main-content-wrap">
+
+			<!-- main content -->
+			<div class="main-content col-lg-12">
+
+
+				<div id="content" role="main">
+
+					<article class="post-208 page type-page status-publish hentry">
+
+						<h2 class="entry-title" style="display: none;">Cart</h2><span class="vcard"
+							style="display: none;"><span class="fn"><a href="../author/porto_admin/index.html"
+									title="Posts by Joe Doe" rel="author">Joe Doe</a></span></span><span class="updated"
+							style="display:none">2016-06-20T09:22:56+00:00</span>
+						<div class="page-content">
+							<div class="woocommerce">
+								<div class="cart-empty-page text-center">
+									<div class="woocommerce-notices-wrapper"></div> <i
+										class="cart-empty porto-icon-bag-2"></i>
+									<p class="px-3 py-2 cart-empty">No products added to the cart</p>
+									<p class="return-to-shop">
+										<a class="button wc-backward btn-v-dark btn-go-shop" href="../shop/index.html">
+											Return to shop </a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</article>
+
+				</div>
+
+
+
+			</div><!-- end main content -->
+
+			<div class="sidebar-overlay"></div>
+
+		</div>
+	</div>
+
+
+
+</div><!-- end main -->
+{% endblock %}

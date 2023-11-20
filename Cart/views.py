@@ -50,3 +50,7 @@ def view_cart(request):
     
 
     return render (request,'cart/view_cart.html',locals())
+
+def empty_cart(request):
+    
+    return render(request,'cart/empty_cart.html')
