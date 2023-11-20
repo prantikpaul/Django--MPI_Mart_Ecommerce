@@ -22,6 +22,7 @@ class product(models.Model):
     featured_prod=models.BooleanField(default=False)
     New_arrivals=models.BooleanField(default=False)
     Best_selling_prod=models.BooleanField(default=False)
+    created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

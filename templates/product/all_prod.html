@@ -1,6 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
-{% block title %}Login{% endblock %}
+{% block title %}Products{% endblock %}
 
 {% block body %}
 
@@ -21,14 +21,14 @@
                             data-plugin-options="{&quot;themeConfig&quot;:true,&quot;stagePadding&quot;:0,&quot;margin&quot;:0,&quot;autoplay&quot;:false,&quot;mouseDrag&quot;:true,&quot;touchDrag&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;autoplayHoverPause&quot;:false,&quot;items&quot;:1,&quot;xl&quot;:1,&quot;lg&quot;:1,&quot;md&quot;:1,&quot;sm&quot;:1,&quot;xs&quot;:1,&quot;nav&quot;:false,&quot;dots&quot;:false,&quot;animateIn&quot;:&quot;&quot;,&quot;animateOut&quot;:&quot;&quot;,&quot;loop&quot;:true,&quot;center&quot;:false,&quot;video&quot;:false,&quot;lazyLoad&quot;:false,&quot;fullscreen&quot;:false}">
 
                             <figure class="wp-block-image size-full is-resized"><img
-                                    src="{% static 'wp-content/uploads/sites/116/2016/06/shop4-gutenberg-cat2.jpg'%}"
+                                    src="{% static 'wp-content/uploads/sites/116/2016/06/iPhone_15_Pro_Max.webp'%}"
                                     alt="Category Image" class="wp-image-2577" width="880" height="284" />
                             </figure>
 
 
 
                             <figure class="wp-block-image size-full is-resized"><img
-                                    src="{% static 'wp-content/uploads/sites/116/2016/06/shop4-gutenberg-cat1.jpg'%}"
+                                    src="{% static 'wp-content/uploads/sites/116/2016/06/Slider_2_Main.webp'%}"
                                     alt="Category Image" class="wp-image-2578" width="880" height="284" />
                             </figure>
 
@@ -107,7 +107,7 @@
 
 												<div class="product-image">
 
-													<a href="../product/casual-spring-blue-shoes/index.html"
+													<a href="{% url 'prod_view' i.id %}"
 														aria-label="product">
 														<div class="inner"><img width="300" height="300"
 																src="{{i.prod_img.url}}"
@@ -119,7 +119,7 @@
 												<div class="product-content">
 													
 													<a class="product-loop-title"
-														href="../product/casual-spring-blue-shoes/index.html">
+														href="{% url 'prod_view' i.id %}">
 														<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
 													</a>
 
