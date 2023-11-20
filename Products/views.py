@@ -5,7 +5,7 @@ from .models import product
 
 def all_prod(request,id):
     show_prod=product.objects.filter(category=id).order_by('-created_at')
-
+    
 
 
     return render(request,'product/all_prod.html',locals())

@@ -9,9 +9,6 @@ from django.contrib import messages
 
 def add_to_cart(request,id):
     prod=product.objects.get(pk=id)
-    if request.method=='POST':
-        get_quty=request.POST['quantity']
-        print(get_quty)
 
     try:  
         ppp= cart.objects.filter(user=request.user, product=prod).first()

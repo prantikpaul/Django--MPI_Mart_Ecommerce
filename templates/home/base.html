@@ -833,14 +833,17 @@
 			font-size: 1.5em;
 			line-height: 1.6;
 		}
+
 		.custom-icon {
-		/* Add your custom icon properties */
-		display: inline-block;
-		width: 26px; /* Adjust the width as needed */
-		height: 26px; /* Adjust the height as needed */
-		background-image: url('{% static 'u5.png' %}'); 
-		
-		/* You can use other properties like background-color, border-radius, etc. */
+			/* Add your custom icon properties */
+			display: inline-block;
+			width: 26px;
+			/* Adjust the width as needed */
+			height: 26px;
+			/* Adjust the height as needed */
+			background-image: url('{% static ' u5.png' %}');
+
+			/* You can use other properties like background-color, border-radius, etc. */
 		}
 	</style>
 	<link rel='stylesheet' id='contact-form-7-css'
@@ -1916,44 +1919,24 @@
 								</div><!-- porto-sicon-box -->
 							</div>
 							{% if user.is_authenticated %}
-							<a href="{% url 'user_profile' %}" title="{{user.username}}"
-								class="my-account  porto"><i class="custom-icon"></i></a>
+							<a href="{% url 'user_profile' %}" title="{{user.username}}" class="my-account  porto"><i
+									class="custom-icon"></i></a>
 							{% else %}
-							<a href="{% url 'login' %}" title="My Account"
-								class="my-account  porto"><i class="porto-icon-user-2"></i></a>
+							<a href="{% url 'login' %}" title="My Account" class="my-account  porto"><i
+									class="porto-icon-user-2"></i></a>
 							{% endif %}
-								<a href="wishlist/index.html" title="Wishlist" class="my-wishlist"><i
+							<a href="wishlist/index.html" title="Wishlist" class="my-wishlist"><i
 									class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
 							<div id="mini-cart" class="mini-cart minicart-arrow-alt minicart-offcanvas">
+								<a href="#">
 								<div class="cart-head">
 									<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
 											class="cart-items"><i
-												class="fas fa-spinner fa-pulse"></i></span></span><span
-										class="cart-items-text"><i class="fas fa-spinner fa-pulse"></i></span>
+												class="wishlist-count">{{show_len_cart}}</i></span></span><span
+										class="cart-items-text"></span>
 								</div>
-								<div class="cart-popup widget_shopping_cart">
-									<div class="widget_shopping_cart_content">
-										<div class="cart-loading"></div>
-									</div>
-								</div>
-								<div class="minicart-overlay"><svg viewBox="0 0 32 32"
-										xmlns="http://www.w3.org/2000/svg">
-										<defs>
-											<style>
-												.minicart-svg {
-													fill: none;
-													stroke: #fff;
-													stroke-linecap: round;
-													stroke-linejoin: round;
-													stroke-width: 2px;
-												}
-											</style>
-										</defs>
-										<g id="cross">
-											<line class="minicart-svg" x1="7" x2="25" y1="7" y2="25" />
-											<line class="minicart-svg" x1="7" x2="25" y1="25" y2="7" />
-										</g>
-									</svg></div>
+								</a>
+
 							</div>
 						</div>
 					</div>
@@ -1975,11 +1958,11 @@
 												{% for i in show_cat %}
 												<li id="nav-menu-item-2021"
 													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="{% url 'all_prod' i.id %}">{{i.name}}<span class="tip" style="">NEW</span></a>
+													data-cols="1"><a href="{% url 'all_prod' i.id %}">{{i.name}}<span
+															class="tip" style="">NEW</span></a>
 												</li>
 												{% endfor %}
-												
+
 											</ul>
 										</div>
 									</div>
@@ -2113,7 +2096,7 @@
 														href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">Header
 														Builder &#038; Types<span class="tip" style="">NEW</span></a>
 												</li>
-												
+
 											</ul>
 										</div>
 									</div>
@@ -2338,7 +2321,7 @@
 			</a>
 			{% else %}
 			<a href="{% url 'login' %}" class="sticky-icon-link" target="_blank">
-				<i class="porto-icon-user-2" ></i>
+				<i class="porto-icon-user-2"></i>
 				<h4>Log in</h4>
 			</a>
 			{% endif %}
@@ -2400,7 +2383,7 @@
 								href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">{{i.name}}
 								<span class="tip" style="">NEW</span></a></li>
 						{% endfor %}
-						
+
 					</ul>
 				</li>
 				<li id="accordion-menu-item-2002"
@@ -2494,7 +2477,7 @@
 							class="menu-item menu-item-type-custom menu-item-object-custom"><a
 								href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">Header Builder
 								&#038; Types<span class="tip" style="">NEW</span></a></li>
-						
+
 					</ul>
 				</li>
 				<li id="accordion-menu-item-847" class="menu-item menu-item-type-post_type menu-item-object-page"><a
