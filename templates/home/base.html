@@ -2399,7 +2399,7 @@
 						{% for i in show_cat %}
 						<li id="accordion-menu-item-2021"
 							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">{{i.name}}
+								href="{% url 'all_prod' i.id %}">{{i.name}}
 								<span class="tip" style="">NEW</span></a></li>
 						{% endfor %}
 
