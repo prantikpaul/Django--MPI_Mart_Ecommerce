@@ -121,9 +121,10 @@
 
 
 
-										<form class="cart"
-											action="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/circled-speaker/"
-											method="post" enctype='multipart/form-data'>
+										<form class="cart" action="{% url 'add_to_cart' i.id %}"
+										
+											method="POST" enctype='multipart/form-data'>
+											{% csrf_token %}
 
 											<div class="quantity buttons_added">
 												<button type="button" value="-" class="minus">-</button>
@@ -134,7 +135,7 @@
 												<button type="button" value="+" class="plus">+</button>
 											</div>
 
-											<button type="submit" name="add-to-cart" value="1367"
+											<button type="submit" name="add-to-cart" value="1367" 
 												class="single_add_to_cart_button button alt">Add to
 												cart</button>
 
