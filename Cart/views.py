@@ -38,11 +38,8 @@ def view_cart(request):
     if request.user.is_authenticated:
         
         cart_len=cart.objects.filter(user=request.user)
-        prod_len_conunt=0 # collecting prod id if avaiable
-        for i in cart_len :
-            prod_len_conunt+=i.id # add prod id if avaiaable
             
-        if prod_len_conunt>0: #if prod exisit in cart then show view cart page 
+        if cart_len: #if prod exisit in cart then show view cart page 
          
             all_prod=cart.objects.filter(user=request.user)
             total_amnt=0

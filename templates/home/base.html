@@ -53,7 +53,9 @@
 	<link rel="preload" href="{% static 'wp-content/themes/porto/fonts/fontawesome_optimized/fa-solid-900.woff2'%}"
 		as="font" type="font/woff2" crossorigin />
 	<link rel="preload" href="{% static 'wp-content/themes/porto/fonts/fontawesome_optimized/fa-brands-400.woff2'%}"
+	
 		as="font" type="font/woff2" crossorigin />
+
 	<!-- This site uses the Google Analytics by MonsterInsights plugin v8.21.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
 	<script src="http://www.googletagmanager.com/gtag/js?id=G-4YY91NHXP7" data-cfasync="false" data-wpfc-render="false"
 		async></script>
@@ -1802,8 +1804,8 @@
 				<div class="header-top">
 					<div class="header-row container">
 						<div class="header-col header-left">
-							<div class="custom-html text-uppercase font-weight-semibold d-none d-md-block">FREE Returns.
-								Standard Shipping Orders ৳500+</div>
+							<div class="custom-html text-uppercase font-weight-semibold d-none d-md-block">
+								Free Shipping on Orders Over ৳ 1000</div>
 						</div>
 						<div class="header-col header-right">
 							<ul id="menu-top-navigation" class="top-links mega-menu show-arrow">
@@ -1926,8 +1928,15 @@
 							<a href="{% url 'login' %}" title="My Account" class="my-account  porto"><i
 									class="porto-icon-user-2"></i></a>
 							{% endif %}
-							<a href="wishlist/index.html" title="Wishlist" class="my-wishlist"><i
-									class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
+
+							{% if user.is_authenticated %}
+							<a href="{% url 'wishlist' %}" title="Wishlist" class="my-wishlist"><i
+									class="porto-icon-wishlist-2"></i><span class="wishlist-count">{{show_len_wishlist}}</span></a>
+							{% else %}
+							<a href="{% url 'wishlist_empty' %}" title="Wishlist" class="my-wishlist"><i
+							class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
+							{% endif %}
+
 							<div id="mini-cart" class="mini-cart minicart-arrow-alt minicart-offcanvas">
 								{% if user.is_authenticated %}
 								<a href="{% url 'view_cart' %}">
@@ -2565,7 +2574,7 @@
 	<script src="{% static 'wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js'%}"
 		id='prettyPhoto-js'></script>
 	<script id='jquery-yith-wcwl-js-extra'>
-		var yith_wcwl_l10n = { "ajax_url": "\/wordpress\/porto\/gutenberg-shop4\/wp-admin\/admin-ajax.php", "redirect_to_cart": "no", "multi_wishlist": "", "hide_add_button": "1", "enable_ajax_loading": "", "ajax_loader_url": "https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader-alt.svg", "remove_from_wishlist_after_add_to_cart": "1", "is_wishlist_responsive": "1", "time_to_close_prettyphoto": "3000", "fragments_index_glue": ".", "reload_on_found_variation": "1", "mobile_media_query": "768", "labels": { "cookie_disabled": "We are sorry, but this feature is available only if cookies on your browser are enabled.", "added_to_cart_message": "<div class=\"woocommerce-notices-wrapper\"><div class=\"woocommerce-message\" role=\"alert\">Product added to cart successfully<\/div><\/div>" }, "actions": { "add_to_wishlist_action": "add_to_wishlist", "remove_from_wishlist_action": "remove_from_wishlist", "reload_wishlist_and_adding_elem_action": "reload_wishlist_and_adding_elem", "load_mobile_action": "load_mobile", "delete_item_action": "delete_item", "save_title_action": "save_title", "save_privacy_action": "save_privacy", "load_fragments": "load_fragments" }, "nonce": { "add_to_wishlist_nonce": "7866f635b2", "remove_from_wishlist_nonce": "809c4b6f84", "reload_wishlist_and_adding_elem_nonce": "a64116de45", "load_mobile_nonce": "82fa431814", "delete_item_nonce": "a84f1ab6fb", "save_title_nonce": "55c76a1388", "save_privacy_nonce": "40054b662f", "load_fragments_nonce": "6fdcb000ac" }, "enable_notices": "" };
+		// var yith_wcwl_l10n = { "ajax_url": "\/wordpress\/porto\/gutenberg-shop4\/wp-admin\/admin-ajax.php", "redirect_to_cart": "no", "multi_wishlist": "", "hide_add_button": "1", "enable_ajax_loading": "", "ajax_loader_url": "https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader-alt.svg", "remove_from_wishlist_after_add_to_cart": "1", "is_wishlist_responsive": "1", "time_to_close_prettyphoto": "3000", "fragments_index_glue": ".", "reload_on_found_variation": "1", "mobile_media_query": "768", "labels": { "cookie_disabled": "We are sorry, but this feature is available only if cookies on your browser are enabled.", "added_to_cart_message": "<div class=\"woocommerce-notices-wrapper\"><div class=\"woocommerce-message\" role=\"alert\">Product added to cart successfully<\/div><\/div>" }, "actions": { "add_to_wishlist_action": "add_to_wishlist", "remove_from_wishlist_action": "remove_from_wishlist", "reload_wishlist_and_adding_elem_action": "reload_wishlist_and_adding_elem", "load_mobile_action": "load_mobile", "delete_item_action": "delete_item", "save_title_action": "save_title", "save_privacy_action": "save_privacy", "load_fragments": "load_fragments" }, "nonce": { "add_to_wishlist_nonce": "7866f635b2", "remove_from_wishlist_nonce": "809c4b6f84", "reload_wishlist_and_adding_elem_nonce": "a64116de45", "load_mobile_nonce": "82fa431814", "delete_item_nonce": "a84f1ab6fb", "save_title_nonce": "55c76a1388", "save_privacy_nonce": "40054b662f", "load_fragments_nonce": "6fdcb000ac" }, "enable_notices": "" };
 	</script>
 	<script src="{% static 'wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.min.js'%}"
 		id='jquery-yith-wcwl-js'></script>
@@ -2577,7 +2586,7 @@
 	<script src="{% static 'wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js'%}"
 		id='jquery-blockui-js'></script>
 	<script id='wc-add-to-cart-js-extra'>
-		var wc_add_to_cart_params = { "ajax_url": "\/wordpress\/porto\/gutenberg-shop4\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/wordpress\/porto\/gutenberg-shop4\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View cart", "cart_url": "https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/cart\/", "is_cart": "", "cart_redirect_after_add": "no" };
+		// var wc_add_to_cart_params = { "ajax_url": "\/wordpress\/porto\/gutenberg-shop4\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/wordpress\/porto\/gutenberg-shop4\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View cart", "cart_url": "https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/cart\/", "is_cart": "", "cart_redirect_after_add": "no" };
 	</script>
 	<script src="{% static 'wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js'%}"
 		id='wc-add-to-cart-js'></script>

@@ -146,12 +146,12 @@
 																
 																 rel="nofollow">Add to cart</a>
 															<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1364  wishlist-fragment on-first-load">
-																
 
-																<!-- ADD TO WISHLIST -->
 
 																<div class="yith-wcwl-add-button">
-																	<a href="index71e7.html?add_to_wishlist=1364&amp;_wpnonce=d982b5ee86"
+                                                                
+                                                                
+																	<a href="{% url 'add_to_wishlist' i.id %}"
 																		class="add_to_wishlist single_add_to_wishlist"
 																		data-product-id="1364"
 																		data-product-type="simple"
@@ -159,13 +159,17 @@
 																		data-title="Add to Wishlist" rel="nofollow">
 																		<span>Add to Wishlist</span>
 																	</a>
-																</div>
+																</div> 
+                                                                
 
 																<!-- COUNT TEXT -->
 
 															</div>
-															<div class="quickview" data-id="1364" title="Quick View">
-																Quick View</div>
+									
+                                                            <!-- <div
+                                                             class="quickview" data-id="1364" title="Quick View">
+																Quick View
+                                                                </div> -->
 														</div>
 													</div>
 												</div>
@@ -345,15 +349,16 @@
                                         <div class="vc_widget_woo_products wpb_content_element">
                                             <div class="widget woocommerce widget_products">
                                                 <ul class="product_list_widget">
+                                                    {% for i in FEATURED_1 %}
                                                     <li>
 
                                                         <a aria-label="product" class="product-image"
                                                             href="../product/ultimate-bluetooth-speaker/index.html"
                                                             title="Ultimate 3D Bluetooth Speaker">
                                                             <div class="inner img-effect"><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-59-1-85x85.jpg'%}"
+                                                                    src="{{i.prod_img.url}}"
                                                                     alt="" width="85" height="85" /><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-61-85x85.jpg'%}"
+                                                                    src="{{i.sub_prod_img1.url}}"
                                                                     alt="" width="85" height="85" class="hover-image" />
                                                             </div>
                                                         </a>
@@ -361,100 +366,37 @@
                                                         <div class="product-details">
                                                             <a href="../product/ultimate-bluetooth-speaker/index.html"
                                                                 title="Ultimate 3D Bluetooth Speaker">
-                                                                <span class="product-title">Ultimate 3D
-                                                                    Bluetooth Speaker</span>
+                                                                <span class="product-title">{{i.name}}</span>
                                                             </a>
 
                                                             <div class="star-rating" title="5.00"><span
                                                                     style="width:100%"><strong
                                                                         class="rating">5.00</strong> out of
                                                                     5</span></div> <span
+                                                                
                                                                 class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>105.00</bdi></span>
-                                                            &ndash; <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>108.00</bdi></span>
+                                                                        class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span>
                                                         </div>
 
                                                     </li>
 
-                                                    <li>
-
-                                                        <a aria-label="product" class="product-image"
-                                                            href="../product/brown-black-casual-glasses/index.html"
-                                                            title="Brown-Black Men Casual Glasses">
-                                                            <div class="inner img-effect"><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-grey-85x85.jpg'%}"
-                                                                    alt="" width="85" height="85" /><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-2-grey-85x85.jpg'%}"
-                                                                    alt="" width="85" height="85" class="hover-image" />
-                                                            </div>
-                                                        </a>
-
-                                                        <div class="product-details">
-                                                            <a href="../product/brown-black-casual-glasses/index.html"
-                                                                title="Brown-Black Men Casual Glasses">
-                                                                <span class="product-title">Brown-Black Men
-                                                                    Casual Glasses</span>
-                                                            </a>
-
-                                                            <div class="star-rating" title="0"><span
-                                                                    style="width:0%"><strong class="rating">0</strong>
-                                                                    out of
-                                                                    5</span></div> <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>101.00</bdi></span>
-                                                            &ndash; <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>111.00</bdi></span>
-                                                        </div>
-
-                                                    </li>
-
-                                                    <li>
-
-                                                        <a aria-label="product" class="product-image"
-                                                            href="../product/brown-women-casual-handbag/index.html"
-                                                            title="Brown Women Casual HandBag">
-                                                            <div class="inner"><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-85x85.jpg'%}"
-                                                                    alt="" width="85" height="85" /></div>
-                                                        </a>
-
-                                                        <div class="product-details">
-                                                            <a href="../product/brown-women-casual-handbag/index.html"
-                                                                title="Brown Women Casual HandBag">
-                                                                <span class="product-title">Brown Women Casual
-                                                                    HandBag</span>
-                                                            </a>
-
-                                                            <div class="star-rating" title="5.00"><span
-                                                                    style="width:100%"><strong
-                                                                        class="rating">5.00</strong> out of
-                                                                    5</span></div> <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-                                                            &ndash; <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span>
-                                                        </div>
-
-                                                    </li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="vc_widget_woo_products wpb_content_element">
                                             <div class="widget woocommerce widget_products">
                                                 <ul class="product_list_widget">
+                                                    {% for i in FEATURED_2 %}
                                                     <li>
 
                                                         <a aria-label="product" class="product-image"
                                                             href="../product/ultimate-bluetooth-speaker/index.html"
                                                             title="Ultimate 3D Bluetooth Speaker">
                                                             <div class="inner img-effect"><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-59-1-85x85.jpg'%}"
+                                                                    src="{{i.prod_img.url}}"
                                                                     alt="" width="85" height="85" /><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-61-85x85.jpg'%}"
+                                                                    src="{{i.sub_prod_img1.url}}"
                                                                     alt="" width="85" height="85" class="hover-image" />
                                                             </div>
                                                         </a>
@@ -462,85 +404,21 @@
                                                         <div class="product-details">
                                                             <a href="../product/ultimate-bluetooth-speaker/index.html"
                                                                 title="Ultimate 3D Bluetooth Speaker">
-                                                                <span class="product-title">Ultimate 3D
-                                                                    Bluetooth Speaker</span>
+                                                                <span class="product-title">{{i.name}}</span>
                                                             </a>
 
                                                             <div class="star-rating" title="5.00"><span
                                                                     style="width:100%"><strong
                                                                         class="rating">5.00</strong> out of
                                                                     5</span></div> <span
+                                                                
                                                                 class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>105.00</bdi></span>
-                                                            &ndash; <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>108.00</bdi></span>
+                                                                        class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span>
                                                         </div>
 
                                                     </li>
 
-                                                    <li>
-
-                                                        <a aria-label="product" class="product-image"
-                                                            href="../product/brown-black-casual-glasses/index.html"
-                                                            title="Brown-Black Men Casual Glasses">
-                                                            <div class="inner img-effect"><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-grey-85x85.jpg'%}"
-                                                                    alt="" width="85" height="85" /><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-2-grey-85x85.jpg'%}"
-                                                                    alt="" width="85" height="85" class="hover-image" />
-                                                            </div>
-                                                        </a>
-
-                                                        <div class="product-details">
-                                                            <a href="../product/brown-black-casual-glasses/index.html"
-                                                                title="Brown-Black Men Casual Glasses">
-                                                                <span class="product-title">Brown-Black Men
-                                                                    Casual Glasses</span>
-                                                            </a>
-
-                                                            <div class="star-rating" title="0"><span
-                                                                    style="width:0%"><strong class="rating">0</strong>
-                                                                    out of
-                                                                    5</span></div> <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>101.00</bdi></span>
-                                                            &ndash; <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>111.00</bdi></span>
-                                                        </div>
-
-                                                    </li>
-
-                                                    <li>
-
-                                                        <a aria-label="product" class="product-image"
-                                                            href="../product/brown-women-casual-handbag/index.html"
-                                                            title="Brown Women Casual HandBag">
-                                                            <div class="inner"><img
-                                                                    src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-85x85.jpg'%}"
-                                                                    alt="" width="85" height="85" /></div>
-                                                        </a>
-
-                                                        <div class="product-details">
-                                                            <a href="../product/brown-women-casual-handbag/index.html"
-                                                                title="Brown Women Casual HandBag">
-                                                                <span class="product-title">Brown Women Casual
-                                                                    HandBag</span>
-                                                            </a>
-
-                                                            <div class="star-rating" title="5.00"><span
-                                                                    style="width:100%"><strong
-                                                                        class="rating">5.00</strong> out of
-                                                                    5</span></div> <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-                                                            &ndash; <span
-                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span>
-                                                        </div>
-
-                                                    </li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                         </div>

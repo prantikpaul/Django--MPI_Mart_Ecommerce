@@ -199,28 +199,30 @@
                                             <h5>Account Details</h5>
                                         </div>
                                         <div class="card-body">
-                                            <p>Already have an account? <a href="page-login-register.html">Log in instead!</a></p>
+                                            
                                             <form method="post" name="enq">
                                                 <div class="row">
                                                     <div class="form-group col-md-6">
                                                         <label>First Name <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" name="name" type="text">
+                                                        <input required="" value="{{user.first_name}}" class="form-control square" name="name" type="text">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label>Last Name <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" name="phone">
+                                                        <input required="" value="{{user.last_name}}" class="form-control square" name="phone">
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <label>Display Name <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" name="dname" type="text">
+                                                        <input required="" value="{{user.username}}" class="form-control square" name="dname" type="text">
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <label>Email Address <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" name="email" type="email">
+                                                        <input required="" value="{{user.email}}" class="form-control square" name="email" type="email">
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <label>Current Password <span class="required">*</span></label>
-                                                        <input required="" class="form-control square" name="password" type="password">
+                                                        <label>Phone <span class="required">*</span></label>
+                                                    {% for i in prof %}
+                                                        <input required="" value="{{i.phone}}" class="form-control square" name="phone" >
+                                                    {% endfor %}
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <label>New Password <span class="required">*</span></label>
@@ -233,6 +235,7 @@
                                                     <div class="col-md-12">
                                                         <button type="submit" class="btn btn-fill-out submit" name="submit" value="Submit">Save</button>
                                                     </div>
+                                                    
                                                 </div>
                                             </form>
                                         </div>
