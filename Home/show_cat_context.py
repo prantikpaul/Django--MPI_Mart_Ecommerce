@@ -1,9 +1,9 @@
 from Products.models import category
-
-def show_cat(request):
-    show_cattP=category.objects.all()
-    data={
-        'show_cat': show_cattP,
+from django.db.models import Count
+def show_cat(request): #send category name with how many prod contain each category 
+    categories_with_product_count = category.objects.annotate(num_products=Count('product'))
+    data = {
+        'show_cat': categories_with_product_count,
     }
 
     return data

@@ -310,100 +310,7 @@
 													data-plugin-options="{&quot;themeConfig&quot;:true,&quot;lg&quot;:4,&quot;md&quot;:3,&quot;xs&quot;:3,&quot;ls&quot;:2,&quot;nav&quot;:true}"
 													data-product_layout="product-default">
 
-													<li
-														class="product-col product-default product type-product post-1368 status-publish first instock product_cat-clothing product_cat-shoes product_cat-t-shirts-fashion product_cat-watches product_tag-bag product_tag-clothes product_tag-fashion has-post-thumbnail sale featured shipping-taxable purchasable product-type-variable">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/brown-women-casual-handbag/index.html"
-																	aria-label="product">
-																	<div class="labels">
-																		<div class="onhot">Hot</div>
-																		<div class="onsale">-19%</div>
-																	</div>
-																	<div class="inner"><img loading="lazy" width="300"
-																			height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/dress/clothing/index.html"
-																		rel="tag">Clothing</a>, <a
-																		href="product-category/fashion/shoes/index.html"
-																		rel="tag">Shoes</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/brown-women-casual-handbag/index.html">
-																	<h3 class="woocommerce-loop-product__title">Brown
-																		Women Casual HandBag</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="5.00"><span
-																				style="width:100%"><strong
-																					class="rating">5.00</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-																	&ndash; <span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="product/brown-women-casual-handbag/index.html"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_variable add_to_cart_button"
-																			data-product_id="1368"
-																			data-product_sku="654111995-1-2"
-																			aria-label="Select options for &ldquo;Brown Women Casual HandBag&rdquo;"
-																			aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-																			rel="nofollow">Select options</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1368  wishlist-fragment on-first-load"
-																			data-fragment-ref="1368"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1368,&quot;parent_product_id&quot;:1368,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="index6ce5.html?add_to_wishlist=1368&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1368"
-																					data-product-type="variable"
-																					data-original-product-id="1368"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1368"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-
+													{% for i in FEATURED_PRODUCTS %}
 													<li
 														class="product-col product-default product type-product post-1367 status-publish instock product_cat-caps product_cat-hoodies product_cat-t-shirts-fashion product_cat-watches product_tag-black product_tag-clothes product_tag-fashion has-post-thumbnail featured downloadable shipping-taxable purchasable product-type-simple">
 														<div class="product-inner">
@@ -416,26 +323,17 @@
 																		<div class="onhot">Hot</div>
 																	</div>
 																	<div class="inner"><img width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-58-1-300x300.jpg'%}"
+																			src="{{i.prod_img.url}}"
 																			class=" wp-post-image" alt=""
 																			decoding="async" loading="lazy" /></div>
 																</a>
 															</div>
 
 															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/accessories/caps/index.html"
-																		rel="tag">Caps</a>, <a
-																		href="product-category/dress/clothing/hoodies/index.html"
-																		rel="tag">Hoodies</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
+																
 																<a class="product-loop-title"
 																	href="product/circled-speaker/index.html">
-																	<h3 class="woocommerce-loop-product__title">Circled
-																		Ultimate 3D Speaker</h3>
+																	<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
 																</a>
 
 
@@ -452,7 +350,7 @@
 
 																<span class="price"><span
 																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span></span>
+																				class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></span>
 
 																<div class="add-links-wrap">
 																	<div class="add-links clearfix">
@@ -492,278 +390,8 @@
 														</div>
 													</li>
 
-													<li
-														class="product-col product-default product type-product post-1369 status-publish instock product_cat-clothing product_cat-shoes product_cat-watches has-post-thumbnail featured shipping-taxable purchasable product-type-variable">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/men-belt/index.html"
-																	aria-label="product">
-																	<div class="labels">
-																		<div class="onhot">Hot</div>
-																	</div>
-																	<div class="inner img-effect"><img width="300"
-																			height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-42-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /><img
-																			width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-44-300x300.jpg'%}"
-																			class="hover-image" alt="" decoding="async"
-																			loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/dress/clothing/index.html"
-																		rel="tag">Clothing</a>, <a
-																		href="product-category/fashion/shoes/index.html"
-																		rel="tag">Shoes</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/men-belt/index.html">
-																	<h3 class="woocommerce-loop-product__title">Men
-																		Black Gentle Belt</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="4.00"><span
-																				style="width:80%"><strong
-																					class="rating">4.00</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>99.00</bdi></span>
-																	&ndash; <span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>109.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="product/men-belt/index.html"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_variable add_to_cart_button"
-																			data-product_id="1369" data-product_sku=""
-																			aria-label="Select options for &ldquo;Men Black Gentle Belt&rdquo;"
-																			aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-																			rel="nofollow">Select options</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1369  wishlist-fragment on-first-load"
-																			data-fragment-ref="1369"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1369,&quot;parent_product_id&quot;:1369,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="indexe545.html?add_to_wishlist=1369&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1369"
-																					data-product-type="variable"
-																					data-original-product-id="1369"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1369"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-
-													<li
-														class="product-col product-default product type-product post-1413 status-publish last instock product_cat-clothing product_cat-shoes product_cat-t-shirts-fashion product_cat-watches has-post-thumbnail featured shipping-taxable purchasable product-type-variable">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/men-black-sports-watch/index.html"
-																	aria-label="product">
-																	<div class="labels">
-																		<div class="onhot">Hot</div>
-																	</div>
-																	<div class="inner"><img width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-66-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/dress/clothing/index.html"
-																		rel="tag">Clothing</a>, <a
-																		href="product-category/fashion/shoes/index.html"
-																		rel="tag">Shoes</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/men-black-sports-watch/index.html">
-																	<h3 class="woocommerce-loop-product__title">Men
-																		Black Sports Watch</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="0"><span
-																				style="width:0%"><strong
-																					class="rating">0</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>101.00</bdi></span>
-																	&ndash; <span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>111.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="product/men-black-sports-watch/index.html"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_variable add_to_cart_button"
-																			data-product_id="1413"
-																			data-product_sku="PT0007"
-																			aria-label="Select options for &ldquo;Men Black Sports Watch&rdquo;"
-																			aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-																			rel="nofollow">Select options</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1413  wishlist-fragment on-first-load"
-																			data-fragment-ref="1413"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1413,&quot;parent_product_id&quot;:1413,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="index20a9.html?add_to_wishlist=1413&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1413"
-																					data-product-type="variable"
-																					data-original-product-id="1413"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1413"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-
-													<li
-														class="product-col product-default product type-product post-1363 status-publish first instock product_cat-caps product_cat-electronics product_cat-watches product_tag-fashion product_tag-hub product_tag-sports has-post-thumbnail featured shipping-taxable purchasable product-type-simple">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/men-sports-travel-bag/index.html"
-																	aria-label="product">
-																	<div class="labels">
-																		<div class="onhot">Hot</div>
-																	</div>
-																	<div class="inner"><img width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-30-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/accessories/caps/index.html"
-																		rel="tag">Caps</a>, <a
-																		href="product-category/electronics/index.html"
-																		rel="tag">Electronics</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/men-sports-travel-bag/index.html">
-																	<h3 class="woocommerce-loop-product__title">Men
-																		Sports Travel Bag</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="0"><span
-																				style="width:0%"><strong
-																					class="rating">0</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="indexbfc4.html?add-to-cart=1363"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
-																			data-product_id="1363"
-																			data-product_sku="854613298"
-																			aria-label="Add &ldquo;Men Sports Travel Bag&rdquo; to your cart"
-																			aria-describedby="" rel="nofollow">Add to
-																			cart</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1363  wishlist-fragment on-first-load"
-																			data-fragment-ref="1363"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1363,&quot;parent_product_id&quot;:1363,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="index6856.html?add_to_wishlist=1363&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1363"
-																					data-product-type="simple"
-																					data-original-product-id="1363"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1363"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
+													{% endfor %}
+													
 												</ul>
 											</div>
 										</div>
@@ -784,461 +412,7 @@
 													data-plugin-options="{&quot;themeConfig&quot;:true,&quot;lg&quot;:5,&quot;md&quot;:4,&quot;xs&quot;:3,&quot;ls&quot;:2,&quot;nav&quot;:true}"
 													data-product_layout="product-default">
 
-													<li
-														class="product-col product-default product type-product post-1370 status-publish first instock product_cat-clothing product_cat-shoes product_cat-t-shirts-fashion product_cat-toys product_cat-watches product_tag-shoes has-post-thumbnail shipping-taxable purchasable product-type-variable">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/sports-shoes/index.html"
-																	aria-label="product">
-																	<div class="inner img-effect"><img width="300"
-																			height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-13-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /><img
-																			width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-21-300x300.jpg'%}"
-																			class="hover-image" alt="" decoding="async"
-																			loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/dress/clothing/index.html"
-																		rel="tag">Clothing</a>, <a
-																		href="product-category/fashion/shoes/index.html"
-																		rel="tag">Shoes</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/electronics/toys/index.html"
-																		rel="tag">Toys</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/sports-shoes/index.html">
-																	<h3 class="woocommerce-loop-product__title">
-																		Basketball Sports Blue Shoes</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="0"><span
-																				style="width:0%"><strong
-																					class="rating">0</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>101.00</bdi></span>
-																	&ndash; <span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>111.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="product/sports-shoes/index.html"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_variable add_to_cart_button"
-																			data-product_id="1370"
-																			data-product_sku="PT0002"
-																			aria-label="Select options for &ldquo;Basketball Sports Blue Shoes&rdquo;"
-																			aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-																			rel="nofollow">Select options</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1370  wishlist-fragment on-first-load"
-																			data-fragment-ref="1370"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1370,&quot;parent_product_id&quot;:1370,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="index1061.html?add_to_wishlist=1370&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1370"
-																					data-product-type="variable"
-																					data-original-product-id="1370"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1370"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-
-													<li
-														class="product-col product-default product type-product post-1418 status-publish instock product_cat-clothing product_cat-shoes product_cat-t-shirts-fashion product_cat-watches product_tag-blue has-post-thumbnail shipping-taxable purchasable product-type-variable">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/young-blue-backpack/index.html"
-																	aria-label="product">
-																	<div class="inner"><img width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-68-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/dress/clothing/index.html"
-																		rel="tag">Clothing</a>, <a
-																		href="product-category/fashion/shoes/index.html"
-																		rel="tag">Shoes</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/young-blue-backpack/index.html">
-																	<h3 class="woocommerce-loop-product__title">Blue
-																		Backpack for Young</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="0"><span
-																				style="width:0%"><strong
-																					class="rating">0</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>101.00</bdi></span>
-																	&ndash; <span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>111.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="product/young-blue-backpack/index.html"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_variable add_to_cart_button"
-																			data-product_id="1418"
-																			data-product_sku="PT0003-2"
-																			aria-label="Select options for &ldquo;Blue Backpack for Young&rdquo;"
-																			aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-																			rel="nofollow">Select options</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1418  wishlist-fragment on-first-load"
-																			data-fragment-ref="1418"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1418,&quot;parent_product_id&quot;:1418,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="indexab26.html?add_to_wishlist=1418&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1418"
-																					data-product-type="variable"
-																					data-original-product-id="1418"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1418"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-
-													<li
-														class="product-col product-default product type-product post-1368 status-publish instock product_cat-clothing product_cat-shoes product_cat-t-shirts-fashion product_cat-watches product_tag-bag product_tag-clothes product_tag-fashion has-post-thumbnail sale featured shipping-taxable purchasable product-type-variable">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/brown-women-casual-handbag/index.html"
-																	aria-label="product">
-																	<div class="labels">
-																		<div class="onhot">Hot</div>
-																		<div class="onsale">-19%</div>
-																	</div>
-																	<div class="inner"><img width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/dress/clothing/index.html"
-																		rel="tag">Clothing</a>, <a
-																		href="product-category/fashion/shoes/index.html"
-																		rel="tag">Shoes</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/brown-women-casual-handbag/index.html">
-																	<h3 class="woocommerce-loop-product__title">Brown
-																		Women Casual HandBag</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="5.00"><span
-																				style="width:100%"><strong
-																					class="rating">5.00</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-																	&ndash; <span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="product/brown-women-casual-handbag/index.html"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_variable add_to_cart_button"
-																			data-product_id="1368"
-																			data-product_sku="654111995-1-2"
-																			aria-label="Select options for &ldquo;Brown Women Casual HandBag&rdquo;"
-																			aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-																			rel="nofollow">Select options</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1368  wishlist-fragment on-first-load"
-																			data-fragment-ref="1368"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1368,&quot;parent_product_id&quot;:1368,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="index6ce5.html?add_to_wishlist=1368&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1368"
-																					data-product-type="variable"
-																					data-original-product-id="1368"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1368"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-
-													<li
-														class="product-col product-default product type-product post-1380 status-publish instock product_cat-clothing product_cat-t-shirts-fashion product_cat-watches has-post-thumbnail shipping-taxable purchasable product-type-variable">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/brown-black-casual-glasses/index.html"
-																	aria-label="product">
-																	<div class="inner img-effect"><img width="300"
-																			height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-grey-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /><img
-																			width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-2-grey-300x300.jpg'%}"
-																			class="hover-image" alt="" decoding="async"
-																			loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/dress/clothing/index.html"
-																		rel="tag">Clothing</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/brown-black-casual-glasses/index.html">
-																	<h3 class="woocommerce-loop-product__title">
-																		Brown-Black Men Casual Glasses</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="0"><span
-																				style="width:0%"><strong
-																					class="rating">0</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>101.00</bdi></span>
-																	&ndash; <span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>111.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="product/brown-black-casual-glasses/index.html"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_variable add_to_cart_button"
-																			data-product_id="1380"
-																			data-product_sku="PT0003"
-																			aria-label="Select options for &ldquo;Brown-Black Men Casual Glasses&rdquo;"
-																			aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-																			rel="nofollow">Select options</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1380  wishlist-fragment on-first-load"
-																			data-fragment-ref="1380"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1380,&quot;parent_product_id&quot;:1380,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="indexc674.html?add_to_wishlist=1380&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1380"
-																					data-product-type="variable"
-																					data-original-product-id="1380"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1380"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
-
-													<li
-														class="product-col product-default product type-product post-1364 status-publish last instock product_cat-caps product_cat-hoodies product_cat-shoes product_cat-watches product_tag-shirt product_tag-skirt has-post-thumbnail downloadable shipping-taxable purchasable product-type-simple">
-														<div class="product-inner">
-
-															<div class="product-image">
-
-																<a href="product/casual-spring-blue-shoes/index.html"
-																	aria-label="product">
-																	<div class="inner"><img width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-17-300x300.jpg'%}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/accessories/caps/index.html"
-																		rel="tag">Caps</a>, <a
-																		href="product-category/dress/clothing/hoodies/index.html"
-																		rel="tag">Hoodies</a>, <a
-																		href="product-category/fashion/shoes/index.html"
-																		rel="tag">Shoes</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
-																<a class="product-loop-title"
-																	href="product/casual-spring-blue-shoes/index.html">
-																	<h3 class="woocommerce-loop-product__title">Casual
-																		Spring Blue Shoes</h3>
-																</a>
-
-
-
-																<div class="rating-wrap">
-																	<div class="rating-content">
-																		<div class="star-rating" title="0"><span
-																				style="width:0%"><strong
-																					class="rating">0</strong> out of
-																				5</span></div>
-																	</div>
-																</div>
-
-
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>55.00</bdi></span></span>
-
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="index7a94.html?add-to-cart=1364"
-																			data-quantity="1"
-																			class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
-																			data-product_id="1364"
-																			data-product_sku="15615132"
-																			aria-label="Add &ldquo;Casual Spring Blue Shoes&rdquo; to your cart"
-																			aria-describedby="" rel="nofollow">Add to
-																			cart</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1364  wishlist-fragment on-first-load"
-																			data-fragment-ref="1364"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1364,&quot;parent_product_id&quot;:1364,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-																			<!-- ADD TO WISHLIST -->
-
-																			<div class="yith-wcwl-add-button">
-																				<a href="indexe044.html?add_to_wishlist=1364&amp;_wpnonce=7866f635b2"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1364"
-																					data-product-type="simple"
-																					data-original-product-id="1364"
-																					data-title="Add to Wishlist"
-																					rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
-																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<div class="quickview" data-id="1364"
-																			title="Quick View">Quick View</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</li>
+													{% for i in NEW_ARRIVALS %}
 
 													<li
 														class="product-col product-default product type-product post-1367 status-publish first instock product_cat-caps product_cat-hoodies product_cat-t-shirts-fashion product_cat-watches product_tag-black product_tag-clothes product_tag-fashion has-post-thumbnail featured downloadable shipping-taxable purchasable product-type-simple">
@@ -1249,29 +423,20 @@
 																<a href="product/circled-speaker/index.html"
 																	aria-label="product">
 																	<div class="labels">
-																		<div class="onhot">Hot</div>
+																		<div class="onhot">New</div>
 																	</div>
 																	<div class="inner"><img width="300" height="300"
-																			src="{% static 'wp-content/uploads/sites/116/2018/04/product-58-1-300x300.jpg'%}"
+																			src="{{i.prod_img.url}}"
 																			class=" wp-post-image" alt=""
 																			decoding="async" loading="lazy" /></div>
 																</a>
 															</div>
 
 															<div class="product-content">
-																<span class="category-list"><a
-																		href="product-category/accessories/caps/index.html"
-																		rel="tag">Caps</a>, <a
-																		href="product-category/dress/clothing/hoodies/index.html"
-																		rel="tag">Hoodies</a>, <a
-																		href="product-category/fashion/t-shirts-fashion/index.html"
-																		rel="tag">T-Shirts</a>, <a
-																		href="product-category/accessories/watches/index.html"
-																		rel="tag">Watches</a></span>
+																
 																<a class="product-loop-title"
 																	href="product/circled-speaker/index.html">
-																	<h3 class="woocommerce-loop-product__title">Circled
-																		Ultimate 3D Speaker</h3>
+																	<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
 																</a>
 
 
@@ -1288,7 +453,7 @@
 
 																<span class="price"><span
 																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span></span>
+																				class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></span>
 
 																<div class="add-links-wrap">
 																	<div class="add-links clearfix">
@@ -1328,6 +493,106 @@
 															</div>
 														</div>
 													</li>
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="container">
+									<h2 class="porto-heading slider-title mb-4"
+										style="font-size:1.125rem;line-height:1;"><span>BEST SELLING PRODUCTS</span></h2>
+
+									<div id="porto-products-8507"
+										class="porto-products wpb_content_element mb-4 theme_option">
+										<div class="slider-wrapper">
+											<div class="woocommerce columns-5 ">
+												<ul class="products products-container products-slider owl-carousel nav-center-images-only nav-pos-outside nav-style-4 show-nav-hover pcols-lg-5 pcols-md-4 pcols-xs-3 pcols-ls-2 pwidth-lg-5 pwidth-md-4 pwidth-xs-3 pwidth-ls-2 is-shortcode"
+													data-plugin-options="{&quot;themeConfig&quot;:true,&quot;lg&quot;:5,&quot;md&quot;:4,&quot;xs&quot;:3,&quot;ls&quot;:2,&quot;nav&quot;:true}"
+													data-product_layout="product-default">
+
+													{% for i in BEST_SELLING_PRODUCTS %}
+
+													<li
+														class="product-col product-default product type-product post-1367 status-publish first instock product_cat-caps product_cat-hoodies product_cat-t-shirts-fashion product_cat-watches product_tag-black product_tag-clothes product_tag-fashion has-post-thumbnail featured downloadable shipping-taxable purchasable product-type-simple">
+														<div class="product-inner">
+
+															<div class="product-image">
+
+																<a href="product/circled-speaker/index.html"
+																	aria-label="product">
+																	<div class="labels">
+																		<div class="onhot">New</div>
+																	</div>
+																	<div class="inner"><img width="300" height="300"
+																			src="{{i.prod_img.url}}"
+																			class=" wp-post-image" alt=""
+																			decoding="async" loading="lazy" /></div>
+																</a>
+															</div>
+
+															<div class="product-content">
+																
+																<a class="product-loop-title"
+																	href="product/circled-speaker/index.html">
+																	<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
+																</a>
+
+
+
+																<div class="rating-wrap">
+																	<div class="rating-content">
+																		<div class="star-rating" title="0"><span
+																				style="width:0%"><strong
+																					class="rating">0</strong> out of
+																				5</span></div>
+																	</div>
+																</div>
+
+
+																<span class="price"><span
+																		class="woocommerce-Price-amount amount"><bdi><span
+																				class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></span>
+
+																<div class="add-links-wrap">
+																	<div class="add-links clearfix">
+																		<a href="index133d.html?add-to-cart=1367"
+																			data-quantity="1"
+																			class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
+																			data-product_id="1367"
+																			data-product_sku="654111995-1-1-2"
+																			aria-label="Add &ldquo;Circled Ultimate 3D Speaker&rdquo; to your cart"
+																			aria-describedby="" rel="nofollow">Add to
+																			cart</a>
+																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1367  wishlist-fragment on-first-load"
+																			data-fragment-ref="1367"
+																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1367,&quot;parent_product_id&quot;:1367,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
+
+																			<!-- ADD TO WISHLIST -->
+
+																			<div class="yith-wcwl-add-button">
+																				<a href="index2eeb.html?add_to_wishlist=1367&amp;_wpnonce=7866f635b2"
+																					class="add_to_wishlist single_add_to_wishlist"
+																					data-product-id="1367"
+																					data-product-type="simple"
+																					data-original-product-id="1367"
+																					data-title="Add to Wishlist"
+																					rel="nofollow">
+																					<span>Add to Wishlist</span>
+																				</a>
+																			</div>
+
+																			<!-- COUNT TEXT -->
+
+																		</div>
+																		<div class="quickview" data-id="1367"
+																			title="Quick View">Quick View</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</li>
+													{% endfor %}
 												</ul>
 											</div>
 										</div>
@@ -1525,6 +790,8 @@
 								</div>
 							</section>
 
+							
+
 							<section class="vc_section porto-section porto-inner-container pb-4"
 								style="background-color:#f6f7f9;">
 								<div class="container">
@@ -1712,376 +979,8 @@
 
 <div id="content-bottom"><!-- begin content bottom -->
 	<div class="porto-block" data-id="2000">
-		<section class="vc_section porto-section porto-inner-container py-0">
-			<div class="container">
-
-				<hr class="wp-block-separator has-text-color has-background is-style-wide mt-0 mb-5"
-					style="background-color:#e7e7e7;color:#e7e7e7" />
-
-
-
-				<div class="wp-block-columns pb-4 product-bottom is-layout-flex wp-container-22">
-					<div class="wp-block-column is-layout-flow">
-						<div class="vc_widget_woo_products wpb_content_element">
-							<div class="widget woocommerce widget_products">
-								<h2 class="widgettitle">Featured Products</h2>
-								<ul class="product_list_widget">
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/ultimate-bluetooth-speaker/index.html"
-											title="Ultimate 3D Bluetooth Speaker">
-											<div class="inner img-effect"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-59-1-85x85.jpg'%}"
-													alt="" width="85" height="85" /><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-61-85x85.jpg'%}"
-													alt="" width="85" height="85" class="hover-image" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/ultimate-bluetooth-speaker/index.html"
-												title="Ultimate 3D Bluetooth Speaker">
-												<span class="product-title">Ultimate 3D Bluetooth Speaker</span>
-											</a>
-
-											<div class="star-rating" title="5.00"><span style="width:100%"><strong
-														class="rating">5.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>105.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>108.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/brown-women-casual-handbag/index.html"
-											title="Brown Women Casual HandBag">
-											<div class="inner"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-85x85.jpg'%}"
-													alt="" width="85" height="85" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/brown-women-casual-handbag/index.html"
-												title="Brown Women Casual HandBag">
-												<span class="product-title">Brown Women Casual HandBag</span>
-											</a>
-
-											<div class="star-rating" title="5.00"><span style="width:100%"><strong
-														class="rating">5.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/circled-speaker/index.html"
-											title="Circled Ultimate 3D Speaker">
-											<div class="inner"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-58-1-85x85.jpg'%}"
-													alt="" width="85" height="85" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/circled-speaker/index.html"
-												title="Circled Ultimate 3D Speaker">
-												<span class="product-title">Circled Ultimate 3D Speaker</span>
-											</a>
-
-											<div class="star-rating" title="0"><span style="width:0%"><strong
-														class="rating">0</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span>
-										</div>
-
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-
-
-					<div class="wp-block-column is-layout-flow">
-						<div class="vc_widget_woo_products wpb_content_element">
-							<div class="widget woocommerce widget_products">
-								<h2 class="widgettitle">Best Selling Products</h2>
-								<ul class="product_list_widget">
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/circled-speaker/index.html"
-											title="Circled Ultimate 3D Speaker">
-											<div class="inner"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-58-1-85x85.jpg'%}"
-													alt="" width="85" height="85" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/circled-speaker/index.html"
-												title="Circled Ultimate 3D Speaker">
-												<span class="product-title">Circled Ultimate 3D Speaker</span>
-											</a>
-
-											<div class="star-rating" title="0"><span style="width:0%"><strong
-														class="rating">0</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/brown-women-casual-handbag/index.html"
-											title="Brown Women Casual HandBag">
-											<div class="inner"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-85x85.jpg'%}"
-													alt="" width="85" height="85" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/brown-women-casual-handbag/index.html"
-												title="Brown Women Casual HandBag">
-												<span class="product-title">Brown Women Casual HandBag</span>
-											</a>
-
-											<div class="star-rating" title="5.00"><span style="width:100%"><strong
-														class="rating">5.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image" href="product/men-belt/index.html"
-											title="Men Black Gentle Belt">
-											<div class="inner img-effect"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-42-85x85.jpg'%}"
-													alt="" width="85" height="85" /><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-44-85x85.jpg'%}"
-													alt="" width="85" height="85" class="hover-image" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/men-belt/index.html" title="Men Black Gentle Belt">
-												<span class="product-title">Men Black Gentle Belt</span>
-											</a>
-
-											<div class="star-rating" title="4.00"><span style="width:80%"><strong
-														class="rating">4.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>99.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>109.00</bdi></span>
-										</div>
-
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-
-
-					<div class="wp-block-column is-layout-flow">
-						<div class="vc_widget_woo_products wpb_content_element">
-							<div class="widget woocommerce widget_products">
-								<h2 class="widgettitle">Latest Products</h2>
-								<ul class="product_list_widget">
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/ultimate-bluetooth-speaker/index.html"
-											title="Ultimate 3D Bluetooth Speaker">
-											<div class="inner img-effect"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-59-1-85x85.jpg'%}"
-													alt="" width="85" height="85" /><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-61-85x85.jpg'%}"
-													alt="" width="85" height="85" class="hover-image" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/ultimate-bluetooth-speaker/index.html"
-												title="Ultimate 3D Bluetooth Speaker">
-												<span class="product-title">Ultimate 3D Bluetooth Speaker</span>
-											</a>
-
-											<div class="star-rating" title="5.00"><span style="width:100%"><strong
-														class="rating">5.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>105.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>108.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/brown-black-casual-glasses/index.html"
-											title="Brown-Black Men Casual Glasses">
-											<div class="inner img-effect"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-grey-85x85.jpg'%}"
-													alt="" width="85" height="85" /><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-106-2-grey-85x85.jpg'%}"
-													alt="" width="85" height="85" class="hover-image" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/brown-black-casual-glasses/index.html"
-												title="Brown-Black Men Casual Glasses">
-												<span class="product-title">Brown-Black Men Casual Glasses</span>
-											</a>
-
-											<div class="star-rating" title="0"><span style="width:0%"><strong
-														class="rating">0</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>101.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>111.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/brown-women-casual-handbag/index.html"
-											title="Brown Women Casual HandBag">
-											<div class="inner"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-85x85.jpg'%}"
-													alt="" width="85" height="85" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/brown-women-casual-handbag/index.html"
-												title="Brown Women Casual HandBag">
-												<span class="product-title">Brown Women Casual HandBag</span>
-											</a>
-
-											<div class="star-rating" title="5.00"><span style="width:100%"><strong
-														class="rating">5.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span>
-										</div>
-
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-
-
-					<div class="wp-block-column is-layout-flow">
-						<div class="vc_widget_woo_top_rated_products wpb_content_element">
-							<div class="widget woocommerce widget_top_rated_products">
-								<h2 class="widgettitle">Top Rated products</h2>
-								<ul class="product_list_widget">
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/brown-women-casual-handbag/index.html"
-											title="Brown Women Casual HandBag">
-											<div class="inner"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-81-85x85.jpg'%}"
-													alt="" width="85" height="85" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/brown-women-casual-handbag/index.html"
-												title="Brown Women Casual HandBag">
-												<span class="product-title">Brown Women Casual HandBag</span>
-											</a>
-
-											<div class="star-rating" title="5.00"><span style="width:100%"><strong
-														class="rating">5.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>209.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>269.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image"
-											href="product/ultimate-bluetooth-speaker/index.html"
-											title="Ultimate 3D Bluetooth Speaker">
-											<div class="inner img-effect"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-59-1-85x85.jpg'%}"
-													alt="" width="85" height="85" /><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-61-85x85.jpg'%}"
-													alt="" width="85" height="85" class="hover-image" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/ultimate-bluetooth-speaker/index.html"
-												title="Ultimate 3D Bluetooth Speaker">
-												<span class="product-title">Ultimate 3D Bluetooth Speaker</span>
-											</a>
-
-											<div class="star-rating" title="5.00"><span style="width:100%"><strong
-														class="rating">5.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>105.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>108.00</bdi></span>
-										</div>
-
-									</li>
-
-									<li>
-
-										<a aria-label="product" class="product-image" href="product/men-belt/index.html"
-											title="Men Black Gentle Belt">
-											<div class="inner img-effect"><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-42-85x85.jpg'%}"
-													alt="" width="85" height="85" /><img
-													src="{% static 'wp-content/uploads/sites/116/2018/04/product-44-85x85.jpg'%}"
-													alt="" width="85" height="85" class="hover-image" /></div>
-										</a>
-
-										<div class="product-details">
-											<a href="product/men-belt/index.html" title="Men Black Gentle Belt">
-												<span class="product-title">Men Black Gentle Belt</span>
-											</a>
-
-											<div class="star-rating" title="4.00"><span style="width:80%"><strong
-														class="rating">4.00</strong> out of 5</span></div> <span
-												class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>99.00</bdi></span>
-											&ndash; <span class="woocommerce-Price-amount amount"><bdi><span
-														class="woocommerce-Price-currencySymbol">&#36;</span>109.00</bdi></span>
-										</div>
-
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</section>
+		<br>
+		<br>
 	</div>
 </div><!-- begin content bottom -->
 

@@ -211,15 +211,17 @@
                 <!-- main sidebar -->
                 <div data-plugin-sticky
                     data-plugin-options="{&quot;autoInit&quot;: true, &quot;minWidth&quot;: 992, &quot;containerSelector&quot;: &quot;.main-content-wrap&quot;,&quot;autoFit&quot;:true, &quot;paddingOffsetBottom&quot;: 10}">
+                    <br>
                     <div class="sidebar-content">
                         <aside id="woocommerce_product_categories-2"
                             class="widget woocommerce widget_product_categories">
                             <h3 class="widget-title">Categories</h3>
                             <ul class="product-categories">
+                            {% for i in show_cat %}
                                 <li class="cat-item cat-item-75 cat-parent"><a
-                                        href="../product-category/accessories/index.html">Accessories</a> <span
-                                        class="count">(13)</span>
-                                    <ul class='children'>
+                                        href="{% url 'all_prod' i.id %}">{{i.name}}</a> <span
+                                        class="count">({{i.num_products}})</span>
+                                    <!-- <ul class='children'>
                                         <li class="cat-item cat-item-100"><a
                                                 href="../product-category/accessories/caps/index.html">Caps</a>
                                             <span class="count">(4)</span>
@@ -228,9 +230,10 @@
                                                 href="../product-category/accessories/watches/index.html">Watches</a>
                                             <span class="count">(13)</span>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </li>
-                                <li class="cat-item cat-item-78 cat-parent"><a
+                                {% endfor %}
+                                <!-- <li class="cat-item cat-item-78 cat-parent"><a
                                         href="../product-category/dress/index.html">Dress</a> <span
                                         class="count">(12)</span>
                                     <ul class='children'>
@@ -269,7 +272,7 @@
                                             <span class="count">(11)</span>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                         </aside>
                         <aside id="yith-woo-ajax-reset-navigation-2"
