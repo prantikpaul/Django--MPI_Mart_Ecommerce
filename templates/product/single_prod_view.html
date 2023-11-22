@@ -173,9 +173,11 @@
 											<!-- ADD TO WISHLIST -->
 
 											<div class="yith-wcwl-add-button">
+											<a href="{% url 'add_to_wishlist' i.id %}">
 												<button class="wishlist-btn">
 													<i class="fas fa-heart"></i> Add to Wish List
 												</button>
+											</a>
 											</div>
 
 											<!-- COUNT TEXT -->
@@ -207,76 +209,154 @@
 									<div class="tab-content" id="tab-reviews">
 										<div id="reviews" class="woocommerce-Reviews">
 											<div id="comments">
-												<h2 class="woocommerce-Reviews-title">
-													Reviews </h2>
+                                                        <h2 class="woocommerce-Reviews-title">
+                                                            1 review for <span>{{i.name}}</span> </h2>
 
 
-												<p class="woocommerce-noreviews">There are no reviews yet.</p>
+                                                        <ol class="commentlist">
+															{% for i in show_review %}
+                                                            <li class="review byuser comment-author-porto_admin bypostauthor even thread-even depth-1"
+                                                                id="li-comment-65">
 
-											</div>
+                                                                <div id="comment-65" class="comment_container">
 
-											<hr class="tall">
+                                                                    <div class="img-thumbnail"><img alt=''
+                                                                            src='https://secure.gravatar.com/avatar/7a2bb5e1cdc8a5ac3bb113771b6a8b50?s=80&#038;d=mm&#038;r=g'
+                                                                            srcset='https://secure.gravatar.com/avatar/7a2bb5e1cdc8a5ac3bb113771b6a8b50?s=160&#038;d=mm&#038;r=g 2x'
+                                                                            class='avatar avatar-80 photo' height='80'
+                                                                            width='80' loading='lazy'
+                                                                            decoding='async' /></div>
+                                                                    <div class="comment-text">
+																			{% if i.rating == 5 %}
+																			<style>
+																			.star-rating span:before {
+																				color: #6a6a6d;
+																				content: "\f005" "\f005" "\f005" "\f005" "\f005";
+																				left: 0;
+																				position: absolute;
+																				top: 0;
+																			}
+																			</style>
+																			{% elif i.rating == 4 %}
+																			<style>
+																			.star-rating span:before {
+																				color: #6a6a6d;
+																				content: "\f005" "\f005" "\f005" "\f005";
+																				left: 0;
+																				position: absolute;
+																				top: 0;
+																			}
+																			</style>
+																			{% elif i.rating == 3 %}
+																			<style>
+																			.star-rating span:before {
+																				color: #6a6a6d;
+																				content:  "\f005" "\f005" "\f005";
+																				left: 0;
+																				position: absolute;
+																				top: 0;
+																			}
+																			</style>
+																			{% elif i.rating == 2 %}
+																			<style>
+																			.star-rating span:before {
+																				color: #6a6a6d;
+																				content: "\f005" "\f005";
+																				left: 0;
+																				position: absolute;
+																				top: 0;
+																			}
+																			</style>
+																			{% else %}
+																			<style>
+																			.star-rating span:before {
+																				color: #6a6a6d;
+																				content: "\f005";
+																				left: 0;
+																				position: absolute;
+																				top: 0;
+																			}
+																			</style>
+																			{% endif %}
+
+                                                                        <div class="star-rating" title="5">
+                                                                            <span style="width:100%">
+                                                                                <strong>{{i.rating}}</strong> out of 5 </span>
+                                                                        </div>
 
 
-											<div id="review_form_wrapper">
-												<div id="review_form">
-													<div id="respond" class="comment-respond">
-														<h3 id="reply-title" class="comment-reply-title">Be the
-															first to review &ldquo;Circled Ultimate 3D
-															Speaker&rdquo; <small><a rel="nofollow"
-																	id="cancel-comment-reply-link"
-																	href="index.html#respond"
-																	style="display:none;">Cancel
-																	reply</a></small></h3>
-														<form
-															action="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/wp-comments-post.php"
-															method="post" id="commentform" class="comment-form"
-															novalidate>
-															<div class="comment-form-rating"><label for="rating">Your
-																	rating&nbsp;<span
-																		class="required">*</span></label><select
-																	name="rating" id="rating" required>
-																	<option value="">Rate&hellip;</option>
-																	<option value="5">Perfect</option>
-																	<option value="4">Good</option>
-																	<option value="3">Average</option>
-																	<option value="2">Not that bad</option>
-																	<option value="1">Very poor</option>
-																</select></div>
-															<p class="comment-form-comment"><label for="comment">Your
-																	review <span
-																		class="required">*</span></label><textarea
-																	id="comment" name="comment" cols="45" rows="8"
-																	required></textarea></p>
-															<p class="comment-form-author"><label
-																	for="author">Name&nbsp;<span
-																		class="required">*</span></label><input
-																	id="author" name="author" type="text" value=""
-																	size="30" required /></p>
-															<p class="comment-form-email"><label
-																	for="email">Email&nbsp;<span
-																		class="required">*</span></label><input
-																	id="email" name="email" type="email" value=""
-																	size="30" required /></p>
-															<p class="comment-form-cookies-consent"><input
-																	id="wp-comment-cookies-consent"
-																	name="wp-comment-cookies-consent" type="checkbox"
-																	value="yes" /> <label
-																	for="wp-comment-cookies-consent">Save my
-																	name, email, and website in this browser for
-																	the next time I comment.</label></p>
-															<p class="form-submit"><input name="submit" type="submit"
-																	id="submit" class="submit" value="Submit" /> <input
-																	type='hidden' name='comment_post_ID' value='1367'
-																	id='comment_post_ID' />
-																<input type='hidden' name='comment_parent'
-																	id='comment_parent' value='0' />
-															</p>
-														</form>
-													</div><!-- #respond -->
-												</div>
-											</div>
+                                                                        <p class="meta">
+                                                                            <strong
+                                                                                class="woocommerce-review__author">{{i.user}}</strong>
+                                                                            <span
+                                                                                class="woocommerce-review__dash">&ndash;</span>
+                                                                            <time
+                                                                                class="woocommerce-review__published-date"
+                                                                                datetime="2018-04-12T08:21:37+00:00">{{i.date}}</time>
+                                                                        </p>
 
+                                                                        <div class="description">
+                                                                            <p>{{i.comment}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li><!-- #comment-## -->
+															{% endfor %}
+                                                            
+                                                        </ol>
+
+
+                                                    </div>
+
+												<hr class="tall">
+
+												{% if user.is_authenticated %}
+												<div id="review_form_wrapper">
+                                                        <div id="review_form">
+                                                            <div id="respond" class="comment-respond">
+                                                                <h3 id="reply-title" class="comment-reply-title">Add a
+                                                                    review <small><a rel="nofollow"
+                                                                            id="cancel-comment-reply-link"
+                                                                            href="/wordpress/porto/gutenberg-shop4/product/brown-women-casual-handbag/#respond"
+                                                                            style="display:none;">Cancel
+                                                                            reply</a></small></h3>
+                                                                <form
+                                                                    action="{% url 'get_review' i.id %}"
+                                                                    method="POST" class="comment-form"
+                                                                    >
+																	{% csrf_token %}
+                                                                    <div class="comment-form-rating"><label
+                                                                            for="rating">Your rating&nbsp;<span
+                                                                                class="required">*</span></label><select
+                                                                            name="rating" id="rating" required>
+                                                                            <option value="">Rate&hellip;</option>
+                                                                            <option value="5">Perfect</option>
+                                                                            <option value="4">Good</option>
+                                                                            <option value="3">Average</option>
+                                                                            <option value="2">Not that bad</option>
+                                                                            <option value="1">Very poor</option>
+                                                                        </select></div>
+                                                                    <p class="comment-form-comment"><label
+                                                                            for="comment">Your review <span
+                                                                                class="required">*</span></label><textarea
+                                                                            id="comment" name="comment" cols="45"
+                                                                            rows="8" required></textarea></p>
+                                                                    
+                                                                    <p class="form-submit"><input name="submit"
+                                                                            type="submit" id="submit" class="submit"
+                                                                            value="Submit" /> <input type='hidden'
+                                                                            name='comment_post_ID' value='1368'
+                                                                            id='comment_post_ID' />
+                                                                        <input type='hidden' name='comment_parent'
+                                                                            id='comment_parent' value='0' />
+                                                                    </p>
+                                                                </form>
+                                                            </div><!-- #respond -->
+                                                        </div>
+                                                    </div>
+													{% else %}
+													
+													{% endif %}
 											<div class="clear"></div>
 										</div>
 									</div>

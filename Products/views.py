@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import product
+from Review.models import prod_review
 
 # Create your views here.
 
@@ -14,7 +15,11 @@ def all_prod(request,id):
 
 def prod_view(request,id):
     show_signl_prod=product.objects.filter(id=id)
+
+    show_review=prod_review.objects.filter(prod=id)
     
+        
+
 
     return render(request,'product/single_prod_view.html',locals())
 
