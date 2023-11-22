@@ -1,0 +1,273 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Search{% endblock %}
+
+{% block body %}
+
+
+
+<!-- end header wrapper -->
+
+
+<section class="page-top page-header-6">
+    <div class="container hide-title">
+        <div class="row">
+            <div class="col-lg-12 clearfix">
+                <div class="pt-right d-none">
+                    <h1 class="page-title">Search Results - dfgdfgdfg</h1>
+                </div>
+                <div class="breadcrumbs-wrap pt-left">
+                    <ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <li class="home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+                                itemprop="item" href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4"
+                                title="Go to Home Page"><span itemprop="name">Home</span></a>
+                            <meta itemprop="position" content="1" /><i class="delimiter delimiter-2"></i>
+                        </li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+                                itemprop="item"
+                                href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/shop/"><span
+                                    itemprop="name">Shop</span></a>
+                            <meta itemprop="position" content="2" /><i class="delimiter delimiter-2"></i>
+                        </li>
+                        <li>Search </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="main" class="column2 column2-left-sidebar boxed"><!-- main -->
+
+    <div class="container">
+        <div class="row main-content-wrap">
+
+            <!-- main content -->
+            <div class="main-content col-lg-9">
+
+                <div id="content-inner-top"><!-- begin content inner top -->
+                    <div class="porto-block" data-id="295">
+                        <div class="porto-carousel owl-carousel has-ccols ccols-1 mb-3"
+                            data-plugin-options="{&quot;themeConfig&quot;:true,&quot;stagePadding&quot;:0,&quot;margin&quot;:0,&quot;autoplay&quot;:false,&quot;mouseDrag&quot;:true,&quot;touchDrag&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;autoplayHoverPause&quot;:false,&quot;items&quot;:1,&quot;xl&quot;:1,&quot;lg&quot;:1,&quot;md&quot;:1,&quot;sm&quot;:1,&quot;xs&quot;:1,&quot;nav&quot;:false,&quot;dots&quot;:false,&quot;animateIn&quot;:&quot;&quot;,&quot;animateOut&quot;:&quot;&quot;,&quot;loop&quot;:true,&quot;center&quot;:false,&quot;video&quot;:false,&quot;lazyLoad&quot;:false,&quot;fullscreen&quot;:false}">
+
+                            <figure class="wp-block-image size-full is-resized"><img
+                                    src="{% static 'wp-content/uploads/sites/116/2016/06/iPhone_15_Pro_Max.webp'%}"
+                                    alt="Category Image" class="wp-image-2577" width="880" height="284" />
+                            </figure>
+
+
+
+                            <figure class="wp-block-image size-full is-resized"><img
+                                    src="{% static 'wp-content/uploads/sites/116/2016/06/Slider_2_Main.webp'%}"
+                                    alt="Category Image" class="wp-image-2578" width="880" height="284" />
+                            </figure>
+
+                        </div>
+                    </div>
+                </div><!-- end content inner top -->
+
+
+                <div id="primary" class="content-area">
+                    <main id="content" class="site-main">
+
+
+                        <div class="shop-loop-before" style="display:none;"> </div>
+
+                        <div class="archive-products">
+
+                            <div class="woocommerce-no-products-found">
+
+                                <div class="woocommerce-info">
+                                  Sorry No products were found matching your selection. </div>
+                            </div>
+                        </div>
+
+                        <div class="shop-loop-after clearfix" style="display:none;"> </div>
+
+                    </main>
+                </div>
+
+
+            </div><!-- end main content -->
+
+            <div class="sidebar-overlay"></div>
+            <div class="col-lg-3 sidebar porto-woo-category-sidebar left-sidebar mobile-sidebar"><!-- main sidebar -->
+                <div data-plugin-sticky
+                    data-plugin-options="{&quot;autoInit&quot;: true, &quot;minWidth&quot;: 992, &quot;containerSelector&quot;: &quot;.main-content-wrap&quot;,&quot;autoFit&quot;:true, &quot;paddingOffsetBottom&quot;: 10}">
+                    <div class="sidebar-toggle"><i class="fa"></i></div>
+                    <div class="sidebar-content">
+                        <aside id="woocommerce_product_categories-2"
+                            class="widget woocommerce widget_product_categories">
+                            <h3 class="widget-title">Categories</h3>
+                            <ul class="product-categories">
+                            {% for i in show_cat %}
+                                <li class="cat-item cat-item-75 cat-parent"><a
+                                        href="{% url 'all_prod' i.id %}">{{i.name}}</a> <span
+                                        class="count">({{i.num_products}})</span>
+                                    <!-- <ul class='children'>
+                                        <li class="cat-item cat-item-100"><a
+                                                href="../product-category/accessories/caps/index.html">Caps</a>
+                                            <span class="count">(4)</span>
+                                        </li>
+                                        <li class="cat-item cat-item-104"><a
+                                                href="../product-category/accessories/watches/index.html">Watches</a>
+                                            <span class="count">(13)</span>
+                                        </li>
+                                    </ul> -->
+                                </li>
+                                {% endfor %}
+                                <!-- <li class="cat-item cat-item-78 cat-parent"><a
+                                        href="../product-category/dress/index.html">Dress</a> <span
+                                        class="count">(12)</span>
+                                    <ul class='children'>
+                                        <li class="cat-item cat-item-77 cat-parent"><a
+                                                href="../product-category/dress/clothing/index.html">Clothing</a>
+                                            <span class="count">(12)</span>
+                                            <ul class='children'>
+                                                <li class="cat-item cat-item-79"><a
+                                                        href="../product-category/dress/clothing/hoodies/index.html">Hoodies</a>
+                                                    <span class="count">(3)</span>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="cat-item cat-item-101 cat-parent"><a
+                                        href="../product-category/electronics/index.html">Electronics</a> <span
+                                        class="count">(3)</span>
+                                    <ul class='children'>
+                                        <li class="cat-item cat-item-107"><a
+                                                href="../product-category/electronics/toys/index.html">Toys</a>
+                                            <span class="count">(2)</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="cat-item cat-item-102 cat-parent"><a
+                                        href="../product-category/fashion/index.html">Fashion</a> <span
+                                        class="count">(13)</span>
+                                    <ul class='children'>
+                                        <li class="cat-item cat-item-105"><a
+                                                href="../product-category/fashion/shoes/index.html">Shoes</a>
+                                            <span class="count">(11)</span>
+                                        </li>
+                                        <li class="cat-item cat-item-106"><a
+                                                href="../product-category/fashion/t-shirts-fashion/index.html">T-Shirts</a>
+                                            <span class="count">(11)</span>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </aside>
+                        <aside id="yith-woo-ajax-reset-navigation-2"
+                            class="widget yith-woocommerce-ajax-product-filter yith-woo-ajax-reset-navigation yith-woo-ajax-navigation woocommerce widget_layered_nav"
+                            style="display:none"></aside>
+                        <aside id="block-widget-6" class="widget widget-block">
+                            <h3 class="widget-title">Featured</h3>
+                            <div class="block">
+                                <div class="porto-block" data-id="714">
+                                    <div class="porto-carousel owl-carousel has-ccols ccols-1 m-t mb-0 show-nav-title"
+                                        data-plugin-options="{&quot;themeConfig&quot;:true,&quot;stagePadding&quot;:0,&quot;margin&quot;:0,&quot;autoplay&quot;:false,&quot;mouseDrag&quot;:true,&quot;touchDrag&quot;:true,&quot;autoplayTimeout&quot;:5000,&quot;autoplayHoverPause&quot;:false,&quot;items&quot;:1,&quot;xl&quot;:1,&quot;lg&quot;:1,&quot;md&quot;:1,&quot;sm&quot;:1,&quot;xs&quot;:1,&quot;nav&quot;:true,&quot;dots&quot;:false,&quot;animateIn&quot;:&quot;&quot;,&quot;animateOut&quot;:&quot;&quot;,&quot;loop&quot;:false,&quot;center&quot;:false,&quot;video&quot;:false,&quot;lazyLoad&quot;:false,&quot;fullscreen&quot;:false}">
+
+                                        <div class="vc_widget_woo_products wpb_content_element">
+                                            <div class="widget woocommerce widget_products">
+                                                <ul class="product_list_widget">
+                                                    {% for i in FEATURED_1 %}
+                                                    <li>
+
+                                                        <a aria-label="product" class="product-image"
+                                                            href="../product/ultimate-bluetooth-speaker/index.html"
+                                                            title="Ultimate 3D Bluetooth Speaker">
+                                                            <div class="inner img-effect"><img
+                                                                    src="{{i.prod_img.url}}"
+                                                                    alt="" width="85" height="85" /><img
+                                                                    src="{{i.sub_prod_img1.url}}"
+                                                                    alt="" width="85" height="85" class="hover-image" />
+                                                            </div>
+                                                        </a>
+
+                                                        <div class="product-details">
+                                                            <a href="../product/ultimate-bluetooth-speaker/index.html"
+                                                                title="Ultimate 3D Bluetooth Speaker">
+                                                                <span class="product-title">{{i.name}}</span>
+                                                            </a>
+
+                                                            <div class="star-rating" title="5.00"><span
+                                                                    style="width:100%"><strong
+                                                                        class="rating">5.00</strong> out of
+                                                                    5</span></div> <span
+                                                                
+                                                                class="woocommerce-Price-amount amount"><bdi><span
+                                                                        class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span>
+                                                        </div>
+
+                                                    </li>
+
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="vc_widget_woo_products wpb_content_element">
+                                            <div class="widget woocommerce widget_products">
+                                                <ul class="product_list_widget">
+                                                    {% for i in FEATURED_2 %}
+                                                    <li>
+
+                                                        <a aria-label="product" class="product-image"
+                                                            href="../product/ultimate-bluetooth-speaker/index.html"
+                                                            title="Ultimate 3D Bluetooth Speaker">
+                                                            <div class="inner img-effect"><img
+                                                                    src="{{i.prod_img.url}}"
+                                                                    alt="" width="85" height="85" /><img
+                                                                    src="{{i.sub_prod_img1.url}}"
+                                                                    alt="" width="85" height="85" class="hover-image" />
+                                                            </div>
+                                                        </a>
+
+                                                        <div class="product-details">
+                                                            <a href="../product/ultimate-bluetooth-speaker/index.html"
+                                                                title="Ultimate 3D Bluetooth Speaker">
+                                                                <span class="product-title">{{i.name}}</span>
+                                                            </a>
+
+                                                            <div class="star-rating" title="5.00"><span
+                                                                    style="width:100%"><strong
+                                                                        class="rating">5.00</strong> out of
+                                                                    5</span></div> <span
+                                                                
+                                                                class="woocommerce-Price-amount amount"><bdi><span
+                                                                        class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span>
+                                                        </div>
+
+                                                    </li>
+
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside id="text-2" class="widget widget_text">
+                            <div class="textwidget">
+                                <h3 class="widget-title mb-1">CUSTOM HTML BLOCK</h3>
+                                <h5 class="mb-3">This is a custom sub-title.</h5>
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non
+                                    placerat mi. Etiam non tellus </p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div><!-- end main sidebar -->
+
+
+        </div>
+    </div>
+
+
+
+
+</div><!-- end main -->
+
+{% endblock %}

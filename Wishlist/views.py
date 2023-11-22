@@ -7,12 +7,8 @@ from . models import wishlist
 def wishlistt(request):
     len_wlist=wishlist.objects.filter(user=request.user)
     if len_wlist:
-        # pass
-        pp=len(len_wlist)
-        print(pp)
-        # pp=0
-        # for i in len_wlist:
-        #     pp+=len(i)
+        pass
+        
     else:
         return redirect('wishlist_empty')
     

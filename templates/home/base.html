@@ -29,7 +29,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Home - Porto Shop 4" />
 	<script type="application/ld+json" class="aioseo-schema">
-			{"@context":"https:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/","name":"Home","description":"Porto WordPress Gutenberg Demo site","url":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/"}}]},{"@type":"Organization","@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#organization","name":"Porto Shop 4","url":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/"},{"@type":"WebPage","@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#webpage","url":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/","name":"Home - Porto Shop 4","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#website"},"breadcrumb":{"@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#breadcrumblist"},"datePublished":"2016-06-20T07:48:11+00:00","dateModified":"2023-01-20T09:53:17+00:00"},{"@type":"WebSite","@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#website","url":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/","name":"Porto Shop 4","description":"Porto WordPress Gutenberg Demo site","inLanguage":"en-US","publisher":{"@id":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.portotheme.com\/wordpress\/porto\/gutenberg-shop4\/?s={search_term_string}"},"query-input":"required name=search_term_string"}}]}
+			
 		</script>
 	<!-- All in One SEO -->
 
@@ -1825,19 +1825,19 @@
 								<li class="menu-item"><a class="porto-link-login" href="my-account/index.html">Log
 										In</a></li>
 							</ul><span class="separator"></span>
-							<ul class="view-switcher porto-view-switcher mega-menu show-arrow">
+							<ul class="view-switcher porto-view-switcher mega-menu ">
 								<li class="menu-item has-sub narrow">
-									<a class="nolink" href="#"><i class="flag-us"></i>Eng</a>
-									<div class="popup">
+									<a class="nolink" href="#"><i class="flag-bd"></i>BDT</a>
+									<!-- <div class="popup">
 										<div class="inner">
 											<ul class="sub-menu">
-												<li class="menu-item"><a href="#"><i class="flag-fr"></i>BN</a></li>
+												<li class="menu-item"><a href="#"><i class="flag-bd"></i>BN</a></li>
 											</ul>
 										</div>
-									</div>
+									</div> -->
 								</li>
 							</ul>
-							<ul id="menu-currency-switcher"
+							<!-- <ul id="menu-currency-switcher"
 								class="currency-switcher porto-view-switcher mega-menu show-arrow">
 								<li class="menu-item has-sub narrow">
 									<a class="nolink" href="#">BDT</a>
@@ -1850,7 +1850,7 @@
 										</div>
 									</div>
 								</li>
-							</ul><span class="separator"></span>
+							</ul><span class="separator"></span> -->
 							<div class="share-links"> <a target="_blank" rel="nofollow noopener noreferrer"
 									class="share-facebook" href="#" title="Facebook"></a>
 								<a target="_blank" rel="nofollow noopener noreferrer" class="share-twitter" href="#"
@@ -1879,19 +1879,18 @@
 							<div class="searchform-popup"><a class="search-toggle" aria-label="Search Toggle"
 									href="#"><i class="porto-icon-magnifier"></i><span
 										class="search-text">Search</span></a>
-								<form action="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/" method="get"
+								<form  method="GET"
 									class="searchform search-layout-advanced searchform-cats">
 									<div class="searchform-fields">
-										<span class="text"><input name="s" type="text" value=""
-												placeholder="Search&hellip;" autocomplete="off" /></span>
-										<input type="hidden" name="post_type" value="product" />
+										<span class="text"><input name="search" type="text" value=""
+												 autocomplete="off" /></span>
+										<input type="hidden" />
 										<select name='product_cat' id='product_cat' class='cat'>
 											<option value='0'>All Categories</option>
-											<option class="level-0" value="accessories">Accessories</option>
-											<option class="level-1" value="caps">&nbsp;&nbsp;&nbsp;Caps</option>
-											<option class="level-1" value="watches">&nbsp;&nbsp;&nbsp;Watches</option>
-											<option class="level-0" value="dress">Dress</option>
-											<option class="level-1" value="clothing">&nbsp;&nbsp;&nbsp;Clothing</option>
+											{% for i in show_cat %}
+											<option class="level-0" value="{{i.id}}">{{i.name}}</option>
+											{% endfor %}
+											
 										</select>
 										<span class="button-wrap">
 											<button class="btn btn-special" title="Search" type="submit">
@@ -1937,7 +1936,7 @@
 							class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
 							{% endif %}
 
-							<div id="mini-cart" class="mini-cart minicart-arrow-alt minicart-offcanvas">
+							<div id="mini-cart" class="mini-cart  minicart-offcanvas">
 								{% if user.is_authenticated %}
 								<a href="{% url 'view_cart' %}">
 								<div class="cart-head">

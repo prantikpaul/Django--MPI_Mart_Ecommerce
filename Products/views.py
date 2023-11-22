@@ -17,3 +17,11 @@ def prod_view(request,id):
     
 
     return render(request,'product/single_prod_view.html',locals())
+
+def empty_search(request):
+    #for showing featured items -----------------------------------------
+    FEATURED_1=product.objects.filter(featured_prod=True)[:3]
+    FEATURED_2=product.objects.filter(featured_prod=True)[4:7]
+    #for showing featured items -----------------------------------------
+
+    return render(request,'product/empty_search.html',locals())
