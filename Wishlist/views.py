@@ -41,3 +41,12 @@ def add_to_wishlist(request,id):
 
 
     return redirect (request.META['HTTP_REFERER'])
+
+def remove_wishlist_item(request,id):
+    get_prod=wishlist.objects.filter(user=request.user, product=id)
+
+    for i in get_prod :
+        i.delete()
+    
+
+    return redirect (request.META['HTTP_REFERER'])

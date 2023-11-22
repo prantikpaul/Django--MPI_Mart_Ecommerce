@@ -3,6 +3,32 @@
 {% block title %}Wishlist{% endblock %}
 
 {% block body %}
+<style>
+
+
+/* Styling the X icon */
+.remove-button .icon {
+  font-size: 12px; /* Adjust size as needed */
+  color: rgb(12, 12, 12); /* Change color as desired */
+}
+.remove_from_wishlistpp{
+    padding: 0;
+    position: absolute;
+    top: 6px;
+    right: 2px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 11px;
+    background-color: #fff;
+    color: #222529;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.4);
+    z-index: 3;
+}
+
+</style>
 <section class="page-top page-header-7">
     <div class="container">
         <div class="row">
@@ -10,8 +36,8 @@
                 <div class="breadcrumbs-wrap text-center">
                     <ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
                         <li class="home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
-                                itemprop="item" href="{% url 'index' %}"
-                                title="Go to Home Page"><span itemprop="name">Home</span></a>
+                                itemprop="item" href="{% url 'index' %}" title="Go to Home Page"><span
+                                    itemprop="name">Home</span></a>
                             <meta itemprop="position" content="1" /><i class="delimiter delimiter-2"></i>
                         </li>
                         <li>Wishlist</li>
@@ -111,28 +137,30 @@
                                             </thead>
 
                                             <tbody class="wishlist-items-wrapper">
+                                                {% for i in len_wlist %}
                                                 <tr id="yith-wcwl-row-1389" data-row-id="1389">
 
 
                                                     <td class="product-thumbnail">
                                                         <div class="position-relative">
                                                             <a
-                                                                href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/ultimate-bluetooth-speaker/?attribute_pa_size=small&#038;attribute_color=Blue">
+                                                                href="{% url 'prod_view' i.product.id %}">
                                                                 <img width="300" height="300"
-                                                                    src="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/wp-content/uploads/sites/116/2018/04/product-60-300x300.jpg"
+                                                                    src="{{i.product.prod_img.url}}"
                                                                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                     alt="" loading="lazy" /> </a>
-                                                            <a href="/wordpress/porto/gutenberg-shop4/wishlist/?remove_from_wishlist=1389"
-                                                                class="remove remove_from_wishlist"
-                                                                title="Remove this product"></a>
+                                                            <a href="{% url 'remove_wishlist_item' i.product.id %}"
+                                                                class="remove_from_wishlistpp"
+                                                                title="Remove this product"><span class="icon">&#10006;</span></a>
+                                                            
                                                         </div>
                                                     </td>
 
                                                     <td class="product-name">
 
                                                         <a
-                                                            href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/ultimate-bluetooth-speaker/?attribute_pa_size=small&#038;attribute_color=Blue">Ultimate
-                                                            3D Bluetooth Speaker - Small, Blue</a>
+                                                            href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/ultimate-bluetooth-speaker/?attribute_pa_size=small&#038;attribute_color=Blue">
+                                                            {{i.product.name}}</a>
 
 
                                                     </td>
@@ -140,7 +168,7 @@
                                                     <td class="product-price">
 
                                                         <span class="woocommerce-Price-amount amount"><span
-                                                                class="woocommerce-Price-currencySymbol">&#036;</span>105.00</span>
+                                                                class="woocommerce-Price-currencySymbol">৳ </span>{{i.product.price}}</span>
                                                     </td>
 
 
@@ -157,7 +185,7 @@
                                                         <!-- Add to cart button -->
                                                         <div class="add-links-wrap">
                                                             <div class="add-links clearfix">
-                                                                <a href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/ultimate-bluetooth-speaker/?attribute_pa_size=small&#038;attribute_color=Blue&#038;variation_id=1389&#038;add-to-cart=1385&#038;remove_from_wishlist_after_add_to_cart=1389&#038;wishlist_id=719&#038;wishlist_token=OXL2JUIQW6SH"
+                                                                <a href="{% url 'add_to_cart' i.product.id %}"
                                                                     data-quantity="1"
                                                                     class="viewcart-style-2 product_type_variation add_to_cart_button ajax_add_to_cart add_to_cart alt button"
                                                                     data-product_id="1389" data-product_sku="PT0003-1"
@@ -185,9 +213,12 @@
                                                                     <!-- COUNT TEXT -->
 
                                                                 </div>
-                                                                <div class="quickview" data-id="1389"
-                                                                    title="Quick View">Quick View</div>
-                                                            </div>
+                                                                <a href="#">
+                                                                <!-- <div 
+                                                                class="quickview" 
+                                                                    title="Quick View">View Product</div>
+                                                                </a>
+                                                            </div> -->
                                                         </div>
 
 
@@ -197,6 +228,7 @@
                                                     </td>
 
                                                 </tr>
+                                                {% endfor %}
                                             </tbody>
 
                                         </table>
