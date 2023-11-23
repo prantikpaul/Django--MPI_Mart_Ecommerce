@@ -194,7 +194,7 @@
 								<ul class="resp-tabs-list" role="tablist">
 									<li class="reviews_tab" id="tab-title-reviews" role="tab"
 										aria-controls="tab-reviews">
-										Reviews (0) </li>
+										Reviews ({{count_review}}) </li>
 							
 									<li class="description_tab" id="tab-title-description" role="tab"
 												aria-controls="tab-description">
@@ -208,13 +208,14 @@
 								<div class="resp-tabs-container">
 									<div class="tab-content" id="tab-reviews">
 										<div id="reviews" class="woocommerce-Reviews">
-											<div id="comments">
+													{% if show_rating %}
+													<div id="comments">
                                                         <h2 class="woocommerce-Reviews-title">
-                                                            1 review for <span>{{i.name}}</span> </h2>
+                                                             Reviews for <span>{{i.name}}</span> </h2>
 
 
                                                         <ol class="commentlist">
-															{% for i in show_review %}
+															{% for i in show_rating %}
                                                             <li class="review byuser comment-author-porto_admin bypostauthor even thread-even depth-1"
                                                                 id="li-comment-65">
 
@@ -227,62 +228,23 @@
                                                                             width='80' loading='lazy'
                                                                             decoding='async' /></div>
                                                                     <div class="comment-text">
-																			{% if i.rating == 5 %}
-																			<style>
-																			.star-rating span:before {
-																				color: #6a6a6d;
-																				content: "\f005" "\f005" "\f005" "\f005" "\f005";
+																			
+																			<!-- <style>
+																			.star-ratingg span:before {
+																				color: #0a0af8;
+																				
 																				left: 0;
 																				position: absolute;
 																				top: 0;
 																			}
-																			</style>
-																			{% elif i.rating == 4 %}
-																			<style>
-																			.star-rating span:before {
-																				color: #6a6a6d;
-																				content: "\f005" "\f005" "\f005" "\f005";
-																				left: 0;
-																				position: absolute;
-																				top: 0;
-																			}
-																			</style>
-																			{% elif i.rating == 3 %}
-																			<style>
-																			.star-rating span:before {
-																				color: #6a6a6d;
-																				content:  "\f005" "\f005" "\f005";
-																				left: 0;
-																				position: absolute;
-																				top: 0;
-																			}
-																			</style>
-																			{% elif i.rating == 2 %}
-																			<style>
-																			.star-rating span:before {
-																				color: #6a6a6d;
-																				content: "\f005" "\f005";
-																				left: 0;
-																				position: absolute;
-																				top: 0;
-																			}
-																			</style>
-																			{% else %}
-																			<style>
-																			.star-rating span:before {
-																				color: #6a6a6d;
-																				content: "\f005";
-																				left: 0;
-																				position: absolute;
-																				top: 0;
-																			}
-																			</style>
-																			{% endif %}
+																			</style> -->
+																			
 
-                                                                        <div class="star-rating" title="5">
+                                                                        <div class="star-ratingg" title="5">
                                                                             <span style="width:100%">
-                                                                                <strong>{{i.rating}}</strong> out of 5 </span>
+                                                                                <strong>{{i.rating}}</strong></span>
                                                                         </div>
+																		<!-- <h6>{{i.rating}}</h6> -->
 
 
                                                                         <p class="meta">
@@ -307,6 +269,20 @@
 
 
                                                     </div>
+													
+													{% else %}
+													<div id="comments">
+																	<h2 class="woocommerce-Reviews-title">
+																		Reviews </h2>
+
+
+																	<p class="woocommerce-noreviews">There are no
+																		reviews yet.</p>
+
+																</div>
+													{% endif %}
+
+													
 
 												<hr class="tall">
 
@@ -330,11 +306,11 @@
                                                                                 class="required">*</span></label><select
                                                                             name="rating" id="rating" required>
                                                                             <option value="">Rate&hellip;</option>
-                                                                            <option value="5">Perfect</option>
-                                                                            <option value="4">Good</option>
-                                                                            <option value="3">Average</option>
-                                                                            <option value="2">Not that bad</option>
-                                                                            <option value="1">Very poor</option>
+                                                                            <option value="★★★★★">Perfect</option>
+                                                                            <option value="★★★★">Good</option>
+                                                                            <option value="★★★">Average</option>
+                                                                            <option value="★★">Not that bad</option>
+                                                                            <option value="★">Very poor</option>
                                                                         </select></div>
                                                                     <p class="comment-form-comment"><label
                                                                             for="comment">Your review <span

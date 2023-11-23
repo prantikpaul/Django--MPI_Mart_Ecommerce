@@ -5,13 +5,25 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+Rating=(
+   ('★','★'),
+   ('★★','★★'),
+   ('★★★','★★★'),
+   ('★★★★','★★★★'),
+   ('★★★★★','★★★★★'),
+)
+
+
 class prod_review(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     prod=models.ForeignKey(product,on_delete=models.CASCADE)
-    rating=models.IntegerField()
+    rating=models.CharField(choices=Rating,max_length=5)
     comment=models.CharField(max_length=400)
     date=models.DateTimeField(auto_now_add=True)
+    avg_rating=models.IntegerField(default=0)
     
 
     def __str__(self):
         return self.prod.name+'---'+self.user.first_name+' '+self.user.last_name
+    
+

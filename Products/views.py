@@ -16,7 +16,13 @@ def all_prod(request,id):
 def prod_view(request,id):
     show_signl_prod=product.objects.filter(id=id)
 
-    show_review=prod_review.objects.filter(prod=id)
+    show_rating=prod_review.objects.filter(prod=id)
+    count_review = 0  # count how many reviews this prod has
+    for i in show_rating:
+        count_review+=1
+        
+    
+   
     
         
 
