@@ -7,7 +7,7 @@ from Review.models import prod_review
 def all_prod(request,id):
     show_prod=product.objects.filter(category=id).order_by('-created_at')
     FEATURED_1=product.objects.filter(featured_prod=True)[:3]
-    FEATURED_2=product.objects.filter(featured_prod=True)[4:7]
+    FEATURED_2=product.objects.filter(Best_selling_prod=True)[4:7]
     
 
 
