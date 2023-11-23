@@ -1,0 +1,521 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+
+{% block body %}
+
+
+<div class="woo-page-header page-header-8">
+	<ul class="breadcrumb text-center">
+		<li class="">
+			<a href="../cart/index.html">Shopping Cart</a>
+		</li>
+		<li class="current">
+			<i class="delimiter delimiter-2"></i>
+			<a href="index.html">Checkout</a>
+		</li>
+		<li class="disable">
+			<i class="delimiter delimiter-2"></i>
+			<a href="#" class="nolink">Order Complete</a>
+		</li>
+	</ul>
+</div>
+
+<div id="main" class="column1 boxed"><!-- main -->
+
+	<div class="container">
+		<div class="row main-content-wrap">
+
+			<!-- main content -->
+			<div class="main-content col-lg-12">
+
+
+				<div id="content" role="main">
+
+					<article class="post-209 page type-page status-publish hentry">
+
+						<h2 class="entry-title" style="display: none;">Checkout</h2><span class="vcard"
+							style="display: none;"><span class="fn"><a href="../author/porto_admin/index.html"
+									title="Posts by Joe Doe" rel="author">Joe Doe</a></span></span><span class="updated"
+							style="display:none">2016-06-20T09:22:56+00:00</span>
+						<div class="page-content">
+							<div class="woocommerce">
+								<div class="woocommerce-notices-wrapper"></div>
+
+
+								<div class="woocommerce-form-coupon-toggle mb-4">
+									What to change Billing Details? <a href="{% url 'user_profile' %}"
+										class="showcoupon text-v-dark text-uppercase font-weight-bold">Go here</a>
+								</div>
+
+								<div class="woocommerce-notices-wrapper"></div>
+								<form name="checkout" method="post" class="checkout woocommerce-checkout"
+									action="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/checkout/"
+									enctype="multipart/form-data">
+
+
+
+									<div class="row" id="customer_details">
+										<div class="col-lg-7">
+											<div class="align-left">
+												<div class="box-content">
+													<div class="woocommerce-billing-fields clearfix">
+
+														<h3>Billing details</h3>
+
+
+
+														<div class="woocommerce-billing-fields__field-wrapper">
+															<p class="form-row form-row-first validate-required"
+																id="billing_first_name_field" data-priority="10"><label
+																	for="billing_first_name" class="">First
+																	name&nbsp;<abbr class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><input type="text"
+																		class="input-text " name="billing_first_name"
+																		id="billing_first_name" placeholder="" value=""
+																		autocomplete="given-name" /></span></p>
+															<p class="form-row form-row-last validate-required"
+																id="billing_last_name_field" data-priority="20">
+																<label for="billing_last_name" class="">Last
+																	name&nbsp;<abbr class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><input type="text"
+																		class="input-text " name="billing_last_name"
+																		id="billing_last_name" placeholder="" value=""
+																		autocomplete="family-name" /></span>
+															</p>
+															<!-- <p class="form-row form-row-wide" id="billing_company_field"
+																data-priority="30">
+																<label for="billing_company" class="">Company
+																	name&nbsp;<span
+																		class="optional">(optional)</span></label><span
+																	class="woocommerce-input-wrapper"><input type="text"
+																		class="input-text " name="billing_company"
+																		id="billing_company" placeholder="" value=""
+																		autocomplete="organization" /></span>
+															</p> -->
+															<p class="form-row form-row-wide address-field update_totals_on_change validate-required"
+																id="billing_country_field" data-priority="40">
+																<label for="billing_country" class="">Country /
+																	Region&nbsp;<abbr class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><select
+																		name="billing_country" id="billing_country"
+																		class="country_to_state country_select "
+																		autocomplete="country"
+																		data-placeholder="Select a country / region&hellip;"
+																		data-label="Country / Region">
+																		<option value="">Select a country /
+																			region&hellip;</option>
+
+																		<option value="BD" selected='selected'>
+																			Bangladesh</option>
+
+																	</select><noscript><button type="submit"
+																			name="woocommerce_checkout_update_totals"
+																			value="Update country / region">Update
+																			country /
+																			region</button></noscript></span>
+															</p>
+															
+															<p class="form-row form-row-wide address-field validate-required validate-state"
+																id="billing_state_field" data-priority="80">
+																<label for="billing_state" class="">District&nbsp;<abbr
+																		class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><select
+																		name="billing_state" id="billing_state"
+																		class="state_select "
+																		autocomplete="address-level1"
+																		data-placeholder="Select an option&hellip;"
+																		data-input-classes="" data-label="District">
+																		<option value="">Select an
+																			option&hellip;</option>
+																		<option value="BD-05">Bagerhat</option>
+																		<option value="BD-01">Bandarban</option>
+																		<option value="BD-02">Barguna</option>
+																		<option value="BD-06">Barishal</option>
+																		<option value="BD-07">Bhola</option>
+																		<option value="BD-03">Bogura</option>
+																		<option value="BD-04">Brahmanbaria
+																		</option>
+																		<option value="BD-09">Chandpur</option>
+																		<option value="BD-10">Chattogram
+																		</option>
+																		<option value="BD-12">Chuadanga</option>
+																		<option value="BD-11">Cox&#039;s Bazar
+																		</option>
+																		<option value="BD-08">Cumilla</option>
+																		<option value="BD-13">Dhaka</option>
+																		<option value="BD-14">Dinajpur</option>
+																		<option value="BD-15">Faridpur </option>
+																		<option value="BD-16">Feni</option>
+																		<option value="BD-19">Gaibandha</option>
+																		<option value="BD-18">Gazipur</option>
+																		<option value="BD-17">Gopalganj</option>
+																		<option value="BD-20">Habiganj</option>
+																		<option value="BD-21">Jamalpur</option>
+																		<option value="BD-22">Jashore</option>
+																		<option value="BD-25">Jhalokati</option>
+																		<option value="BD-23">Jhenaidah</option>
+																		<option value="BD-24">Joypurhat</option>
+																		<option value="BD-29">Khagrachhari
+																		</option>
+																		<option value="BD-27">Khulna</option>
+																		<option value="BD-26">Kishoreganj
+																		</option>
+																		<option value="BD-28">Kurigram</option>
+																		<option value="BD-30">Kushtia</option>
+																		<option value="BD-31">Lakshmipur
+																		</option>
+																		<option value="BD-32">Lalmonirhat
+																		</option>
+																		<option value="BD-36">Madaripur</option>
+																		<option value="BD-37">Magura</option>
+																		<option value="BD-33">Manikganj
+																		</option>
+																		<option value="BD-39">Meherpur</option>
+																		<option value="BD-38">Moulvibazar
+																		</option>
+																		<option value="BD-35">Munshiganj
+																		</option>
+																		<option value="BD-34">Mymensingh
+																		</option>
+																		<option value="BD-48">Naogaon</option>
+																		<option value="BD-43">Narail</option>
+																		<option value="BD-40">Narayanganj
+																		</option>
+																		<option value="BD-42">Narsingdi</option>
+																		<option value="BD-44">Natore</option>
+																		<option value="BD-45">Nawabganj</option>
+																		<option value="BD-41">Netrakona</option>
+																		<option value="BD-46">Nilphamari
+																		</option>
+																		<option value="BD-47">Noakhali</option>
+																		<option value="BD-49">Pabna</option>
+																		<option value="BD-52">Panchagarh
+																		</option>
+																		<option value="BD-51">Patuakhali
+																		</option>
+																		<option value="BD-50">Pirojpur</option>
+																		<option value="BD-53">Rajbari</option>
+																		<option value="BD-54">Rajshahi</option>
+																		<option value="BD-56">Rangamati</option>
+																		<option value="BD-55">Rangpur</option>
+																		<option value="BD-58">Satkhira</option>
+																		<option value="BD-62">Shariatpur
+																		</option>
+																		<option value="BD-57">Sherpur</option>
+																		<option value="BD-59">Sirajganj</option>
+																		<option value="BD-61">Sunamganj</option>
+																		<option value="BD-60">Sylhet</option>
+																		<option value="BD-63">Tangail</option>
+																		<option value="BD-64">Thakurgaon
+																		</option>
+																	</select></span>
+															</p>
+
+															<p class="form-row form-row-wide address-field validate-required"
+																id="billing_address_1_field" data-priority="50">
+																<label for="billing_address_1" class="">
+																	Address&nbsp;<abbr class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><input type="text"
+																		class="input-text " name="billing_address_1"
+																		id="billing_address_1"
+																		placeholder="House number and street name"
+																		value="" autocomplete="address-line1" /></span>
+															</p>
+															<!-- <p class="form-row form-row-wide address-field"
+																id="billing_address_2_field" data-priority="60">
+																<label for="billing_address_2"
+																	class="screen-reader-text">Apartment, suite,
+																	unit, etc.&nbsp;<span
+																		class="optional">(optional)</span></label><span
+																	class="woocommerce-input-wrapper"><input type="text"
+																		class="input-text " name="billing_address_2"
+																		id="billing_address_2"
+																		placeholder="Apartment, suite, unit, etc. (optional)"
+																		value="" autocomplete="address-line2" /></span>
+															</p>
+															<p class="form-row form-row-wide address-field validate-required"
+																id="billing_city_field" data-priority="70">
+																<label for="billing_city" class="">Town /
+																	City&nbsp;<abbr class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><input type="text"
+																		class="input-text " name="billing_city"
+																		id="billing_city" placeholder="" value=""
+																		autocomplete="address-level2" /></span>
+															</p> -->
+
+															<p class="form-row form-row-wide validate-required validate-phone"
+																id="billing_phone_field" data-priority="100">
+																<label for="billing_phone" class="">Phone&nbsp;<abbr
+																		class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><input type="tel"
+																		class="input-text " name="billing_phone"
+																		id="billing_phone" placeholder="" value=""
+																		autocomplete="tel" /></span>
+															</p>
+															<p class="form-row form-row-wide validate-required validate-email"
+																id="billing_email_field" data-priority="110">
+																<label for="billing_email" class="">Email
+																	address&nbsp;<abbr class="required"
+																		title="required">*</abbr></label><span
+																	class="woocommerce-input-wrapper"><input
+																		type="email" class="input-text "
+																		name="billing_email" id="billing_email"
+																		placeholder="" value=""
+																		autocomplete="email username" /></span>
+															</p>
+														</div>
+
+													</div>
+
+
+													<div class="woocommerce-additional-fields">
+
+
+
+														<div class="woocommerce-additional-fields__field-wrapper">
+															<p class="form-row notes" id="order_comments_field"
+																data-priority=""><label for="order_comments"
+																	class="">Order notes&nbsp;<span
+																		class="optional">(optional)</span></label><span
+																	class="woocommerce-input-wrapper"><textarea
+																		name="order_comments" class="input-text "
+																		id="order_comments"
+																		placeholder="Notes about your order, e.g. special notes for delivery."
+																		rows="2" cols="5"></textarea></span></p>
+														</div>
+
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-5">
+											<div class="align-left">
+												<div class="checkout-order-review align-left">
+													<div class="box-content featured-boxes">
+														<h3 id="order_review_heading" class="text-md text-uppercase">
+															Your order</h3>
+
+
+														<div id="order_review"
+															class="woocommerce-checkout-review-order">
+
+															<table
+																class="shop_table review-order woocommerce-checkout-review-order-table mb-0">
+																<thead>
+																	<tr>
+																		<th colspan="2" class="product-name">
+																			<h4 class="mb-0">Product</h4>
+																		</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr class="border-bottom-0 cart_item">
+																		<td class="product-name line-height-sm">
+																			Circled Ultimate 3D Speaker&nbsp;
+																			<strong
+																				class="product-quantity font-weight-medium">&times;&nbsp;1</strong>
+																		</td>
+																		<td class="product-total">
+																			<span
+																				class="woocommerce-Price-amount amount"><bdi><span
+																						class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span>
+																		</td>
+																	</tr>
+																	<tr class="border-bottom-0 cart_item">
+																		<td class="product-name line-height-sm">
+																			Men Sports Travel Bag&nbsp; <strong
+																				class="product-quantity font-weight-medium">&times;&nbsp;1</strong>
+																		</td>
+																		<td class="product-total">
+																			<span
+																				class="woocommerce-Price-amount amount"><bdi><span
+																						class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span>
+																		</td>
+																	</tr>
+																	<tr class="border-bottom-0 cart_item">
+																		<td class="product-name line-height-sm">
+																			Casual Spring Blue Shoes&nbsp;
+																			<strong
+																				class="product-quantity font-weight-medium">&times;&nbsp;1</strong>
+																		</td>
+																		<td class="product-total">
+																			<span
+																				class="woocommerce-Price-amount amount"><bdi><span
+																						class="woocommerce-Price-currencySymbol">&#36;</span>55.00</bdi></span>
+																		</td>
+																	</tr>
+																</tbody>
+																<tfoot>
+
+																	<tr class="cart-subtotal">
+																		<th>
+																			<h4 class="mb-0">Subtotal</h4>
+																		</th>
+																		<td><span
+																				class="woocommerce-Price-amount amount"><bdi><span
+																						class="woocommerce-Price-currencySymbol">&#36;</span>653.00</bdi></span>
+																		</td>
+																	</tr>
+
+
+
+
+
+																	<tr class="woocommerce-shipping-totals shipping">
+																		<td colspan="2" class="text-start"
+																			data-title="Shipping">
+																			<h4 class="m-b-sm">Payment</h4>
+																			<ul id="shipping_method"
+																				class="woocommerce-shipping-methods mb-2">
+																				<li>
+																					<div class="porto-radio ">
+																						<input type="radio"
+																							name="shipping_method[0]"
+																							data-index="0"
+																							id="shipping_method_0_local_pickup1"
+																							value="local_pickup:1"
+																							class="shipping_method porto-control-input"
+																							checked='checked' /><label
+																							class="porto-control-label"
+																							for="shipping_method_0_local_pickup1">Online
+																							Payment</label>
+																					</div>
+																				</li>
+																				<li>
+																					<div class="porto-radio ">
+																						<input type="radio"
+																							name="shipping_method[0]"
+																							data-index="0"
+																							id="shipping_method_0_flat_rate2"
+																							value="flat_rate:2"
+																							class="shipping_method porto-control-input" /><label
+																							class="porto-control-label"
+																							for="shipping_method_0_flat_rate2">Cash
+																							On Delivery</label>
+																					</div>
+																				</li>
+																			</ul>
+
+
+																		</td>
+																	</tr>
+
+
+
+
+
+
+																	<tr class="order-total">
+																		<th>
+																			<h4 class="text-md my-3">Total</h4>
+																		</th>
+																		<td><strong><span
+																					class="woocommerce-Price-amount amount"><bdi><span
+																							class="woocommerce-Price-currencySymbol">&#36;</span>653.00</bdi></span></strong>
+																		</td>
+																	</tr>
+
+
+																</tfoot>
+															</table>
+															<div id="payment" class="woocommerce-checkout-payment">
+
+
+																<div class="porto-separator m-b-md">
+																	<hr class="separator-line  align_center">
+																</div>
+																<h4 class="px-2">Payment methods</h4>
+																<ul
+																	class="wc_payment_methods payment_methods methods px-2">
+																	<li>
+																		<div class="woocommerce-info">
+																			Sorry, it seems that there are no
+																			available payment methods. Please
+																			contact us if you require assistance
+																			or wish to make alternate
+																			arrangements. </div>
+																	</li>
+																</ul>
+																<div class="porto-separator m-b-lg">
+																	<hr class="separator-line  align_center">
+																</div>
+																<div class="form-row place-order">
+																	<noscript>
+																		Since your browser does not support
+																		JavaScript, or it is disabled, please
+																		ensure you click the <em>Update
+																			Totals</em> button before placing
+																		your order. You may be charged more than
+																		the amount stated above if you fail to
+																		do so. <br /><button type="submit"
+																			class="button alt"
+																			name="woocommerce_checkout_update_totals"
+																			value="Update totals">Update
+																			totals</button>
+																	</noscript>
+
+																	<div
+																		class="woocommerce-terms-and-conditions-wrapper">
+																		<div class="woocommerce-privacy-policy-text">
+																		</div>
+																	</div>
+
+
+
+
+																	<button type="submit"
+																		class="button alt btn-v-dark w-100 mt-3 py-3"
+																		name="woocommerce_checkout_place_order"
+																		id="place_order" value="Place order"
+																		data-value="Place order">Place
+																		order</button><img
+																		src="../wp-content/themes/porto/images/ajax-loader.gif"
+																		srcset="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/wp-content/themes/porto/images/ajax-loader@2x.gif 2x"
+																		alt="loader" />
+
+																	<input type="hidden"
+																		id="woocommerce-process-checkout-nonce"
+																		name="woocommerce-process-checkout-nonce"
+																		value="b8730047e0" /><input type="hidden"
+																		name="_wp_http_referer"
+																		value="/wordpress/porto/gutenberg-shop4/checkout/" />
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</article>
+
+				</div>
+
+
+
+			</div><!-- end main content -->
+
+			<div class="sidebar-overlay"></div>
+
+		</div>
+	</div>
+
+
+
+</div><!-- end main -->
+
+{% endblock %}

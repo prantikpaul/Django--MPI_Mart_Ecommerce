@@ -194,20 +194,7 @@
                                                             <h4
                                                                 class="card-sub-title text-md text-uppercase m-b-md pb-1">
                                                                 Cart totals</h4>
-                                                                 <div class="coupon">
-                                                                                    
-                                                                                    <input style="height: 40px; width: 140px;" type="text"
-                                                                                        name="coupon_code"
-                                                                                        class="input-text"
-                                                                                        
-                                                                                        placeholder="Coupon code"
-                                                                                        value="" />
-                                                                                        
-                                                                                    <button type="submit"
-                                                                                        class="button wc-action-btn wc-action-sm"
-                                                                                        name="apply_coupon">Apply
-                                                                                        coupon</button>
-                                                                                </div>
+                                                                 
                                                             <div id="panel-cart-total">
                                                                 <div class="card-body p-0">
                                                                     <table class="responsive cart-total"
@@ -235,8 +222,23 @@
 
 
                                                                         <tr class="">
-                                                                            <th colspan="2">
-                                                                                <h4 class="m-b-sm">Payment</h4>
+                                                                            <th style="padding-left: 0px; padding-right: 0px;" colspan="2">
+                                                                            <div class="coupon">
+                                                                            <h4 class="m-b-sm">Coupon</h4>
+                                                                                    
+                                                                                    <input style="height: 40px; width: 140px;margin-right: 10px;" type="text"
+                                                                                        name="coupon_code"
+                                                                                        class="input-text"
+                                                                                        
+                                                                                        placeholder="Coupon code"
+                                                                                        value="" />
+                                                                                        
+                                                                                    <button style="padding-left: 8px; padding-right: 8px ;" type="submit"
+                                                                                        class="button wc-action-btn wc-action-sm"
+                                                                                        name="apply_coupon">Apply
+                                                                                        coupon</button>
+                                                                                </div>
+                                                                                <!-- <h4 class="m-b-sm">Payment</h4>
                                                                                 <form action="">
                                                                                     <ul id="shipping_method"
                                                                                             class="woocommerce-shipping-methods mb-2">
@@ -279,7 +281,7 @@
                                                                                         name="_wp_http_referer"
                                                                                         value="/wordpress/porto/gutenberg-shop4/cart/" />
                                                                                     </section>
-                                                                                </form>
+                                                                                </form> -->
 
                                                                             </th>
                                                                         </tr>
@@ -298,7 +300,7 @@
                                                                     </table>
 
                                                                     <div class="wc-proceed-to-checkout">
-                                                                        <a href="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/checkout/"
+                                                                        <a href="{% url 'checkout' %}"
                                                                             class="btn btn-v-dark w-100 m-t-lg py-3">Proceed
                                                                             to checkout<i
                                                                                 class="vc_btn3-icon fas fa-arrow-right ps-3"></i></a>
