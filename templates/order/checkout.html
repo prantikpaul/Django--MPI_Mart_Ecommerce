@@ -49,9 +49,9 @@
 								</div>
 
 								<div class="woocommerce-notices-wrapper"></div>
-								<form name="checkout" method="post" class="checkout woocommerce-checkout"
-									action="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/checkout/"
-									enctype="multipart/form-data">
+								<form name="checkout" method="POST" class="checkout woocommerce-checkout"
+									action="{% url 'place_order' %}" enctype="multipart/form-data">
+									{% csrf_token %}
 
 
 
@@ -73,7 +73,8 @@
 																		title="required">*</abbr></label><span
 																	class="woocommerce-input-wrapper"><input type="text"
 																		class="input-text " name="billing_first_name"
-																		id="billing_first_name" placeholder="" value=""
+																		id="billing_first_name" placeholder=""
+																		value="{{get_user.first_name}}"
 																		autocomplete="given-name" /></span></p>
 															<p class="form-row form-row-last validate-required"
 																id="billing_last_name_field" data-priority="20">
@@ -82,7 +83,8 @@
 																		title="required">*</abbr></label><span
 																	class="woocommerce-input-wrapper"><input type="text"
 																		class="input-text " name="billing_last_name"
-																		id="billing_last_name" placeholder="" value=""
+																		id="billing_last_name" placeholder=""
+																		value="{{get_user.last_name}}"
 																		autocomplete="family-name" /></span>
 															</p>
 															<!-- <p class="form-row form-row-wide" id="billing_company_field"
@@ -118,7 +120,7 @@
 																			country /
 																			region</button></noscript></span>
 															</p>
-															
+
 															<p class="form-row form-row-wide address-field validate-required validate-state"
 																id="billing_state_field" data-priority="80">
 																<label for="billing_state" class="">District&nbsp;<abbr
@@ -225,7 +227,8 @@
 																		class="input-text " name="billing_address_1"
 																		id="billing_address_1"
 																		placeholder="House number and street name"
-																		value="" autocomplete="address-line1" /></span>
+																		value="{{get_prof.Address1}}"
+																		autocomplete="address-line1" /></span>
 															</p>
 															<!-- <p class="form-row form-row-wide address-field"
 																id="billing_address_2_field" data-priority="60">
@@ -257,7 +260,8 @@
 																		title="required">*</abbr></label><span
 																	class="woocommerce-input-wrapper"><input type="tel"
 																		class="input-text " name="billing_phone"
-																		id="billing_phone" placeholder="" value=""
+																		id="billing_phone" placeholder=""
+																		value="{{get_prof.phone}}"
 																		autocomplete="tel" /></span>
 															</p>
 															<p class="form-row form-row-wide validate-required validate-email"
@@ -268,7 +272,7 @@
 																	class="woocommerce-input-wrapper"><input
 																		type="email" class="input-text "
 																		name="billing_email" id="billing_email"
-																		placeholder="" value=""
+																		placeholder="" value="{{get_user.email}}"
 																		autocomplete="email username" /></span>
 															</p>
 														</div>
@@ -318,41 +322,22 @@
 																	</tr>
 																</thead>
 																<tbody>
+																	{% for i in all_prod %}
 																	<tr class="border-bottom-0 cart_item">
 																		<td class="product-name line-height-sm">
-																			Circled Ultimate 3D Speaker&nbsp;
+																			{{i.product.name}}
 																			<strong
-																				class="product-quantity font-weight-medium">&times;&nbsp;1</strong>
+																				class="product-quantity font-weight-medium">&times;&nbsp;{{i.quantity}}</strong>
 																		</td>
 																		<td class="product-total">
 																			<span
 																				class="woocommerce-Price-amount amount"><bdi><span
-																						class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span>
+																						class="woocommerce-Price-currencySymbol">৳
+																					</span>{{i.total_price}}</bdi></span>
 																		</td>
 																	</tr>
-																	<tr class="border-bottom-0 cart_item">
-																		<td class="product-name line-height-sm">
-																			Men Sports Travel Bag&nbsp; <strong
-																				class="product-quantity font-weight-medium">&times;&nbsp;1</strong>
-																		</td>
-																		<td class="product-total">
-																			<span
-																				class="woocommerce-Price-amount amount"><bdi><span
-																						class="woocommerce-Price-currencySymbol">&#36;</span>299.00</bdi></span>
-																		</td>
-																	</tr>
-																	<tr class="border-bottom-0 cart_item">
-																		<td class="product-name line-height-sm">
-																			Casual Spring Blue Shoes&nbsp;
-																			<strong
-																				class="product-quantity font-weight-medium">&times;&nbsp;1</strong>
-																		</td>
-																		<td class="product-total">
-																			<span
-																				class="woocommerce-Price-amount amount"><bdi><span
-																						class="woocommerce-Price-currencySymbol">&#36;</span>55.00</bdi></span>
-																		</td>
-																	</tr>
+																	{% endfor %}
+
 																</tbody>
 																<tfoot>
 
@@ -362,15 +347,25 @@
 																		</th>
 																		<td><span
 																				class="woocommerce-Price-amount amount"><bdi><span
-																						class="woocommerce-Price-currencySymbol">&#36;</span>653.00</bdi></span>
+																						class="woocommerce-Price-currencySymbol">৳
+																					</span>{{total_amnt}}</bdi></span>
 																		</td>
 																	</tr>
 
 
 
-
-
 																	<tr class="woocommerce-shipping-totals shipping">
+																		<th>
+																			<h4 class="mb-0">Shipping</h4>
+																		</th>
+																		<td><span
+																				class="woocommerce-Price-amount amount"><bdi><span
+																						style="margin-left: 40px;"
+																						class="woocommerce-Price-currencySymbol"></span>৳100.00</bdi></span>
+																		</td>
+																	</tr>
+
+																	<!-- <tr class="woocommerce-shipping-totals shipping">
 																		<td colspan="2" class="text-start"
 																			data-title="Shipping">
 																			<h4 class="m-b-sm">Payment</h4>
@@ -407,20 +402,21 @@
 
 
 																		</td>
-																	</tr>
+																	</tr> -->
 
 
 
 
 
 
-																	<tr class="order-total">
+																	<tr class="cart-subtotal">
 																		<th>
-																			<h4 class="text-md my-3">Total</h4>
+																			<h3 class="mb-0">Total</h3>
 																		</th>
 																		<td><strong><span
 																					class="woocommerce-Price-amount amount"><bdi><span
-																							class="woocommerce-Price-currencySymbol">&#36;</span>653.00</bdi></span></strong>
+																							class="woocommerce-Price-currencySymbol">৳
+																						</span>{{total_with_shipping}}</bdi></span></strong>
 																		</td>
 																	</tr>
 
@@ -434,34 +430,69 @@
 																	<hr class="separator-line  align_center">
 																</div>
 																<h4 class="px-2">Payment methods</h4>
-																<ul
-																	class="wc_payment_methods payment_methods methods px-2">
+																<!-- <ul id="shipping_method"
+																				class="woocommerce-shipping-methods mb-2">
+																				<li>
+																					<div class="porto-radio ">
+																						<input type="radio"
+																							name="payment_online"
+																							data-index="0"
+																							id="shipping_method_0_local_pickup1"
+																							value="payment_online"
+																							class="shipping_method porto-control-input"
+																							checked='checked' /><label
+																							class="porto-control-label"
+																							for="shipping_method_0_local_pickup1">Online
+																							Payment</label>
+																					</div>
+																				</li>
+																				<li>
+																					<div class="porto-radio ">
+																						<input type="radio"
+																							name="payment_cod"
+																							data-index="0"
+																							id="shipping_method_0_flat_rate2"
+																							value="payment_cod"
+																							class="shipping_method porto-control-input" /><label
+																							class="porto-control-label"
+																							for="shipping_method_0_flat_rate2">Cash
+																							On Delivery</label>
+																					</div>
+																				</li>
+																			</ul> -->
+																<ul id="shipping_method"
+																	class="woocommerce-shipping-methods">
 																	<li>
-																		<div class="woocommerce-info">
-																			Sorry, it seems that there are no
-																			available payment methods. Please
-																			contact us if you require assistance
-																			or wish to make alternate
-																			arrangements. </div>
+																		<div class="porto-radio ">
+																			<input type="radio"
+																				name="shipping_method[0]" data-index="0"
+																				id="shipping_method_0_flat_rate2"
+																				value="payment_online"
+																				class="shipping_method porto-control-input"
+																				checked='checked' /><label
+																				class="porto-control-label text-capitalize font-weight-normal"
+																				for="shipping_method_0_flat_rate2">Online
+																							Payment</label>
+																		</div>
+																	</li>
+																	<li>
+																		<div class="porto-radio ">
+																			<input type="radio"
+																				name="shipping_method[0]" data-index="0"
+																				id="shipping_method_0_local_pickup1"
+																				value="payment_cod"
+																				class="shipping_method porto-control-input" /><label
+																				class="porto-control-label text-capitalize font-weight-normal"
+																				for="shipping_method_0_local_pickup1">Cash
+																							On Delivery</label>
+																		</div>
 																	</li>
 																</ul>
 																<div class="porto-separator m-b-lg">
 																	<hr class="separator-line  align_center">
 																</div>
 																<div class="form-row place-order">
-																	<noscript>
-																		Since your browser does not support
-																		JavaScript, or it is disabled, please
-																		ensure you click the <em>Update
-																			Totals</em> button before placing
-																		your order. You may be charged more than
-																		the amount stated above if you fail to
-																		do so. <br /><button type="submit"
-																			class="button alt"
-																			name="woocommerce_checkout_update_totals"
-																			value="Update totals">Update
-																			totals</button>
-																	</noscript>
+
 
 																	<div
 																		class="woocommerce-terms-and-conditions-wrapper">
@@ -472,22 +503,15 @@
 
 
 
+
 																	<button type="submit"
 																		class="button alt btn-v-dark w-100 mt-3 py-3"
-																		name="woocommerce_checkout_place_order"
-																		id="place_order" value="Place order"
-																		data-value="Place order">Place
-																		order</button><img
-																		src="../wp-content/themes/porto/images/ajax-loader.gif"
-																		srcset="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/wp-content/themes/porto/images/ajax-loader@2x.gif 2x"
+																		name="woocommerce_checkout_place_order">Place
+																		order</button><img src="#" srcset="#"
 																		alt="loader" />
 
-																	<input type="hidden"
-																		id="woocommerce-process-checkout-nonce"
-																		name="woocommerce-process-checkout-nonce"
-																		value="b8730047e0" /><input type="hidden"
-																		name="_wp_http_referer"
-																		value="/wordpress/porto/gutenberg-shop4/checkout/" />
+
+
 																</div>
 															</div>
 														</div>
