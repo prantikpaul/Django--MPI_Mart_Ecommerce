@@ -3,17 +3,9 @@ from sslcommerz_lib import SSLCOMMERZ
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-def payment(request):
+def payment(request,id):
     
-
-    userP = request.user # getting user
-    if userP.is_authenticated: #if user is logged in
-        len_cart=cart.objects.filter(user=userP) #geting cart objects of that user
-        total = 0 # initializing a vallue adding vlaue to it
-        for i in len_cart: # in all carts how many items in there
-            p = i.product.new_price * i.quantity # getting each product and its quantity and multiplying them 
-            total += p
-    
+    total=id
     
     sslcz = SSLCOMMERZ({'store_id': 'niyam6412dc52e1e89', 'store_pass': 'niyam6412dc52e1e89@ssl', 'issandbox': True})
     total_amount = total
@@ -21,7 +13,7 @@ def payment(request):
         'total_amount': total_amount,
         'currency': "BDT",
         'tran_id': "tran_12345",
-        'success_url': "http://127.0.0.1:8000/cart/save_order/",
+        'success_url': "http://127.0.0.1:8000/Payment/born_To_redirect/",
         # if transaction is succesful, user will be redirected here
         'fail_url': "http://127.0.0.1:8000/cart/pay_failed/",  # if transaction is failed, user will be redirected here
         # 'cancel_url': "http://127.0.0.1:8000/payment-cancelled",
@@ -45,3 +37,8 @@ def payment(request):
     response = sslcz.createSession(data)
 
     return redirect(response['GatewayPageURL'])
+
+@csrf_exempt
+def born_To_redirect(request):
+    
+    return redirect ('order_success')

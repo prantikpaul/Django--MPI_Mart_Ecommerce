@@ -42,12 +42,12 @@ def checkout(request):
 
     return render (request,'order/checkout.html',locals())
 
-def place_order(request):
+def place_order(request,id):
     if request.method=='POST':
         pp=request.POST['shipping_method[0]']
         print(pp)
         if pp =='payment_online':
-            pass
+            return redirect ('payment',id)
         else:
             return redirect ('order_success')
     

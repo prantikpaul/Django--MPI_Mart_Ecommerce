@@ -50,7 +50,7 @@
 
 								<div class="woocommerce-notices-wrapper"></div>
 								<form name="checkout" method="POST" class="checkout woocommerce-checkout"
-									action="{% url 'place_order' %}" enctype="multipart/form-data">
+									action="{% url 'place_order' total_with_shipping %}" enctype="multipart/form-data">
 									{% csrf_token %}
 
 

@@ -8,6 +8,7 @@ def home(request):
     BEST_SELLING_PRODUCTS=product.objects.filter(Best_selling_prod=True)
 
     
+    #for search bar --------------------------------------------------------
     try:
         if request.method=='GET':
             pp=request.GET['search'] #geting prod name
@@ -18,6 +19,8 @@ def home(request):
                 return redirect('search',pp,rr)
     except:
         pass
+    
+    #for search bar --------------------------------------------------------
                             
 
         
@@ -44,7 +47,22 @@ def search(request,id,id2):
         if cat:
             pass
         else:
-            return redirect('empty_search')              
+            return redirect('empty_search')       
+
+
+        #for search bar --------------------------------------------------------
+    try:
+        if request.method=='GET':
+            pp=request.GET['search'] #geting prod name
+            rr=int(request.GET['product_cat']) # get category name
+            
+            if pp :
+                print('okkk')
+                return redirect('search',pp,rr)
+    except:
+        pass
+    
+    #for search bar --------------------------------------------------------
 
 
     return render (request,'product/search.html',locals())

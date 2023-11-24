@@ -15,7 +15,7 @@
 	<link rel="pingback" href="xmlrpc.php" />
 	<script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
 	<title>{% block title %}Home - MPI Mart{% endblock %}</title>
-	
+
 
 	<!-- All in One SEO 4.4.3 - aioseo.com -->
 	<meta name="robots" content="max-image-preview:large" />
@@ -29,7 +29,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Home - Porto Shop 4" />
 	<script type="application/ld+json" class="aioseo-schema">
-			
+
 		</script>
 	<!-- All in One SEO -->
 
@@ -53,7 +53,6 @@
 	<link rel="preload" href="{% static 'wp-content/themes/porto/fonts/fontawesome_optimized/fa-solid-900.woff2'%}"
 		as="font" type="font/woff2" crossorigin />
 	<link rel="preload" href="{% static 'wp-content/themes/porto/fonts/fontawesome_optimized/fa-brands-400.woff2'%}"
-	
 		as="font" type="font/woff2" crossorigin />
 
 	<!-- This site uses the Google Analytics by MonsterInsights plugin v8.21.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
@@ -844,7 +843,7 @@
 			/* Adjust the width as needed */
 			height: 26px;
 			/* Adjust the height as needed */
-			background-image: url('{% static 'u55.png' %}');
+			background-image: url('{% static ' u55.png' %}');
 
 			/* You can use other properties like background-color, border-radius, etc. */
 		}
@@ -1871,7 +1870,7 @@
 							<div class="logo">
 								<a href="{% url 'index' %}" title="MPI Mart" rel="home">
 									<img class="img-responsive standard-logo retina-logo" width="202" height="80"
-										src="{% static 'wp-content/uploads/sites/116/2022/08/mpi_logo.png'%}"
+										src="{% static 'wp-content/uploads/sites/116/2022/08/mpi_logoo.png'%}"
 										alt="Porto Shop 4" /> </a>
 							</div>
 						</div>
@@ -1879,18 +1878,17 @@
 							<div class="searchform-popup"><a class="search-toggle" aria-label="Search Toggle"
 									href="#"><i class="porto-icon-magnifier"></i><span
 										class="search-text">Search</span></a>
-								<form  method="GET"
-									class="searchform search-layout-advanced searchform-cats">
+								<form method="GET" class="searchform search-layout-advanced searchform-cats">
 									<div class="searchform-fields">
 										<span class="text"><input name="search" type="text" value=""
-												 autocomplete="off" /></span>
+												autocomplete="off" /></span>
 										<input type="hidden" />
 										<select name='product_cat' id='product_cat' class='cat'>
 											<option value='0'>All Categories</option>
 											{% for i in show_cat %}
 											<option class="level-0" value="{{i.id}}">{{i.name}}</option>
 											{% endfor %}
-											
+
 										</select>
 										<span class="button-wrap">
 											<button class="btn btn-special" title="Search" type="submit">
@@ -1930,30 +1928,30 @@
 
 							{% if user.is_authenticated %}
 							<a href="{% url 'wishlist' %}" title="Wishlist" class="my-wishlist"><i
-									class="porto-icon-wishlist-2"></i><span class="wishlist-count">{{show_len_wishlist}}</span></a>
+									class="porto-icon-wishlist-2"></i><span
+									class="wishlist-count">{{show_len_wishlist}}</span></a>
 							{% else %}
 							<a href="{% url 'wishlist_empty' %}" title="Wishlist" class="my-wishlist"><i
-							class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
+									class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
 							{% endif %}
 
 							<div id="mini-cart" class="mini-cart  minicart-offcanvas">
 								{% if user.is_authenticated %}
 								<a href="{% url 'view_cart' %}">
-								<div class="cart-head">
-									<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
-											class="cart-items"><i
-												class="wishlist-count">{{show_len_cart}}</i></span></span><span
-										class="cart-items-text"></span>
-								</div>
+									<div class="cart-head">
+										<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
+												class="cart-items"><i
+													class="wishlist-count">{{show_len_cart}}</i></span></span><span
+											class="cart-items-text"></span>
+									</div>
 								</a>
 								{% else %}
 								<a href="{% url 'empty_cart' %}">
-								<div class="cart-head">
-									<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
-											class="cart-items"><i
-												class="wishlist-count">0</i></span></span><span
-										class="cart-items-text"></span>
-								</div>
+									<div class="cart-head">
+										<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
+												class="cart-items"><i class="wishlist-count">0</i></span></span><span
+											class="cart-items-text"></span>
+									</div>
 								</a>
 								{% endif %}
 
@@ -2330,17 +2328,17 @@
 	<div class="sticky-demo-wrapper">
 		<div class="sticky-overlay"></div>
 		<div class="sticky-icon-links">
-		{% if user.is_authenticated %}
-		<a href="{% url 'view_cart' %}" class="sticky-icon-link" target="_blank">
+			{% if user.is_authenticated %}
+			<a href="{% url 'view_cart' %}" class="sticky-icon-link" target="_blank">
 				<i class="porto-icon-cart"></i>
 				<h4>View Cart</h4>
 			</a>
-		{% else %}
+			{% else %}
 			<a href="{% url 'empty_cart' %}" class="sticky-icon-link" target="_blank">
 				<i class="porto-icon-cart"></i>
 				<h4>View Cart</h4>
 			</a>
-		{% endif %}
+			{% endif %}
 			{% if user.is_authenticated %}
 			<a href="{% url 'user_profile' %}" class="sticky-icon-link" target="_blank">
 				<i style="height: 26px;width: 26px;" class="custom-icon"></i>
@@ -2365,25 +2363,17 @@
 	<a href="#" aria-label="Mobile Close" class="side-nav-panel-close"><i class="fas fa-times"></i></a>
 	<div id="side-nav-panel" class="">
 
-		<form action="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/" method="get"
+		<form method="GET"
 			class="searchform search-layout-advanced searchform-cats">
 			<div class="searchform-fields">
-				<span class="text"><input name="s" type="text" value="" placeholder="Search&hellip;"
+				<span class="text"><input name="search" type="text" value="" placeholder="Search&hellip;"
 						autocomplete="off" /></span>
 				<input type="hidden" name="post_type" value="product" />
 				<select name='product_cat' id='product_cat_mobile' class='cat'>
 					<option value='0'>All Categories</option>
-					<option class="level-0" value="accessories">Accessories</option>
-					<option class="level-1" value="caps">&nbsp;&nbsp;&nbsp;Caps</option>
-					<option class="level-1" value="watches">&nbsp;&nbsp;&nbsp;Watches</option>
-					<option class="level-0" value="dress">Dress</option>
-					<option class="level-1" value="clothing">&nbsp;&nbsp;&nbsp;Clothing</option>
-					<option class="level-2" value="hoodies">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hoodies</option>
-					<option class="level-0" value="electronics">Electronics</option>
-					<option class="level-1" value="toys">&nbsp;&nbsp;&nbsp;Toys</option>
-					<option class="level-0" value="fashion">Fashion</option>
-					<option class="level-1" value="shoes">&nbsp;&nbsp;&nbsp;Shoes</option>
-					<option class="level-1" value="t-shirts-fashion">&nbsp;&nbsp;&nbsp;T-Shirts</option>
+					{% for i in show_cat %}
+					<option class="level-0" value="{{i.id}}">{{i.name}}</option>
+					{% endfor %}
 				</select>
 				<span class="button-wrap">
 					<button class="btn btn-special" title="Search" type="submit">
