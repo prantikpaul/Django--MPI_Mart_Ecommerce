@@ -27,13 +27,5 @@ class prod_review(models.Model):
     def __str__(self):
         return self.prod.name+'---'+self.user.first_name+' '+self.user.last_name
     
-class prod_avg_review(models.Model):
-    
-    prod=models.ForeignKey(product,on_delete=models.CASCADE)
-    avg_rating=models.IntegerField(default=0)
-    avg_rating_star=models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.prod.name
     
 

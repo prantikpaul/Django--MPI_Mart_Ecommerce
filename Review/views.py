@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import prod_review,prod_avg_review
+from .models import prod_review
 from Products.models import product
 # Create your views here.
 
@@ -23,7 +23,7 @@ def get_review(request,id):
             int_rr+=2
         elif get_rating =='★':
             int_rr+=1
-        print(int_rr)
+        # print(int_rr)
 
         ppp=prod_review.objects.create(
             user=request.user,
@@ -44,6 +44,7 @@ def get_review(request,id):
 def prod_avg_rater(request,id):
     get_prod=product.objects.get(pk=id)
         
+    
             
     rrr=prod_review.objects.filter(prod=get_prod)
     if rrr :
@@ -54,20 +55,34 @@ def prod_avg_rater(request,id):
             rating=0
             for i in rrr:
                 rating+=i.int_rating
-            pp=prod_avg_review.objects.create(
-                prod=get_prod,
-                avg_rating=rating
-            )
-            pp.save()
+            
+            #for convert int to star :) 
+            int_rr=''
+            if rating ==5:
+                int_rr+='★★★★★'
+            elif rating ==4:
+                int_rr+='★★★★'
+            elif rating ==3:
+                int_rr+='★★★'
+            elif rating ==2:
+                int_rr+='★★'
+            elif rating ==1:
+                int_rr+='★'
+            # print(int_rr)
+            rrr=product.objects.get(id=id) #geting product by id 
+    
+            if rrr: #upload product avg data to the product model
+                rrr.avg_rating_star=int_rr
+                rrr.save()
         
         elif count > 1 :
             rating=0
-            print(count)
+            # print(count)
             for i in rrr:
                 rating+=i.int_rating
             avg_rating=rating/count
             rounded_number = round(avg_rating)
-            print(rounded_number)
+            # print(rounded_number)
 
             #for convert int to star :) 
             int_rr=''
@@ -83,19 +98,14 @@ def prod_avg_rater(request,id):
                 int_rr+='★'
             # print(int_rr)
 
-            try: # prod_avg_review te already oi product exist kore thahole just rating ta update korbe
-                qqq=prod_avg_review.objects.filter(prod=get_prod).first()
-                qqq.avg_rating=rounded_number,
-                qqq. avg_rating_star=int_rr
-                qqq.save()
-
-            except: # prod_avg_review te already oi product exist na kore thahole create korbe
             
-                pp=prod_avg_review.objects.create(
-                    prod=get_prod,
-                    avg_rating=rounded_number,
-                    avg_rating_star=int_rr
-                )
-                pp.save()
+            rrr=product.objects.get(id=id) #geting product by id 
+    
+            if rrr: #upload product avg data to the product model
+                rrr.avg_rating_star=int_rr
+                rrr.save()
+                        
+
+            
     
     return redirect (request.META['HTTP_REFERER'])
