@@ -35,7 +35,6 @@
 								<div id="interactive-banner-wrap-wmi3" class="porto-ibanner mb-0"
 									style="background:#f4f4f4;min-height:500px;"><img decoding="async" loading="lazy"
 										alt="Intro image" width="1920" height="500" class="porto-ibanner-img"
-										
 										src="{% static 'pppv2.png'%}">
 									<div class="porto-ibanner-desc no-padding d-flex">
 										<div class="container">
@@ -178,16 +177,16 @@
 
 									<div class="wp-block-columns mb-0 is-layout-flex wp-container-4">
 										<div class="wp-block-column is-layout-flow">
-											<div id="interactive-banner-wrap-zmax"
-												class="porto-ibanner m-b-md hover-shadow porto-gb-e185c8ac827bb7495adce97d7696a13e"
-												style="background:#e7e7e7;min-height:175px;"><img decoding="async"
-													loading="lazy" alt="ads" width="360" height="175"
-													class="porto-ibanner-img"
-													src="{% static 'ad01.png'%}">
-												<div class="porto-ibanner-desc no-padding d-flex">
-													<div
-														class="porto-ibanner-layer banner-pos-b81e7e9755afdd696f1e9e1e89f118ea">
-														<!-- <h3 class="porto-heading mb-2"
+											<a href="#">
+												<div id="interactive-banner-wrap-zmax"
+													class="porto-ibanner m-b-md hover-shadow porto-gb-e185c8ac827bb7495adce97d7696a13e"
+													style="background:#e7e7e7;min-height:175px;"><img decoding="async"
+														loading="lazy" alt="ads" width="360" height="175"
+														class="porto-ibanner-img" src="{% static 'add1.png'%}">
+													<div class="porto-ibanner-desc no-padding d-flex">
+														<div
+															class="porto-ibanner-layer banner-pos-b81e7e9755afdd696f1e9e1e89f118ea">
+															<!-- <h3 class="porto-heading mb-2"
 															style="font-size:1.5em;line-height:1;">Porto Watches</h3>
 
 														<h4 class="porto-heading mb-3"
@@ -206,54 +205,49 @@
 																transform: translateY(-50%);
 															}
 														</style> -->
+														</div>
 													</div>
 												</div>
-											</div>
+											</a>
 										</div>
 
 
 
 										<div class="wp-block-column is-layout-flow">
-											<div id="interactive-banner-wrap-l28w"
-												class="porto-ibanner has-border-primary m-b-md hover-shadow"
-												style="min-height:145px;"><img decoding="async" loading="lazy" alt="ads"
-													width="331" height="145" class="porto-ibanner-img"
-													src="{% static 'wp-content/uploads/sites/116/2019/09/shop4_home_ads2-1.jpg'%}">
-												<div class="porto-ibanner-desc no-padding d-flex">
-													<div class="porto-ibanner-layer text-center banner-pos-d8faaecc40d074754cb807780753fdf5"
-														style="width:100%;">
-														<div
-															class="porto-u-heading d-inline-block v-middle m-2 porto-u-2888">
-															<div class="porto-u-main-heading">
-																<h3
-																	style="font-weight:700;font-size:1.375em;line-height:1;">
-																	DEAL PROMOS</h3>
-															</div>
-															<div class="porto-u-sub-heading"
-																style="font-weight:600;color: #777777;font-size:0.9375em;">
-																STARTING AT $99</div>
-															<style>
-																.porto-u-2888.porto-u-heading {
-																	text-align: right
-																}
-															</style>
-														</div>
+											<a href="#">
+												<div id="interactive-banner-wrap-zmax"
+													class="porto-ibanner m-b-md hover-shadow porto-gb-e185c8ac827bb7495adce97d7696a13e"
+													style="background:#e7e7e7;min-height:175px;">
+													<img decoding="async" loading="lazy" alt="ads" width="360"
+														height="175" class="porto-ibanner-img"
+														src="{% static 'add2.png'%}">
 
-														<a aria-label="button"
-															class="btn btn-md btn-dark btn-modern m-2"
+													<div class="porto-ibanner-desc no-padding d-flex">
+														<div
+															class="porto-ibanner-layer banner-pos-b81e7e9755afdd696f1e9e1e89f118ea">
+															<!-- <h3 class="porto-heading mb-2"
+															style="font-size:1.5em;line-height:1;">Porto Watches</h3>
+
+														<h4 class="porto-heading mb-3"
+															style="font-size:1.8125em;font-weight:800;line-height:1;color:#0088cc;">
+															<sup><del><strong>20%</strong></del></sup>30%<sup>OFF</sup>
+														</h4>
+
+														<a aria-label="button" class="btn btn-md btn-dark btn-modern"
 															href="#"><span>Shop Now</span></a>
 														<style>
-															.banner-pos-d8faaecc40d074754cb807780753fdf5 {
-																left: 50%;
+															.banner-pos-b81e7e9755afdd696f1e9e1e89f118ea {
+																left: 6%;
 																right: unset;
 																top: 50%;
 																bottom: unset;
-																transform: translate(-50%, -50%);
+																transform: translateY(-50%);
 															}
-														</style>
+														</style> -->
+														</div>
 													</div>
 												</div>
-											</div>
+											</a>
 										</div>
 
 
@@ -331,14 +325,23 @@
 															</div>
 
 															<div class="product-content">
-																
+
 																<a class="product-loop-title"
 																	href="{% url 'prod_view' i.id %}">
-																	<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
+																	<h3 class="woocommerce-loop-product__title">
+																		{{i.name}}</h3>
 																</a>
 
 
-
+																{% if i.avg_rating_star %}
+																<div class="rating-wrap">
+																	<div style="font-size: 18px;" title="0">
+																		{{i.avg_rating_star}}
+																		<!-- <span style="width:0%">
+																		<strong class="rating">0</strong> out of 5 </span> -->
+																	</div>
+																</div>
+																{% else %}
 																<div class="rating-wrap">
 																	<div class="rating-content">
 																		<div class="star-rating" title="0"><span
@@ -347,19 +350,19 @@
 																				5</span></div>
 																	</div>
 																</div>
+																{% endif %}
 
 
 																<span class="price"><span
 																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></span>
+																				class="woocommerce-Price-currencySymbol">৳
+																			</span>{{i.price}}</bdi></span></span>
 
 																<div class="add-links-wrap">
 																	<div class="add-links clearfix">
-																		<a href="{% url 'add_to_cart' i.id %}" 
-																class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
-																
-																
-																 rel="nofollow">Add to cart</a>
+																		<a href="{% url 'add_to_cart' i.id %}"
+																			class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
+																			rel="nofollow">Add to cart</a>
 																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1367  wishlist-fragment on-first-load"
 																			data-fragment-ref="1367"
 																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1367,&quot;parent_product_id&quot;:1367,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
@@ -372,7 +375,8 @@
 																					data-product-id="1364"
 																					data-product-type="simple"
 																					data-original-product-id="1364"
-																					data-title="Add to Wishlist" rel="nofollow">
+																					data-title="Add to Wishlist"
+																					rel="nofollow">
 																					<span>Add to Wishlist</span>
 																				</a>
 																			</div>
@@ -389,7 +393,7 @@
 													</li>
 
 													{% endfor %}
-													
+
 												</ul>
 											</div>
 										</div>
@@ -431,14 +435,24 @@
 															</div>
 
 															<div class="product-content">
-																
+
 																<a class="product-loop-title"
 																	href="{% url 'prod_view' i.id %}">
-																	<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
+																	<h3 class="woocommerce-loop-product__title">
+																		{{i.name}}</h3>
 																</a>
 
 
 
+																{% if i.avg_rating_star %}
+																<div class="rating-wrap">
+																	<div style="font-size: 18px;" title="0">
+																		{{i.avg_rating_star}}
+																		<!-- <span style="width:0%">
+																		<strong class="rating">0</strong> out of 5 </span> -->
+																	</div>
+																</div>
+																{% else %}
 																<div class="rating-wrap">
 																	<div class="rating-content">
 																		<div class="star-rating" title="0"><span
@@ -447,19 +461,19 @@
 																				5</span></div>
 																	</div>
 																</div>
+																{% endif %}
 
 
 																<span class="price"><span
 																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></span>
+																				class="woocommerce-Price-currencySymbol">৳
+																			</span>{{i.price}}</bdi></span></span>
 
 																<div class="add-links-wrap">
 																	<div class="add-links clearfix">
-																		<a href="{% url 'add_to_cart' i.id %}" 
-																class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
-																
-																
-																 rel="nofollow">Add to cart</a>
+																		<a href="{% url 'add_to_cart' i.id %}"
+																			class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
+																			rel="nofollow">Add to cart</a>
 																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1367  wishlist-fragment on-first-load"
 																			data-fragment-ref="1367"
 																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1367,&quot;parent_product_id&quot;:1367,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
@@ -472,7 +486,8 @@
 																					data-product-id="1364"
 																					data-product-type="simple"
 																					data-original-product-id="1364"
-																					data-title="Add to Wishlist" rel="nofollow">
+																					data-title="Add to Wishlist"
+																					rel="nofollow">
 																					<span>Add to Wishlist</span>
 																				</a>
 																			</div>
@@ -494,46 +509,57 @@
 									</div>
 
 									<div class="container">
-									<h2 class="porto-heading slider-title mb-4"
-										style="font-size:1.125rem;line-height:1;"><span>BEST SELLING PRODUCTS</span></h2>
+										<h2 class="porto-heading slider-title mb-4"
+											style="font-size:1.125rem;line-height:1;"><span>BEST SELLING PRODUCTS</span>
+										</h2>
 
-									<div id="porto-products-8507"
-										class="porto-products wpb_content_element mb-4 theme_option">
-										<div class="slider-wrapper">
-											<div class="woocommerce columns-5 ">
-												<ul class="products products-container products-slider owl-carousel nav-center-images-only nav-pos-outside nav-style-4 show-nav-hover pcols-lg-5 pcols-md-4 pcols-xs-3 pcols-ls-2 pwidth-lg-5 pwidth-md-4 pwidth-xs-3 pwidth-ls-2 is-shortcode"
-													data-plugin-options="{&quot;themeConfig&quot;:true,&quot;lg&quot;:5,&quot;md&quot;:4,&quot;xs&quot;:3,&quot;ls&quot;:2,&quot;nav&quot;:true}"
-													data-product_layout="product-default">
+										<div id="porto-products-8507"
+											class="porto-products wpb_content_element mb-4 theme_option">
+											<div class="slider-wrapper">
+												<div class="woocommerce columns-5 ">
+													<ul class="products products-container products-slider owl-carousel nav-center-images-only nav-pos-outside nav-style-4 show-nav-hover pcols-lg-5 pcols-md-4 pcols-xs-3 pcols-ls-2 pwidth-lg-5 pwidth-md-4 pwidth-xs-3 pwidth-ls-2 is-shortcode"
+														data-plugin-options="{&quot;themeConfig&quot;:true,&quot;lg&quot;:5,&quot;md&quot;:4,&quot;xs&quot;:3,&quot;ls&quot;:2,&quot;nav&quot;:true}"
+														data-product_layout="product-default">
 
-													{% for i in BEST_SELLING_PRODUCTS %}
+														{% for i in BEST_SELLING_PRODUCTS %}
 
-													<li
-														class="product-col product-default product type-product post-1367 status-publish first instock product_cat-caps product_cat-hoodies product_cat-t-shirts-fashion product_cat-watches product_tag-black product_tag-clothes product_tag-fashion has-post-thumbnail featured downloadable shipping-taxable purchasable product-type-simple">
-														<div class="product-inner">
+														<li
+															class="product-col product-default product type-product post-1367 status-publish first instock product_cat-caps product_cat-hoodies product_cat-t-shirts-fashion product_cat-watches product_tag-black product_tag-clothes product_tag-fashion has-post-thumbnail featured downloadable shipping-taxable purchasable product-type-simple">
+															<div class="product-inner">
 
-															<div class="product-image">
+																<div class="product-image">
 
-																<a href="{% url 'prod_view' i.id %}"
-																	aria-label="product">
-																	<div class="labels">
-																		<div class="onhot">New</div>
+																	<a href="{% url 'prod_view' i.id %}"
+																		aria-label="product">
+																		<div class="labels">
+																			<div class="onhot">New</div>
+																		</div>
+																		<div class="inner"><img width="300" height="300"
+																				src="{{i.prod_img.url}}"
+																				class=" wp-post-image" alt=""
+																				decoding="async" loading="lazy" /></div>
+																	</a>
+																</div>
+
+																<div class="product-content">
+
+																	<a class="product-loop-title"
+																		href="{% url 'prod_view' i.id %}">
+																		<h3 class="woocommerce-loop-product__title">
+																			{{i.name}}</h3>
+																	</a>
+
+
+
+																	{% if i.avg_rating_star %}
+																<div class="rating-wrap">
+																	<div style="font-size: 18px;" title="0">
+																		{{i.avg_rating_star}}
+																		<!-- <span style="width:0%">
+																		<strong class="rating">0</strong> out of 5 </span> -->
 																	</div>
-																	<div class="inner"><img width="300" height="300"
-																			src="{{i.prod_img.url}}"
-																			class=" wp-post-image" alt=""
-																			decoding="async" loading="lazy" /></div>
-																</a>
-															</div>
-
-															<div class="product-content">
-																
-																<a class="product-loop-title"
-																	href="{% url 'prod_view' i.id %}">
-																	<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
-																</a>
-
-
-
+																</div>
+																{% else %}
 																<div class="rating-wrap">
 																	<div class="rating-content">
 																		<div class="star-rating" title="0"><span
@@ -542,129 +568,135 @@
 																				5</span></div>
 																	</div>
 																</div>
+																{% endif %}
 
 
-																<span class="price"><span
-																		class="woocommerce-Price-amount amount"><bdi><span
-																				class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></span>
+																	<span class="price"><span
+																			class="woocommerce-Price-amount amount"><bdi><span
+																					class="woocommerce-Price-currencySymbol">৳
+																				</span>{{i.price}}</bdi></span></span>
 
-																<div class="add-links-wrap">
-																	<div class="add-links clearfix">
-																		<a href="{% url 'add_to_cart' i.id %}" 
-																class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
-																
-																
-																 rel="nofollow">Add to cart</a>
-																		<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1367  wishlist-fragment on-first-load"
-																			data-fragment-ref="1367"
-																			data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1367,&quot;parent_product_id&quot;:1367,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
+																	<div class="add-links-wrap">
+																		<div class="add-links clearfix">
+																			<a href="{% url 'add_to_cart' i.id %}"
+																				class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
+																				rel="nofollow">Add to cart</a>
+																			<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1367  wishlist-fragment on-first-load"
+																				data-fragment-ref="1367"
+																				data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1367,&quot;parent_product_id&quot;:1367,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
 
-																			<!-- ADD TO WISHLIST -->
+																				<!-- ADD TO WISHLIST -->
 
-																			<div class="yith-wcwl-add-button">
-																				<a href="{% url 'add_to_wishlist' i.id %}"
-																					class="add_to_wishlist single_add_to_wishlist"
-																					data-product-id="1364"
-																					data-product-type="simple"
-																					data-original-product-id="1364"
-																					data-title="Add to Wishlist" rel="nofollow">
-																					<span>Add to Wishlist</span>
-																				</a>
+																				<div class="yith-wcwl-add-button">
+																					<a href="{% url 'add_to_wishlist' i.id %}"
+																						class="add_to_wishlist single_add_to_wishlist"
+																						data-product-id="1364"
+																						data-product-type="simple"
+																						data-original-product-id="1364"
+																						data-title="Add to Wishlist"
+																						rel="nofollow">
+																						<span>Add to Wishlist</span>
+																					</a>
+																				</div>
+
+																				<!-- COUNT TEXT -->
+
 																			</div>
-
-																			<!-- COUNT TEXT -->
-
-																		</div>
-																		<!-- <div class="quickview" data-id="1367"
+																			<!-- <div class="quickview" data-id="1367"
 																			title="Quick View">Quick View</div> -->
+																		</div>
 																	</div>
 																</div>
 															</div>
-														</div>
-													</li>
-													{% endfor %}
-												</ul>
+														</li>
+														{% endfor %}
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
 
-									<div class="vc_section porto-section section-parallax mx-0 py-3 mb-5 home-banner"
-										data-plugin-parallax data-plugin-options="{&quot;speed&quot;:1.5}"
-										data-image-src="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/wp-content/uploads/sites/116/2019/09/shop4_home_banner.jpg"
-										style="background-position:center center;background-size:cover;background-color:#0088cc;">
+										<div class="vc_section porto-section section-parallax mx-0 py-3 mb-5 home-banner"
+											data-plugin-parallax data-plugin-options="{&quot;speed&quot;:1.5}"
+											data-image-src="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/wp-content/uploads/sites/116/2019/09/shop4_home_banner.jpg"
+											style="background-position:center center;background-size:cover;background-color:#0088cc;">
 
-										<div
-											class="wp-block-columns mb-0 align-items-center is-layout-flex wp-container-7">
-											<div class="wp-block-column is-layout-flow" style="flex-basis:75%">
-												<h2 class="porto-heading mb-3 mb-sm-0"
-													style="font-size:1.275rem;line-height:1.2;color:#ffffff;">
-													<strong>BIG SALE</strong> ALL NEW FASHION BRANDS ITEMS UP TO 70% OFF
-													<small>Online Purchases Only</small></h2>
+											<div
+												class="wp-block-columns mb-0 align-items-center is-layout-flex wp-container-7">
+												<div class="wp-block-column is-layout-flow" style="flex-basis:75%">
+													<h2 class="porto-heading mb-3 mb-sm-0"
+														style="font-size:1.275rem;line-height:1.2;color:#ffffff;">
+														<strong>BIG SALE</strong> ALL NEW FASHION BRANDS ITEMS UP TO 70%
+														OFF
+														<small>Online Purchases Only</small>
+													</h2>
+												</div>
+
+
+
+												<div class="wp-block-column text-sm-end text-center is-layout-flow"
+													style="flex-basis:25%"><a aria-label="button"
+														class="btn btn-lg btn-light btn-modern" href="#"><span>View
+															Sale</span></a></div>
 											</div>
 
-
-
-											<div class="wp-block-column text-sm-end text-center is-layout-flow"
-												style="flex-basis:25%"><a aria-label="button"
-													class="btn btn-lg btn-light btn-modern" href="#"><span>View
-														Sale</span></a></div>
 										</div>
 
-									</div>
+										<style>
+											#porto-product-categories-9354 li.product-category .thumb-info-wrapper:after {
+												background-color: rgba(27, 27, 23, 0);
+											}
 
-									<style>
-										#porto-product-categories-9354 li.product-category .thumb-info-wrapper:after {
-											background-color: rgba(27, 27, 23, 0);
-										}
-
-										#porto-product-categories-9354 li.product-category:hover .thumb-info-wrapper:after {
-											background-color: rgba(27, 27, 23, 0.15);
-										}
-									</style>
-									<div id="porto-product-categories-9354"
-										class="porto-products wpb_content_element porto-product-category-widgetmb-3">
-										<h2 class="slider-title"><span class="inline-title">Browse Our
-												Categories</span><span class="line"></span></h2>
-										<div class="slider-wrapper">
-											<div class="woocommerce columns-5">
-												<ul class="products products-container products-slider owl-carousel category-pos-bottom category-text-center category-color-dark pcols-lg-5 pcols-md-4 pcols-xs-3 pcols-ls-2 pwidth-lg-5 pwidth-md-4 pwidth-xs-3 pwidth-ls-2 is-shortcode"
-													data-plugin-options="{&quot;themeConfig&quot;:true,&quot;lg&quot;:5,&quot;md&quot;:4,&quot;xs&quot;:3,&quot;ls&quot;:2}"
-													data-product_layout="product-default">
-													{% for i in show_cat %}
-													<li class="product-category product-col">
-														<a href="{% url 'all_prod' i.id %}"
-															aria-label="category">
-															<div  class="thumb-info  align-center">
-																<div class="thumb-info-wrapper tf-none">
-																	<img decoding="async" loading="lazy"
-																		src="{{i.category_pic.url}}"
-																		alt="Accessories" width="300" height="300" />
-																</div>
-																<div style="height: 60px;" class="thumb-info-wrap">
-																	<div style="padding-top: 2px;" class="thumb-info-title">
-																		<h3 class="sub-title thumb-info-inner">
-																			{{i.name}}</h3>
-																		<span class="thumb-info-type">
-																			<mark class="count">{{i.num_products}}</mark> products
-																		</span>
+											#porto-product-categories-9354 li.product-category:hover .thumb-info-wrapper:after {
+												background-color: rgba(27, 27, 23, 0.15);
+											}
+										</style>
+										<div id="porto-product-categories-9354"
+											class="porto-products wpb_content_element porto-product-category-widgetmb-3">
+											<h2 class="slider-title"><span class="inline-title">Browse Our
+													Categories</span><span class="line"></span></h2>
+											<div class="slider-wrapper">
+												<div class="woocommerce columns-5">
+													<ul class="products products-container products-slider owl-carousel category-pos-bottom category-text-center category-color-dark pcols-lg-5 pcols-md-4 pcols-xs-3 pcols-ls-2 pwidth-lg-5 pwidth-md-4 pwidth-xs-3 pwidth-ls-2 is-shortcode"
+														data-plugin-options="{&quot;themeConfig&quot;:true,&quot;lg&quot;:5,&quot;md&quot;:4,&quot;xs&quot;:3,&quot;ls&quot;:2}"
+														data-product_layout="product-default">
+														{% for i in show_cat %}
+														<li class="product-category product-col">
+															<a href="{% url 'all_prod' i.id %}" aria-label="category">
+																<div class="thumb-info  align-center">
+																	<div class="thumb-info-wrapper tf-none">
+																		<img decoding="async" loading="lazy"
+																			src="{{i.category_pic.url}}"
+																			alt="Accessories" width="300"
+																			height="300" />
+																	</div>
+																	<div style="height: 60px;" class="thumb-info-wrap">
+																		<div style="padding-top: 2px;"
+																			class="thumb-info-title">
+																			<h3 class="sub-title thumb-info-inner">
+																				{{i.name}}</h3>
+																			<span class="thumb-info-type">
+																				<mark
+																					class="count">{{i.num_products}}</mark>
+																				products
+																			</span>
+																		</div>
 																	</div>
 																</div>
-															</div>
-														</a>
+															</a>
 
 
-													</li>
-													{% endfor %}
+														</li>
+														{% endfor %}
 
-													
-												</ul>
+
+													</ul>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
 							</section>
 
-							
+
 
 							<section class="vc_section porto-section porto-inner-container pb-4"
 								style="background-color:#f6f7f9;">
@@ -673,67 +705,67 @@
 									<div
 										class="wp-block-columns mb-1 justify-content-center is-layout-flex wp-container-11">
 										<div class="wp-block-columns is-layout-flex wp-container-4">
-                                                <div class="wp-block-column is-layout-flow">
-                                                    <div class="porto-sicon-box style_1 top-icon">
-                                                        <div class="porto-sicon-top">
-                                                            <div class="porto-just-icon-wrapper porto-icon none"
-                                                                style="color:#0088cc;font-size:55px;"><i
-                                                                    class="porto-icon-shipped"></i></div>
-                                                        </div>
-                                                        <div class="porto-sicon-header">
-                                                            <h3 class="porto-sicon-title"
-                                                                style="font-weight:600;font-size:18px;line-height:20px;">
-                                                                Free Shipping</h3>
-                                                        </div> <!-- header -->
-                                                        <div class="porto-sicon-description"
-                                                            style="font-size:15px;line-height:27px;">Lorem Ipsum is
-                                                            simply dummy text of the printing and typesetting industry.
-                                                            Lorem Ipsum has been the industr.</div> <!-- description -->
-                                                    </div><!-- porto-sicon-box -->
-                                                </div>
+											<div class="wp-block-column is-layout-flow">
+												<div class="porto-sicon-box style_1 top-icon">
+													<div class="porto-sicon-top">
+														<div class="porto-just-icon-wrapper porto-icon none"
+															style="color:#0088cc;font-size:55px;"><i
+																class="porto-icon-shipped"></i></div>
+													</div>
+													<div class="porto-sicon-header">
+														<h3 class="porto-sicon-title"
+															style="font-weight:600;font-size:18px;line-height:20px;">
+															Free Shipping</h3>
+													</div> <!-- header -->
+													<div class="porto-sicon-description"
+														style="font-size:15px;line-height:27px;">Lorem Ipsum is
+														simply dummy text of the printing and typesetting industry.
+														Lorem Ipsum has been the industr.</div> <!-- description -->
+												</div><!-- porto-sicon-box -->
+											</div>
 
 
 
-										<div class="wp-block-column is-layout-flow">
-                                                    <div class="porto-sicon-box style_1 top-icon">
-                                                        <div class="porto-sicon-top">
-                                                            <div class="porto-just-icon-wrapper porto-icon none"
-                                                                style="color:#0088cc;font-size:55px;"><i
-                                                                    class="porto-icon-us-dollar"></i></div>
-                                                        </div>
-                                                        <div class="porto-sicon-header">
-                                                            <h3 class="porto-sicon-title"
-                                                                style="font-weight:600;font-size:18px;line-height:20px;">
-                                                                100% money back guarantee.</h3>
-                                                        </div> <!-- header -->
-                                                        <div class="porto-sicon-description"
-                                                            style="font-size:15px;line-height:27px;">Lorem Ipsum is
-                                                            simply dummy text of the printing and typesetting industry.
-                                                            Lorem Ipsum has been the industr.</div> <!-- description -->
-                                                    </div><!-- porto-sicon-box -->
-                                                </div>
+											<div class="wp-block-column is-layout-flow">
+												<div class="porto-sicon-box style_1 top-icon">
+													<div class="porto-sicon-top">
+														<div class="porto-just-icon-wrapper porto-icon none"
+															style="color:#0088cc;font-size:55px;"><i
+																class="porto-icon-us-dollar"></i></div>
+													</div>
+													<div class="porto-sicon-header">
+														<h3 class="porto-sicon-title"
+															style="font-weight:600;font-size:18px;line-height:20px;">
+															100% money back guarantee.</h3>
+													</div> <!-- header -->
+													<div class="porto-sicon-description"
+														style="font-size:15px;line-height:27px;">Lorem Ipsum is
+														simply dummy text of the printing and typesetting industry.
+														Lorem Ipsum has been the industr.</div> <!-- description -->
+												</div><!-- porto-sicon-box -->
+											</div>
 
 
 
-										<div class="wp-block-column is-layout-flow">
-                                                    <div class="porto-sicon-box style_1 top-icon">
-                                                        <div class="porto-sicon-top">
-                                                            <div class="porto-just-icon-wrapper porto-icon none"
-                                                                style="color:#0088cc;font-size:55px;"><i
-                                                                    class="porto-icon-online-support"></i></div>
-                                                        </div>
-                                                        <div class="porto-sicon-header">
-                                                            <h3 class="porto-sicon-title"
-                                                                style="font-weight:600;font-size:18px;line-height:20px;">
-                                                                Online Support 24/7</h3>
-                                                        </div> <!-- header -->
-                                                        <div class="porto-sicon-description"
-                                                            style="font-size:15px;line-height:27px;">Lorem Ipsum is
-                                                            simply dummy text of the printing and typesetting industry.
-                                                            Lorem Ipsum has been the industr.</div> <!-- description -->
-                                                    </div><!-- porto-sicon-box -->
-                                                </div>
-                                            </div>
+											<div class="wp-block-column is-layout-flow">
+												<div class="porto-sicon-box style_1 top-icon">
+													<div class="porto-sicon-top">
+														<div class="porto-just-icon-wrapper porto-icon none"
+															style="color:#0088cc;font-size:55px;"><i
+																class="porto-icon-online-support"></i></div>
+													</div>
+													<div class="porto-sicon-header">
+														<h3 class="porto-sicon-title"
+															style="font-weight:600;font-size:18px;line-height:20px;">
+															Online Support 24/7</h3>
+													</div> <!-- header -->
+													<div class="porto-sicon-description"
+														style="font-size:15px;line-height:27px;">Lorem Ipsum is
+														simply dummy text of the printing and typesetting industry.
+														Lorem Ipsum has been the industr.</div> <!-- description -->
+												</div><!-- porto-sicon-box -->
+											</div>
+										</div>
 									</div>
 
 								</div>
@@ -766,11 +798,13 @@
 										<div class="wp-block-column text-center text-md-start py-2 is-layout-flow">
 											<h5 class="porto-heading coupon-sale-text coupon-sale-light-bg m-b-sm text-md-start"
 												style="font-size:.7rem;font-weight:700;line-height:1.4;text-align:center;">
-												<b>Exclusive COUPON</b></h5>
+												<b>Exclusive COUPON</b>
+											</h5>
 
 											<h5 class="porto-heading mb-0 coupon-sale-text d-inline-block"
 												style="font-size:1rem;font-weight:700;line-height:1;color:#ffffff;">
-												<i>UP TO</i><b>$100</b> OFF</h5>
+												<i>UP TO</i><b>$100</b> OFF
+											</h5>
 										</div>
 									</div>
 

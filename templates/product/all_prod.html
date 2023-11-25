@@ -102,84 +102,89 @@
                                 data-product_layout="product-default">
                                 {% for i in show_prod %}
                                 <li
-											class="product-col product-default product type-product post-1364 status-publish instock product_cat-caps product_cat-hoodies product_cat-shoes product_cat-watches product_tag-shirt product_tag-skirt has-post-thumbnail downloadable shipping-taxable purchasable product-type-simple">
-											<div class="product-inner">
+                                    class="product-col product-default product type-product post-1364 status-publish instock product_cat-caps product_cat-hoodies product_cat-shoes product_cat-watches product_tag-shirt product_tag-skirt has-post-thumbnail downloadable shipping-taxable purchasable product-type-simple">
+                                    <div class="product-inner">
 
-												<div class="product-image">
+                                        <div class="product-image">
 
-													<a href="{% url 'prod_view' i.id %}"
-														aria-label="product">
-														<div class="inner"><img width="300" height="300"
-																src="{{i.prod_img.url}}"
-																class=" wp-post-image" alt="" decoding="async"
-																loading="lazy" /></div>
-													</a>
-												</div>
+                                            <a href="{% url 'prod_view' i.id %}" aria-label="product">
+                                                <div class="inner"><img width="300" height="300"
+                                                        src="{{i.prod_img.url}}" class=" wp-post-image" alt=""
+                                                        decoding="async" loading="lazy" /></div>
+                                            </a>
+                                        </div>
 
-												<div class="product-content">
-													
-													<a class="product-loop-title"
-														href="{% url 'prod_view' i.id %}">
-														<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
-													</a>
+                                        <div class="product-content">
+
+                                            <a class="product-loop-title" href="{% url 'prod_view' i.id %}">
+                                                <h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
+                                            </a>
 
 
 
-													<div class="rating-wrap">
-														<div class="rating-content">
-															<div class="star-rating" title="0"><span
-																	style="width:0%"><strong class="rating">0</strong>
-																	out of 5</span></div>
-														</div>
-													</div>
+                                            {% if i.avg_rating_star %}
+                                            <div class="rating-wrap">
+                                                <div style="font-size: 18px;" title="0">
+                                                    {{i.avg_rating_star}}
+                                                    <!-- <span style="width:0%">
+																		<strong class="rating">0</strong> out of 5 </span> -->
+                                                </div>
+                                            </div>
+                                            {% else %}
+                                            <div class="rating-wrap">
+                                                <div class="rating-content">
+                                                    <div class="star-rating" title="0"><span style="width:0%"><strong
+                                                                class="rating">0</strong> out of
+                                                            5</span></div>
+                                                </div>
+                                            </div>
+                                            {% endif %}
 
 
-													<span class="price"><span
-															class="woocommerce-Price-amount amount"><bdi><span
-																	class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></span>
+                                            <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span
+                                                            class="woocommerce-Price-currencySymbol">৳
+                                                        </span>{{i.price}}</bdi></span></span>
 
-													<div class="add-links-wrap">
-														<div class="add-links clearfix">
-															<a href="{% url 'add_to_cart' i.id %}" 
-																class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
-																
-																
-																 rel="nofollow">Add to cart</a>
-															<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1364  wishlist-fragment on-first-load">
+                                            <div class="add-links-wrap">
+                                                <div class="add-links clearfix">
+                                                    <a href="{% url 'add_to_cart' i.id %}"
+                                                        class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                        rel="nofollow">Add to cart</a>
+                                                    <div
+                                                        class="yith-wcwl-add-to-wishlist add-to-wishlist-1364  wishlist-fragment on-first-load">
 
 
-																<div class="yith-wcwl-add-button">
-                                                                
-                                                                
-																	<a href="{% url 'add_to_wishlist' i.id %}"
-																		class="add_to_wishlist single_add_to_wishlist"
-																		data-product-id="1364"
-																		data-product-type="simple"
-																		data-original-product-id="1364"
-																		data-title="Add to Wishlist" rel="nofollow">
-																		<span>Add to Wishlist</span>
-																	</a>
-																</div> 
-                                                                
+                                                        <div class="yith-wcwl-add-button">
 
-																<!-- COUNT TEXT -->
 
-															</div>
-									
-                                                            <!-- <div
+                                                            <a href="{% url 'add_to_wishlist' i.id %}"
+                                                                class="add_to_wishlist single_add_to_wishlist"
+                                                                data-product-id="1364" data-product-type="simple"
+                                                                data-original-product-id="1364"
+                                                                data-title="Add to Wishlist" rel="nofollow">
+                                                                <span>Add to Wishlist</span>
+                                                            </a>
+                                                        </div>
+
+
+                                                        <!-- COUNT TEXT -->
+
+                                                    </div>
+
+                                                    <!-- <div
                                                              class="quickview" data-id="1364" title="Quick View">
 																Quick View
                                                                 </div> -->
-														</div>
-													</div>
-												</div>
-											</div>
-										</li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                                 {% endfor %}
 
-                                
 
-                                
+
+
                             </ul>
                         </div>
                         <div class="shop-loop-after clearfix">
@@ -221,7 +226,7 @@
                             class="widget woocommerce widget_product_categories">
                             <h3 class="widget-title">Categories</h3>
                             <ul class="product-categories">
-                            {% for i in show_cat %}
+                                {% for i in show_cat %}
                                 <li class="cat-item cat-item-75 cat-parent"><a
                                         href="{% url 'all_prod' i.id %}">{{i.name}}</a> <span
                                         class="count">({{i.num_products}})</span>
@@ -355,11 +360,10 @@
                                                         <a aria-label="product" class="product-image"
                                                             href="../product/ultimate-bluetooth-speaker/index.html"
                                                             title="Ultimate 3D Bluetooth Speaker">
-                                                            <div class="inner img-effect"><img
-                                                                    src="{{i.prod_img.url}}"
+                                                            <div class="inner img-effect"><img src="{{i.prod_img.url}}"
                                                                     alt="" width="85" height="85" /><img
-                                                                    src="{{i.sub_prod_img1.url}}"
-                                                                    alt="" width="85" height="85" class="hover-image" />
+                                                                    src="{{i.sub_prod_img1.url}}" alt="" width="85"
+                                                                    height="85" class="hover-image" />
                                                             </div>
                                                         </a>
 
@@ -373,9 +377,9 @@
                                                                     style="width:100%"><strong
                                                                         class="rating">5.00</strong> out of
                                                                     5</span></div> <span
-                                                                
                                                                 class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span>
+                                                                        class="woocommerce-Price-currencySymbol">৳
+                                                                    </span>{{i.price}}</bdi></span>
                                                         </div>
 
                                                     </li>
@@ -393,11 +397,10 @@
                                                         <a aria-label="product" class="product-image"
                                                             href="../product/ultimate-bluetooth-speaker/index.html"
                                                             title="Ultimate 3D Bluetooth Speaker">
-                                                            <div class="inner img-effect"><img
-                                                                    src="{{i.prod_img.url}}"
+                                                            <div class="inner img-effect"><img src="{{i.prod_img.url}}"
                                                                     alt="" width="85" height="85" /><img
-                                                                    src="{{i.sub_prod_img1.url}}"
-                                                                    alt="" width="85" height="85" class="hover-image" />
+                                                                    src="{{i.sub_prod_img1.url}}" alt="" width="85"
+                                                                    height="85" class="hover-image" />
                                                             </div>
                                                         </a>
 
@@ -411,9 +414,9 @@
                                                                     style="width:100%"><strong
                                                                         class="rating">5.00</strong> out of
                                                                     5</span></div> <span
-                                                                
                                                                 class="woocommerce-Price-amount amount"><bdi><span
-                                                                        class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span>
+                                                                        class="woocommerce-Price-currencySymbol">৳
+                                                                    </span>{{i.price}}</bdi></span>
                                                         </div>
 
                                                     </li>
