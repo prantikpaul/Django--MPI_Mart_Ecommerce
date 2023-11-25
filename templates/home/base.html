@@ -1854,8 +1854,10 @@
 									class="share-facebook" href="#" title="Facebook"></a>
 								<a target="_blank" rel="nofollow noopener noreferrer" class="share-twitter" href="#"
 									title="Twitter"></a>
-								<a target="_blank" rel="nofollow noopener noreferrer" cheader-row containerlass="share-instagram" href="#"
-									title="Instagram"></a>
+									<a target="_blank" rel="nofollow noopener noreferrer" class="share-instagram" href="#"
+									title="Twitter"></a>
+								<!-- <a target="_blank" rel="nofollow noopener noreferrer" cheader-row containerlass="share-instagram" href="#"
+									title="Instagram"></a> -->
 							</div>
 						</div>
 					</div>
@@ -2369,11 +2371,11 @@
 				<span class="text"><input name="search" type="text" value="" placeholder="Search&hellip;"
 						autocomplete="off" /></span>
 				<input type="hidden" name="post_type" value="product" />
-				<select name='product_cat' id='product_cat_mobile' class='cat'>
-					<option value='0'>All Categories</option>
-					{% for i in show_cat %}
+				<select style="width: 2px;" name='product_cat' id='product_cat_mobile' class='cat'>
+					<option value='0'></option>
+					<!-- {% for i in show_cat %}
 					<option class="level-0" value="{{i.id}}">{{i.name}}</option>
-					{% endfor %}
+					{% endfor %} -->
 				</select>
 				<span class="button-wrap">
 					<button class="btn btn-special" title="Search" type="submit">

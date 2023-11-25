@@ -62,4 +62,18 @@ def empty_search(request):
     FEATURED_2=product.objects.filter(featured_prod=True)[4:7]
     #for showing featured items -----------------------------------------
 
+        #for search bar --------------------------------------------------------
+    try:
+        if request.method=='GET':
+            pp=request.GET['search'] #geting prod name
+            rr=int(request.GET['product_cat']) # get category name
+            
+            if pp :
+                print('okkk')
+                return redirect('search',pp,rr)
+    except:
+        pass
+    
+    #for search bar --------------------------------------------------------
+    
     return render(request,'product/empty_search.html',locals())
