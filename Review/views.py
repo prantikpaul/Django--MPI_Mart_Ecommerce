@@ -73,6 +73,7 @@ def prod_avg_rater(request,id):
     
             if rrr: #upload product avg data to the product model
                 rrr.avg_rating_star=int_rr
+                rrr.avg_rating=rating
                 rrr.save()
         
         elif count > 1 :
@@ -103,6 +104,7 @@ def prod_avg_rater(request,id):
     
             if rrr: #upload product avg data to the product model
                 rrr.avg_rating_star=int_rr
+                rrr.avg_rating=rounded_number
                 rrr.save()
                         
 

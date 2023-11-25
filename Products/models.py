@@ -25,6 +25,7 @@ class product(models.Model):
     Best_selling_prod=models.BooleanField(default=False)
     created_at=models.DateTimeField(auto_now_add=True)
     avg_rating_star=models.CharField(max_length=10,blank=True,null=True)
+    avg_rating=models.IntegerField(default=0)
     
 
     def __str__(self):

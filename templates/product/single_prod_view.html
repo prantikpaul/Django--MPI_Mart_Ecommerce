@@ -102,6 +102,17 @@
 											{{i.name}} </h2>
 
 										<div class="woocommerce-product-rating">
+											{% if i.avg_rating_star %}
+											<div style="font-size: 30px;" title="0">{{i.avg_rating_star}}
+												<!-- <span style="width:0%">
+													<strong class="rating">0</strong> out of 5 </span> -->
+											</div>
+											<div class="review-link noreview">
+												<a href="#review_form" class="woocommerce-write-review-link"
+													rel="nofollow">( {{i.avg_rating}} out of 5 )</a>
+											</div>
+											
+											{% else %}
 											<div class="star-rating" title="0">
 												<span style="width:0%">
 													<strong class="rating">0</strong> out of 5 </span>
@@ -110,6 +121,7 @@
 												<a href="#review_form" class="woocommerce-write-review-link"
 													rel="nofollow">( There are no reviews yet. )</a>
 											</div>
+											{% endif %}
 										</div>
 										<p class="price"><span class="woocommerce-Price-amount amount"><bdi><span
 														class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span>
