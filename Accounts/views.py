@@ -124,3 +124,41 @@ def logout(request):
      
 
     return redirect ('index')
+
+def forget_pass(request):
+     otp=random.randint(111111,999999)
+     if request.method=='POST':
+        email=request.POST['email']
+
+        if email :
+            try:
+                pp = User.objects.get(email=email) #email diye user name ber kora
+                if pp:
+                    # print(pp)
+                    rr = Profile.objects.get(user=pp) #username diye profile ber kora
+                    rr.otp=otp
+                    rr.save()
+                    send_mail_forget_pass(email,otp)
+                    
+                    # print(rr)
+
+                    return redirect('verfiy_otppp')
+
+            except:
+                messages.warning(request,"No User Found !!")
+            
+
+        
+                
+        else:
+            messages.warning(request,"Email Didn't matached")
+
+     
+     return render (request,'account/forget_pass.html',locals())
+
+def send_mail_forget_pass(Email, otp):
+    subject = "Password Reset OTP"
+    message = f'Hi this is your OTP : {otp}'
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [Email]
+    send_mail(subject, message, email_from, recipient_list)
