@@ -134,15 +134,15 @@ def forget_pass(request):
             try:
                 pp = User.objects.get(email=email) #email diye user name ber kora
                 if pp:
-                    # print(pp)
+                    print(pp)
                     rr = Profile.objects.get(user=pp) #username diye profile ber kora
                     rr.otp=otp
                     rr.save()
-                    send_mail_forget_pass(email,otp)
+                    # send_mail_forget_pass(email,otp)
                     
-                    # print(rr)
+                    print(rr)
 
-                    return redirect('verfiy_otppp')
+                    return redirect('forget_pass_otp')
 
             except:
                 messages.warning(request,"No User Found !!")
@@ -162,3 +162,14 @@ def send_mail_forget_pass(Email, otp):
     email_from = settings.EMAIL_HOST_USER
     recipient_list = [Email]
     send_mail(subject, message, email_from, recipient_list)
+
+def forget_pass_otp(requset):
+     
+
+
+     return render(requset,'account/forget_pass_otp.html',locals())
+
+def forget_pass_confirm(request):
+     
+
+     return render (request,'account/forget_pass_confirm.html',locals())
