@@ -6,6 +6,7 @@ from .models import Profile
 import uuid
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth import update_session_auth_hash
 # Create your views here.
 
 def login(request):
@@ -163,13 +164,45 @@ def send_mail_forget_pass(Email, otp):
     recipient_list = [Email]
     send_mail(subject, message, email_from, recipient_list)
 
-def forget_pass_otp(requset):
+def forget_pass_otp(request):
+    
+    if request.method=='POST':
+        otp=request.POST['otp']
+
+        if otp :
+            try:
+                get_prof=Profile.objects.get(otp=otp)
+                if get_prof:
+                    return redirect('forget_pass_confirm',get_prof.user.id)
+            except:
+                messages.warning(request,"OTP Didn't matached")
+
+        else:
+            messages.warning(request,"Please Enter Your OTP")
+
      
 
 
-     return render(requset,'account/forget_pass_otp.html',locals())
+    return render(request,'account/forget_pass_otp.html',locals())
 
-def forget_pass_confirm(request):
-     
+def forget_pass_confirm(request,id):
+     if request.method=='POST':
+        ppr=User.objects.get(id=id)
+        Pass=request.POST['pass']
+        Cpass=request.POST['cpass']
+        if Pass and Cpass :
+            if Pass==Cpass:
+                if len(Pass)>7:
+                    ppr.set_password(Pass)
+                    ppr.save()
+                    update_session_auth_hash(request,ppr)
+                    messages.success(request,'Password Changed Successfully')
+                    return redirect ('login')
+                else:
+                        messages.warning(request, "Password Must contain atleast 8 letters !!")
+            else:
+                messages.warning(request, "Your Password Didn't Match !!")
+        else:
+                messages.warning(request, "Please Enter Password !!")
 
      return render (request,'account/forget_pass_confirm.html',locals())

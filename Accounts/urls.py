@@ -10,7 +10,7 @@ urlpatterns = [
     path('verify_token/<auth_token>/',verify,name='verify'),
     path('forget_pass/',forget_pass,name='forget_pass'),
     path('forget_pass_otp/',forget_pass_otp,name='forget_pass_otp'),
-    path('forget_pass_confirm/',forget_pass_confirm,name='forget_pass_confirm'),
+    path('forget_pass_confirm/<id>/',forget_pass_confirm,name='forget_pass_confirm'),
 
 
 
