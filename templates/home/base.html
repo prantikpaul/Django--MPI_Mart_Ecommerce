@@ -1936,21 +1936,37 @@
 							<a href="{% url 'wishlist_empty' %}" title="Wishlist" class="my-wishlist"><i
 									class="porto-icon-wishlist-2"></i><span class="wishlist-count">0</span></a>
 							{% endif %}
+							<style>
+							.minicart-iconn {
+									content: "\e700";
+									display: inline-block;
+															
+									width: 30px;
+									/* Adjust the width as needed */
+									height: 26px;
+									/* Adjust the height as needed */
+									background-image: url('{% static 'cccc.png' %}');
+									background-repeat: no-repeat;
 
+									}
+							</style>
 							<div id="mini-cart" class="mini-cart  minicart-offcanvas">
 								{% if user.is_authenticated %}
 								<a href="{% url 'view_cart' %}">
 									<div class="cart-head">
-										<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
-												class="cart-items"><i
-													class="wishlist-count">{{show_len_cart}}</i></span></span><span
+								{% if show_len_cart %}
+										<span class="cart-icon"><i class="minicart-iconn porto-icon-cart-thick"></i><span class="cart-items">
+								{% else %}
+										<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span class="cart-items">
+								{% endif %}
+												<i class="wishlist-count">{{show_len_cart}}</i></span></span><span
 											class="cart-items-text"></span>
 									</div>
 								</a>
 								{% else %}
 								<a href="{% url 'empty_cart' %}">
 									<div class="cart-head">
-										<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
+										<span class="cart-icon"><i class="minicart-iconn porto-icon-cart-thick"></i><span
 												class="cart-items"><i class="wishlist-count">0</i></span></span><span
 											class="cart-items-text"></span>
 									</div>
