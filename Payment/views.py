@@ -15,7 +15,7 @@ def payment(request,id):
         'tran_id': "tran_12345",
         'success_url': "http://127.0.0.1:8000/Payment/born_To_redirect/",
         # if transaction is succesful, user will be redirected here
-        'fail_url': "http://127.0.0.1:8000/cart/pay_failed/",  # if transaction is failed, user will be redirected here
+        'fail_url': "http://127.0.0.1:8000/Payment/payment_failed/",  # if transaction is failed, user will be redirected here
         # 'cancel_url': "http://127.0.0.1:8000/payment-cancelled",
         # after user cancels the transaction, will be redirected here
         'emi_option': "0",
@@ -42,3 +42,9 @@ def payment(request,id):
 def born_To_redirect(request):
     
     return redirect ('order_success')
+
+@csrf_exempt
+def payment_failed(request):
+    
+
+    return render (request,'payment/payment_failed.html',locals())

@@ -1,0 +1,55 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Failed{% endblock %}
+
+{% block body %}
+  <style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.containerp {
+  position: relative;
+  height: 60vh; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.imgg {
+  /* Additional styles for image size, if needed */
+  max-width: 100%;
+  height: 70px;
+  
+}
+
+h1 {
+
+  font-size: 20px;
+  /* Additional styles for heading */
+}
+h2 {
+
+  font-size: 15px;
+  /* Additional styles for heading */
+}
+
+
+    </style>
+</head>
+<body>
+
+<div class="containerp">
+<br>
+<br>
+<br>
+    <img class="imgg"  src="{% static 'xx.jpg'%}" alt="">
+    <h1>Payment Failed !</h1>
+    <h2>Please Try Again</h2>
+    <a href="{% url 'index' %}">
+    <button>Return To Home</button>
+    </a>
+</div>
+{% endblock %}

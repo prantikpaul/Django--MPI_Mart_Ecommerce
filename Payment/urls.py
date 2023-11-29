@@ -4,5 +4,6 @@ from .views import *
 urlpatterns = [
     path('payment/<id>/',payment,name='payment'),
     path('born_To_redirect/',born_To_redirect,name='born_To_redirect'),
+    path('payment_failed/',payment_failed,name='payment_failed'),
 
 ]
