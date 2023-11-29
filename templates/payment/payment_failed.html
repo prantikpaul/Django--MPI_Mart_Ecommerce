@@ -52,4 +52,11 @@ h2 {
     <button>Return To Home</button>
     </a>
 </div>
+<script>
+        setTimeout(function() {
+            // Redirect using JavaScript after the delay
+            window.location.href = '{% url 'index' %}';
+        }, 3000); // Delay in milliseconds (5 seconds)
+    </script>
+
 {% endblock %}
