@@ -41,7 +41,7 @@ def payment(request,id):
 @csrf_exempt
 def born_To_redirect(request):
     
-    return redirect ('order_success')
+    return redirect ('order_save')
 
 @csrf_exempt
 def payment_failed(request):

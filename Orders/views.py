@@ -58,3 +58,9 @@ def order_success(request):
     
 
     return render(request,'order/order_success.html',locals())
+
+
+def order_save(request):
+    
+
+    return redirect('order_success')

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import product
+from .models import product,category
 from Review.models import prod_review
 
 # Create your views here.
@@ -8,6 +8,12 @@ def all_prod(request,id):
     show_prod=product.objects.filter(category=id).order_by('-created_at')
     FEATURED_1=product.objects.filter(featured_prod=True)[:3]
     FEATURED_2=product.objects.filter(Best_selling_prod=True)[4:7]
+
+    show_cat_nm=category.objects.filter(id=id) #to show category name in title 
+    rrr=''
+    for i in show_cat_nm: 
+        rrr=i.name
+
 
         #for search bar --------------------------------------------------------
     try:
@@ -29,6 +35,11 @@ def all_prod(request,id):
 
 def prod_view(request,id):
     show_signl_prod=product.objects.filter(id=id)
+
+    ppp = ''
+
+    for i in show_signl_prod : #to show title name of that product 
+        ppp=i.name
 
     show_rating=prod_review.objects.filter(prod=id)
     count_review = 0  # count how many reviews this prod has
