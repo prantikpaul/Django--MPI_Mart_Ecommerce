@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from Accounts.models import Profile
 from Cart.models import cart
+from .models import *
+import random
 
 # Create your views here.
 
@@ -49,7 +51,7 @@ def place_order(request,id):
         if pp =='payment_online':
             return redirect ('payment',id)
         else:
-            return redirect ('order_success')
+            return redirect ('order_save')
     
 
     return redirect (request.META['HTTP_REFERER'])
@@ -61,6 +63,42 @@ def order_success(request):
 
 
 def order_save(request):
+    get_cart=cart.objects.filter(user=request.user)
     
+    total_imt=0
+    total=0
+    for i in get_cart:
+        total+=i.product.price*i.quantity
+        total_imt+=i.quantity
+    print(total)
+    print(total_imt)
+
+    ord_no=random.randint(1111,9999)
+    print(ord_no)
+    ppp=Cart_order.objects.create(
+        user=request.user,
+        order_no=ord_no,
+        total=total,
+        total_item=total_imt,
+    )
+    ppp.save()
+
+    for i in get_cart:
+        oders=Orders.objects.create(
+            order_by_user=ppp,
+            order_no=ord_no,
+            item=i.product.name,
+            qyt=i.quantity,
+            price=i.product.price,
+            total=total,
+        )
+        oders.save()
+
+    get_cart.delete()
 
     return redirect('order_success')
+
+def order_details(request):
+    
+
+    return render(request,'order/order_details.html')

@@ -22,7 +22,7 @@ class Cart_order(models.Model):
     
 
 class Orders(models.Model):
-    order_items=models.ForeignKey(Cart_order,on_delete=models.CASCADE)
+    order_by_user=models.ForeignKey(Cart_order,on_delete=models.CASCADE)
     order_no=models.IntegerField()
     item=models.CharField(max_length=200)
     qyt=models.IntegerField()
@@ -31,4 +31,4 @@ class Orders(models.Model):
     order_at=models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.order_items.user.first_name+' '+self.order_items.user.last_name
+        return self.order_by_user.user.first_name+' '+self.order_by_user.user.last_name

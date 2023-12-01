@@ -100,27 +100,16 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    {% for i in get_cart_order %}
                                                         <tr>
-                                                            <td>#1357</td>
-                                                            <td>March 45, 2020</td>
-                                                            <td>Processing</td>
-                                                            <td>$125.00 for 2 item</td>
-                                                            <td><a href="#" class="btn-small d-block">View</a></td>
+                                                            <td>#{{i.order_no}}</td>
+                                                            <td>{{i.order_date}}</td>
+                                                            <td>{{i.order_status}}</td>
+                                                            <td>৳{{i.total}} for {{i.total_item}} item</td>
+                                                            <td><a href="{% url 'order_details' %}" class="btn-small d-block">View</a></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>#2468</td>
-                                                            <td>June 29, 2020</td>
-                                                            <td>Completed</td>
-                                                            <td>$364.00 for 5 item</td>
-                                                            <td><a href="#" class="btn-small d-block">View</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>#2366</td>
-                                                            <td>August 02, 2020</td>
-                                                            <td>Completed</td>
-                                                            <td>$280.00 for 3 item</td>
-                                                            <td><a href="#" class="btn-small d-block">View</a></td>
-                                                        </tr>
+                                                    {% endfor %}
+                                                
                                                     </tbody>
                                                     <br>
                                                 </table>
