@@ -98,7 +98,10 @@ def order_save(request):
 
     return redirect('order_success')
 
-def order_details(request):
-    
+def order_details(request,id):
+    show_uname=request.user
+    show_order_details=Orders.objects.filter(order_no=id) #filter order by order no .... 
+    show_order_total=Orders.objects.filter(order_no=id)[:1] #total and etc for loop diye show korar jonno [1] bar loop fixed kora hoise
+    # print(show_order_details)
 
-    return render(request,'order/order_details.html')
+    return render(request,'order/order_details.html',locals())

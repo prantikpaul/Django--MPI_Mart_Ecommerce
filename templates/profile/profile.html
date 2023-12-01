@@ -106,7 +106,7 @@
                                                             <td>{{i.order_date}}</td>
                                                             <td>{{i.order_status}}</td>
                                                             <td>৳{{i.total}} for {{i.total_item}} item</td>
-                                                            <td><a href="{% url 'order_details' %}" class="btn-small d-block">View</a></td>
+                                                            <td><a href="{% url 'order_details' i.order_no %}" class="btn-small d-block">View</a></td>
                                                         </tr>
                                                     {% endfor %}
                                                 

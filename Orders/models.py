@@ -32,3 +32,6 @@ class Orders(models.Model):
 
     def __str__(self):
         return self.order_by_user.user.first_name+' '+self.order_by_user.user.last_name
+    
+    def total_price(self) :
+       return self.price*self.qyt
