@@ -1,0 +1,254 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+
+
+
+
+<section class="page-top page-header-6">
+	<div class="container hide-title">
+		<div class="row">
+			<div class="col-lg-12 clearfix">
+				<div class="pt-right d-none">
+					<h1 class="page-title">Blog</h1>
+				</div>
+				<div class="breadcrumbs-wrap pt-left">
+					<ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+						<li class="home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+								itemprop="item" href="{% url 'index' %}" title="Go to Home Page"><span
+									itemprop="name">Home</span></a>
+							<meta itemprop="position" content="1" /><i class="delimiter delimiter-2"></i>
+						</li>
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span
+								itemprop="name">Blog</span>
+							<meta itemprop="position" content="2" />
+							<meta itemscope itemtype="https://schema.org/Thing" itemprop="item"
+								content="../wordpress/porto/gutenberg-shop4/blog/index.html">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div id="main" class="column2 column2-right-sidebar boxed"><!-- main -->
+
+	<div class="container">
+		<div class="row main-content-wrap">
+
+			<!-- main content -->
+			<div class="main-content col-lg-9">
+
+
+				<div id="content" role="main">
+					<div class="porto-ajax-load load-infinite" data-post_type="post" data-post_layout="grid">
+						<div class="blog-posts posts-grid blog-posts-date">
+							<div class="row posts-container">
+								<article
+									class="post post-grid col-md-6 col-lg-4 post-1354 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion category-model">
+									<div class="grid-box">
+										<div class="post-image single">
+											<div class="post-slideshow porto-carousel owl-carousel has-ccols ccols-1  nav-inside nav-inside-center nav-style-2 show-nav-hover"
+												data-plugin-options='{"nav":true}'>
+												<a href=""
+													aria-label="post image">
+													<div class="img-thumbnail">
+														<img width="265" height="198" src="{% static 'blog1.jpg' %}"
+															class="owl-lazy img-responsive" alt="" decoding="async"
+															loading="lazy" />
+													</div>
+												</a>
+											</div>
+
+											<div class="post-date"><span class="day">06</span><span
+													class="month">Jan</span><time datetime="2018-02-26">February
+													26, 2018</time></div>
+										</div>
+
+										<!-- Post meta before content -->
+										<div class="post-content">
+
+											<h4 class="entry-title"><a
+													href="">কিভাবে আপনার
+													প্রয়োজন অনুযায়ী মোবাইল পছন্দ করবেন ?</a></h4>
+											<span class="vcard" style="display: none;"><span class="fn"><a
+														href="" title="Posts by Joe Doe"
+														rel="author">Joe
+														Doe</a></span></span><span class="updated"
+												style="display:none">2020-03-27T03:37:19+00:00</span>
+											<p class="post-excerpt">Lorem ipsum dolor sit amet, consectetur
+												adipiscing elit. Cras non placerat mi. Etiam non tellus sem.
+												Aenean pretium convallis lorem,...</p>
+										</div>
+										<!-- Post meta after content -->
+										<div class="post-meta"><span class="meta-comments"><i
+													class="far fa-comments"></i><a
+													href=""
+													title="Comment on Top New Collection">0 Comments</a></span>
+										</div>
+										<div class="clearfix">
+											<a class="btn btn-xs btn-default text-xs text-uppercase btn-readmore"
+												href="">Read
+												more...</a>
+										</div>
+									</div>
+								</article>
+								<article
+									class="post post-grid col-md-6 col-lg-4 post-1354 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion category-model">
+									<div class="grid-box">
+										<div class="post-image single">
+											<div class="post-slideshow porto-carousel owl-carousel has-ccols ccols-1  nav-inside nav-inside-center nav-style-2 show-nav-hover"
+												data-plugin-options='{"nav":true}'>
+												<a href=""
+													aria-label="post image">
+													<div class="img-thumbnail">
+														<img width="265" height="198" src="{% static 'blog2.jpg' %}"
+															class="owl-lazy img-responsive" alt="" decoding="async"
+															loading="lazy" />
+													</div>
+												</a>
+											</div>
+
+											<div class="post-date"><span class="day">26</span><span
+													class="month">Dec</span><time datetime="2018-02-26">February
+													26, 2018</time></div>
+										</div>
+
+										<!-- Post meta before content -->
+										<div class="post-content">
+
+											<h4 class="entry-title"><a
+													href="">কিভাবে সঠিক
+													কনফিগারেশন এর পিসি বিল্ড করবেন ?</a></h4>
+											<span class="vcard" style="display: none;"><span class="fn"><a
+														href="" title="Posts by Joe Doe"
+														rel="author">Joe
+														Doe</a></span></span><span class="updated"
+												style="display:none">2020-03-27T03:37:19+00:00</span>
+											<p class="post-excerpt">একটি সঠিক কনফিগারেশনের পিসি বিল্ড করার জন্য কিছু
+												ধরণের তথ্য প্রয়োজন হয়,
+												<br> যেমনঃ
+
+												ব্যবহারের উদ্দেশ্য: পিসি ব্যবহার করা হবে কোন কাজে? গেমিং, ভিডিও এডিটিং,
+												অফিস কাজ, ডেভেলপমেন্ট ইত্যাদি। <br>
+
+												বাজেট: কত টাকার মধ্যে পিসি তৈরি করতে চান? ... <br>
+
+												
+											</p>
+										</div>
+										<!-- Post meta after content -->
+										<div class="post-meta"><span class="meta-comments"><i
+													class="far fa-comments"></i><a
+													href=""
+													title="Comment on Top New Collection">0 Comments</a></span>
+										</div>
+										<div class="clearfix">
+											<a class="btn btn-xs btn-default text-xs text-uppercase btn-readmore"
+												href="">Read
+												more...</a>
+										</div>
+									</div>
+								</article>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div><!-- end main content -->
+
+			<div class="sidebar-overlay"></div>
+			<div class="col-lg-3 sidebar porto-blog-sidebar right-sidebar mobile-sidebar"><!-- main sidebar -->
+				<div data-plugin-sticky
+					data-plugin-options="{&quot;autoInit&quot;: true, &quot;minWidth&quot;: 992, &quot;containerSelector&quot;: &quot;.main-content-wrap&quot;,&quot;autoFit&quot;:true, &quot;paddingOffsetBottom&quot;: 10}">
+					<div class="sidebar-toggle"><i class="fa"></i></div>
+					<div class="sidebar-content">
+						<aside id="categories-3" class="widget widget_categories">
+							<h3 class="widget-title">Blog Categories</h3>
+							<ul>
+								<li class="cat-item cat-item-15"><a href="">Articles</a>
+									<ul class='children'>
+										<li class="cat-item cat-item-16"><a
+												href="">Asides</a>
+										</li>
+									</ul>
+								</li>
+								<!-- <li class="cat-item cat-item-98"><a href="">Bag</a>
+								</li> -->
+								<li class="cat-item cat-item-96"><a href="">Fashion</a>
+								</li>
+								<li class="cat-item cat-item-97"><a href="">Model</a>
+								</li>
+								<li class="cat-item cat-item-99"><a
+										href="">Traveling</a>
+								</li>
+								<li class="cat-item cat-item-1"><a
+										href="">Uncategorized</a>
+								</li>
+							</ul>
+
+						</aside>
+						<!-- <aside id="recent_posts-widget-3" class="widget widget-recent-posts">
+							<h3 class="widget-title">Recent Posts</h3>
+							<div class="has-ccols has-ccols-spacing ccols-1 ccols-lg-1">
+								<div class="post-slide">
+									<div class="post-item-small">
+										<div class="post-image img-thumbnail">
+											<a href="" aria-label="post">
+												<img width="85" height="85"
+													src="../wp-content/uploads/sites/116/2018/02/shop4_post1-85x85.jpg"
+													alt="" />
+											</a>
+										</div>
+										<div class="post-item-content">
+											<h5 class="post-item-title"><a
+													href="../2018/02/26/post-format-standard/index.html">Top New
+													Collection</a></h5>
+											<span class="post-date">February 26, 2018</span>
+										</div>
+									</div>
+									<div class="post-item-small">
+										<div class="post-image img-thumbnail">
+											<a href="../2018/02/26/post-format-video/index.html" aria-label="post">
+												<img width="85" height="85"
+													src="../wp-content/uploads/sites/116/2018/02/shop4_post2-85x85.jpg"
+													alt="" />
+											</a>
+										</div>
+										<div class="post-item-content">
+											<h5 class="post-item-title"><a
+													href="../2018/02/26/post-format-video/index.html">Fashion
+													Trends</a></h5>
+											<span class="post-date">February 26, 2018</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</aside> -->
+						<!-- <aside id="tag_cloud-3" class="widget widget_tag_cloud">
+							<h3 class="widget-title">Tags</h3>
+							<div class="tagcloud"><a href=""
+									class="tag-cloud-link tag-link-24 tag-link-position-1" style="font-size: 8pt;"
+									aria-label="Articles (1 item)">Articles</a>
+								<a href="../tag/chat/index.html" class="tag-cloud-link tag-link-26 tag-link-position-2"
+									style="font-size: 8pt;" aria-label="Chat (1 item)">Chat</a>
+							</div>
+						</aside> -->
+					</div>
+				</div>
+			</div><!-- end main sidebar -->
+
+
+		</div>
+	</div>
+
+
+
+</div><!-- end main -->
+{% endblock %}

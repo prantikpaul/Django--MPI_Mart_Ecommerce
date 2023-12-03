@@ -1966,7 +1966,7 @@
 								{% else %}
 								<a href="{% url 'empty_cart' %}">
 									<div class="cart-head">
-										<span class="cart-icon"><i class="minicart-iconn porto-icon-cart-thick"></i><span
+										<span class="cart-icon"><i class="minicart-icon porto-icon-cart-thick"></i><span
 												class="cart-items"><i class="wishlist-count">0</i></span></span><span
 											class="cart-items-text"></span>
 									</div>
@@ -2003,7 +2003,7 @@
 										</div>
 									</div>
 								</li>
-								<li id="nav-menu-item-2002"
+								<!-- <li id="nav-menu-item-2002"
 									class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children has-sub wide col-3">
 									<a href="product/brown-women-casual-handbag/index.html">Products</a>
 									<div class="popup" data-popup-mw="580">
@@ -2119,34 +2119,27 @@
 											</ul>
 										</div>
 									</div>
-								</li>
-								<li id="nav-menu-item-2020"
-									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub narrow">
-									<a class="nolink" href="#">Features</a>
-									<div class="popup">
-										<div class="inner" style="">
-											<ul class="sub-menu porto-narrow-sub-menu">
-												<li id="nav-menu-item-2021"
-													class="menu-item menu-item-type-custom menu-item-object-custom"
-													data-cols="1"><a
-														href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">Header
-														Builder &#038; Types<span class="tip" style="">NEW</span></a>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-								</li>
+								</li> -->
+								
 								<li id="nav-menu-item-847"
 									class="menu-item menu-item-type-post_type menu-item-object-page narrow"><a
-										href="blog/index.html">Blog</a></li>
+										href="{% url 'blog' %}">Blog</a></li>
 								<li id="nav-menu-item-1008"
 									class="menu-item menu-item-type-post_type menu-item-object-page narrow"><a
-										href="about-us/index.html">About Us</a></li>
-								<li id="nav-menu-item-1548"
-									class="menu-item menu-item-type-custom menu-item-object-custom narrow"><a
-										target="_blank"
-										href="https://www.portotheme.com/wordpress/porto/shortcodes/">Elements</a></li>
+										href="{% url 'about_us' %}">About Us</a></li>
+								<li id="nav-menu-item-1008"
+									class="menu-item menu-item-type-post_type menu-item-object-page narrow"><a
+										href="{% url 'contact_us' %}">Contact Us</a></li>
+								{% if user.is_authenticated %}
+								<li id="accordion-menu-item-1008" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+										href="{% url 'logout' %}">Logout</a></li>
+
+								
+								{% else %}
+								<li id="accordion-menu-item-1008" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+										href="{% url 'register' %}">Sign Up</a></li>
+								{% endif %}
+								
 							</ul>
 						</div>
 					</div>
@@ -2173,17 +2166,15 @@
 								<h3 class="widget-title">Contact Info</h3>
 								<div class="contact-info contact-info-block">
 									<ul class="contact-details">
-										<li><i class="far fa-dot-circle"></i> <strong>Address:</strong> <span>123 Street
-												Name, City, England</span></li>
-										<li><i class="fab fa-whatsapp"></i> <strong>Phone:</strong> <span>(123)
-												456-7890</span></li>
+										<li><i class="far fa-dot-circle"></i> <strong>Address:</strong> <span>Mymensingh City, Bangladesh</span></li>
+										<li><i class="fab fa-whatsapp"></i> <strong>Phone:</strong> <span>(+880)
+												1795018150</span></li>
 										<li><i class="far fa-envelope"></i> <strong>Email:</strong> <span><a
-													href="https://www.portotheme.com/cdn-cgi/l/email-protection#573a363e3b17322f363a273b327934383a"><span
+													href=""><span
 														class="__cf_email__"
-														data-cfemail="ec818d8580ac89948d819c8089c28f8381">[email&#160;protected]</span></a></span>
+														data-cfemail="ec818d8580ac89948d819c8089c28f8381">info@mpimart.com</span></a></span>
 										</li>
-										<li><i class="far fa-clock"></i> <strong>Working Days/Hours:</strong> <span>Mon
-												- Sun / 9:00 AM - 8:00 PM</span></li>
+										<li><i class="far fa-clock"></i> <strong>Working Days/Hours:</strong> <span>24/7</span></li>
 									</ul>
 								</div>
 
@@ -2209,12 +2200,12 @@
 										<li><a href="#">Order Tracking</a></li>
 										<li><a href="#">Shipping &#038; Delivery</a></li>
 										<li><a href="#">Orders History</a></li>
-										<li><a href="#">Advanced Search</a></li>
-										<li><a href="my-account/index.html">My Account</a></li>
+										<!-- <li><a href="#">Advanced Search</a></li> -->
+										<!-- <li><a href="my-account/index.html">My Account</a></li> -->
 										<li><a href="#">Careers</a></li>
 										<li><a href="#">About Us</a></li>
-										<li><a href="#">Corporate Sales</a></li>
-										<li><a href="#">Privacy</a></li>
+										<!-- <li><a href="#">Corporate Sales</a></li> -->
+										<!-- <li><a href="#">Privacy</a></li> -->
 									</ul>
 								</div>
 							</aside>
@@ -2223,39 +2214,13 @@
 							<aside id="woocommerce_product_tag_cloud-2"
 								class="widget woocommerce widget_product_tag_cloud">
 								<h3 class="widget-title">Popular Tags</h3>
-								<div class="tagcloud"><a href="product-tag/bag/index.html"
-										class="tag-cloud-link tag-link-33 tag-link-position-1" style="font-size: 8pt;"
-										aria-label="Bag (1 product)">Bag</a>
-									<a href="product-tag/black/index.html"
+								<div class="tagcloud">
+									{% for i in show_cat %}
+									<a href="{% url 'all_prod' i.id %}"
 										class="tag-cloud-link tag-link-120 tag-link-position-2" style="font-size: 8pt;"
-										aria-label="black (1 product)">black</a>
-									<a href="product-tag/blue/index.html"
-										class="tag-cloud-link tag-link-121 tag-link-position-3" style="font-size: 8pt;"
-										aria-label="blue (1 product)">blue</a>
-									<a href="product-tag/clothes/index.html"
-										class="tag-cloud-link tag-link-40 tag-link-position-4" style="font-size: 22pt;"
-										aria-label="Clothes (4 products)">Clothes</a>
-									<a href="product-tag/fashion/index.html"
-										class="tag-cloud-link tag-link-50 tag-link-position-5" style="font-size: 22pt;"
-										aria-label="Fashion (4 products)">Fashion</a>
-									<a href="product-tag/hub/index.html"
-										class="tag-cloud-link tag-link-53 tag-link-position-6" style="font-size: 8pt;"
-										aria-label="Hub (1 product)">Hub</a>
-									<a href="product-tag/shirt/index.html"
-										class="tag-cloud-link tag-link-67 tag-link-position-7" style="font-size: 8pt;"
-										aria-label="Shirt (1 product)">Shirt</a>
-									<a href="product-tag/shoes/index.html"
-										class="tag-cloud-link tag-link-119 tag-link-position-8" style="font-size: 8pt;"
-										aria-label="shoes (1 product)">shoes</a>
-									<a href="product-tag/skirt/index.html"
-										class="tag-cloud-link tag-link-68 tag-link-position-9" style="font-size: 8pt;"
-										aria-label="Skirt (1 product)">Skirt</a>
-									<a href="product-tag/sports/index.html"
-										class="tag-cloud-link tag-link-70 tag-link-position-10" style="font-size: 8pt;"
-										aria-label="Sports (1 product)">Sports</a>
-									<a href="product-tag/sweater/index.html"
-										class="tag-cloud-link tag-link-71 tag-link-position-11" style="font-size: 8pt;"
-										aria-label="Sweater (1 product)">Sweater</a>
+										aria-label="black (1 product)">{{i.name}}</a>
+									{% endfor %}
+									
 								</div>
 							</aside>
 						</div>
@@ -2271,10 +2236,10 @@
 											<p role="status" aria-live="polite" aria-atomic="true"></p>
 											<ul></ul>
 										</div>
-										<form
-											action="https://www.portotheme.com/wordpress/porto/gutenberg-shop4/#wpcf7-f1512-o1"
-											method="post" class="wpcf7-form init" aria-label="Contact form"
-											novalidate="novalidate" data-status="init">
+										<!-- <form
+											action=""
+											method="" class="wpcf7-form init" aria-label="Contact form"
+											novalidate="novalidate" data-status="init"> -->
 											<div style="display: none;">
 												<input type="hidden" name="_wpcf7" value="1512" />
 												<input type="hidden" name="_wpcf7_version" value="5.7.6" />
@@ -2299,7 +2264,7 @@
 												</div>
 											</div>
 											<div class="wpcf7-response-output" aria-hidden="true"></div>
-										</form>
+										<!-- </form> -->
 									</div>
 
 								</div>
@@ -2421,7 +2386,7 @@
 
 					</ul>
 				</li>
-				<li id="accordion-menu-item-2002"
+				<!-- <li id="accordion-menu-item-2002"
 					class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children has-sub">
 					<a href="product/brown-women-casual-handbag/index.html">Products</a>
 					<span class="arrow" role="button"></span>
@@ -2502,25 +2467,27 @@
 						<li id="accordion-menu-item-958"
 							class="menu-item menu-item-type-custom menu-item-object-custom hidden-item"></li>
 					</ul>
-				</li>
-				<li id="accordion-menu-item-2020"
-					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub"><a
-						class="nolink" href="#">Features</a>
-					<span class="arrow" role="button"></span>
-					<ul class="sub-menu">
-						<li id="accordion-menu-item-2021"
-							class="menu-item menu-item-type-custom menu-item-object-custom"><a
-								href="https://www.portotheme.com/wordpress/porto/shortcodes/headers/">Header Builder
-								&#038; Types<span class="tip" style="">NEW</span></a></li>
-
-					</ul>
-				</li>
-				<li id="accordion-menu-item-847" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-						href="blog/index.html">Blog</a></li>
+				</li> -->
+				
+				<li id="nav-menu-item-847"
+					class="menu-item menu-item-type-post_type menu-item-object-page narrow"><a
+						href="{% url 'blog' %}">Blog</a></li>
+				<li id="nav-menu-item-1008"
+					class="menu-item menu-item-type-post_type menu-item-object-page narrow"><a
+						href="{% url 'about_us' %}">About Us</a></li>
+				<li id="nav-menu-item-1008"
+					class="menu-item menu-item-type-post_type menu-item-object-page narrow"><a
+						href="{% url 'contact_us' %}">Contact Us</a></li>
+	{% if user.is_authenticated %}
 				<li id="accordion-menu-item-1008" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-						href="about-us/index.html">About Us</a></li>
-				<li id="accordion-menu-item-1548" class="menu-item menu-item-type-custom menu-item-object-custom"><a
-						target="_blank" href="https://www.portotheme.com/wordpress/porto/shortcodes/">Elements</a></li>
+						href="{% url 'logout' %}">Logout</a></li>
+
+				
+				{% else %}
+				<li id="accordion-menu-item-1008" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+						href="{% url 'register' %}">Sign Up</a></li>
+				{% endif %}
+				
 			</ul>
 		</div>
 		<!-- <div class="menu-custom-block"><a href="#">Special Offer!</a>
