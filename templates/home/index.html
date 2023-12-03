@@ -28,21 +28,21 @@
 
 
 
-							<!-- sliderrrrrrrrrrrr ------------------------------------------------------------ -->
+								<!-- sliderrrrrrrrrrrr ------------------------------------------------------------ -->
 
-									<!-- style="background:#f4f4f4;min-height:301px;min-width:862px;"><img decoding="async" loading="lazy" -->
+								<!-- style="background:#f4f4f4;min-height:301px;min-width:862px;"><img decoding="async" loading="lazy" -->
 
 
 								<div id="interactive-banner-wrap-wmi3" class="porto-ibanner mb-0"
-									style="background:#f4f4f4;min-height:291px; min-width:847px;"><img decoding="async" loading="lazy"
-										alt="Intro image" width="1920" height="500" class="porto-ibanner-img"
-										src="{% static 'pppv5.png'%}">
+									style="background:#f4f4f4;min-height:291px; min-width:847px;"><img decoding="async"
+										loading="lazy" alt="Intro image" width="1920" height="500"
+										class="porto-ibanner-img" src="{% static 'pppv5.png'%}">
 									<div class="porto-ibanner-desc no-padding d-flex">
 										<div class="container">
 											<div class="porto-ibanner-container">
 												<div
 													class="porto-ibanner-layer ps-xl-5 banner-pos-7f2b537194c1b41a52040ca8529bdbb6">
-													
+
 												</div>
 											</div>
 										</div>
@@ -145,7 +145,7 @@
 
 									<div class="wp-block-columns mb-0 is-layout-flex wp-container-4">
 										<div class="wp-block-column is-layout-flow">
-											<a href="#">
+											<a href="{% url 'prod_view' 46 %}">
 												<div id="interactive-banner-wrap-zmax"
 													class="porto-ibanner m-b-md hover-shadow porto-gb-e185c8ac827bb7495adce97d7696a13e"
 													style="background:#e7e7e7;min-height:175px;"><img decoding="async"
@@ -182,7 +182,7 @@
 
 
 										<div class="wp-block-column is-layout-flow">
-											<a href="#">
+											<a href="{% url 'prod_view' 47 %}">
 												<div id="interactive-banner-wrap-zmax"
 													class="porto-ibanner m-b-md hover-shadow porto-gb-e185c8ac827bb7495adce97d7696a13e"
 													style="background:#e7e7e7;min-height:175px;">
@@ -221,38 +221,39 @@
 
 
 										<div class="wp-block-column is-layout-flow">
-											<div id="interactive-banner-wrap-jbis"
-												class="porto-ibanner m-b-md hover-shadow"
-												style="background:#e7e7e7;min-height:175px;"><img decoding="async"
-													loading="lazy" alt="ads" width="360" height="175"
-													class="porto-ibanner-img"
-													src="{% static 'add3.png'%}">
-												<div class="porto-ibanner-desc no-padding d-flex">
-													<div
-														class="porto-ibanner-layer banner-pos-453f600e41656c08effa3b0165512714">
-														<!-- <h3 class="porto-heading mb-2"
-															style="font-size:1.5em;line-height:1;text-align:right;">
-															Handbags</h3>
+											<a href="{% url 'prod_view' 45 %}">
+												<div id="interactive-banner-wrap-jbis"
+													class="porto-ibanner m-b-md hover-shadow"
+													style="background:#e7e7e7;min-height:175px;"><img decoding="async"
+														loading="lazy" alt="ads" width="360" height="175"
+														class="porto-ibanner-img" src="{% static 'add3.png'%}">
+													<div class="porto-ibanner-desc no-padding d-flex">
+														<div
+															class="porto-ibanner-layer banner-pos-453f600e41656c08effa3b0165512714">
+															<!-- <h3 class="porto-heading mb-2"
+																style="font-size:1.5em;line-height:1;text-align:right;">
+																Handbags</h3>
 
-														<h4 class="porto-heading mb-2"
-															style="font-size:.9375em;font-weight:600;line-height:1.4;color:#ff7272;text-align:right;">
-															STARTING AT $99</h4>
+															<h4 class="porto-heading mb-2"
+																style="font-size:.9375em;font-weight:600;line-height:1.4;color:#ff7272;text-align:right;">
+																STARTING AT $99</h4>
 
-														<div class="porto-button text-right"><a aria-label="button"
-																class="btn btn-md btn-dark btn-modern"
-																href="#"><span>Shop Now</span></a></div>
-														<style>
-															.banner-pos-453f600e41656c08effa3b0165512714 {
-																right: 6%;
-																left: unset;
-																top: 50%;
-																bottom: unset;
-																transform: translateY(-50%);
-															}
-														</style> -->
+															<div class="porto-button text-right"><a aria-label="button"
+																	class="btn btn-md btn-dark btn-modern"
+																	href="#"><span>Shop Now</span></a></div>
+															<style>
+																.banner-pos-453f600e41656c08effa3b0165512714 {
+																	right: 6%;
+																	left: unset;
+																	top: 50%;
+																	bottom: unset;
+																	transform: translateY(-50%);
+																}
+															</style> -->
+														</div>
 													</div>
 												</div>
-											</div>
+											</a>
 										</div>
 									</div>
 
@@ -284,7 +285,8 @@
 																	aria-label="product">
 																	<div class="labels">
 																		{% if i.avg_rating %}
-																		<div class="onhot">rated {{i.avg_rating}} out of 5</div>
+																		<div class="onhot">rated {{i.avg_rating}} out of
+																			5</div>
 																		{% else %}
 																		<div class="onhot">FEATURED</div>SS
 																		{% endif %}
@@ -399,7 +401,8 @@
 																	aria-label="product">
 																	<div class="labels">
 																		{% if i.avg_rating %}
-																		<div class="onhot">rated {{i.avg_rating}} out of 5</div>
+																		<div class="onhot">rated {{i.avg_rating}} out of
+																			5</div>
 																		{% else %}
 																		<div class="onhot">NEW</div>SS
 																		{% endif %}
@@ -511,10 +514,11 @@
 																		aria-label="product">
 																		<div class="labels">
 																			{% if i.avg_rating %}
-																		<div class="onhot">rated {{i.avg_rating}} out of 5</div>
-																		{% else %}
-																		<div class="onhot">Best Selling</div>SS
-																		{% endif %}
+																			<div class="onhot">rated {{i.avg_rating}}
+																				out of 5</div>
+																			{% else %}
+																			<div class="onhot">Best Selling</div>SS
+																			{% endif %}
 
 																		</div>
 																		<div class="inner"><img width="300" height="300"
@@ -608,8 +612,9 @@
 												<div class="wp-block-column is-layout-flow" style="flex-basis:75%">
 													<h2 class="porto-heading mb-3 mb-sm-0"
 														style="font-size:1.275rem;line-height:1.2;color:#ffffff;">
-														<strong>মূল্য ছাড় !</strong>অনলাইনে পেমেন্ট করলেই পাচ্ছেন সর্বচ্চ ৩০% ছাড় !
-														
+														<strong>মূল্য ছাড় !</strong>অনলাইনে পেমেন্ট করলেই পাচ্ছেন
+														সর্বচ্চ ৩০% ছাড় !
+
 													</h2>
 												</div>
 
@@ -617,7 +622,8 @@
 
 												<div class="wp-block-column text-sm-end text-center is-layout-flow"
 													style="flex-basis:25%"><a aria-label="button"
-														class="btn btn-lg btn-light btn-modern" href="#"><span>এখনই অর্ডার করুন</span></a></div>
+														class="btn btn-lg btn-light btn-modern" href="#"><span>এখনই
+															অর্ডার করুন</span></a></div>
 											</div>
 
 										</div>
@@ -699,7 +705,9 @@
 															ফ্রি শিপিং</h3>
 													</div> <!-- header -->
 													<div class="porto-sicon-description"
-														style="font-size:15px;line-height:27px;">১০০০৳ টাকার উপর অর্ডার করলেই পাচ্ছেন ২৪ ঘন্টার ভেতর ফ্রি ডেলিভারী !</div> <!-- description -->
+														style="font-size:15px;line-height:27px;">১০০০৳ টাকার উপর অর্ডার
+														করলেই পাচ্ছেন ২৪ ঘন্টার ভেতর ফ্রি ডেলিভারী !</div>
+													<!-- description -->
 												</div><!-- porto-sicon-box -->
 											</div>
 
@@ -715,11 +723,12 @@
 													<div class="porto-sicon-header">
 														<h3 class="porto-sicon-title"
 															style="font-weight:600;font-size:18px;line-height:20px;">
-															১০০% মানি ব্যাক গ্যারান্টি </h3> 
+															১০০% মানি ব্যাক গ্যারান্টি </h3>
 													</div> <!-- header -->
 													<div class="porto-sicon-description"
-														style="font-size:15px;line-height:27px;">প্রোডাক্ট রিটার্ন করে পাবেন শতভাগ মানি ব্যাক !
-														 শর্ত সাপেক্ষে*</div> <!-- description -->
+														style="font-size:15px;line-height:27px;">প্রোডাক্ট রিটার্ন করে
+														পাবেন শতভাগ মানি ব্যাক !
+														শর্ত সাপেক্ষে*</div> <!-- description -->
 												</div><!-- porto-sicon-box -->
 											</div>
 
@@ -738,7 +747,8 @@
 															অনলাইন সাপোর্ট 24/7</h3>
 													</div> <!-- header -->
 													<div class="porto-sicon-description"
-														style="font-size:15px;line-height:27px;">যেকোনো সমস্যা সমাধানে আমাদের টিম ২৪/৭ সমাধান দিতে প্রস্তুত</div> <!-- description -->
+														style="font-size:15px;line-height:27px;">যেকোনো সমস্যা সমাধানে
+														আমাদের টিম ২৪/৭ সমাধান দিতে প্রস্তুত</div> <!-- description -->
 												</div><!-- porto-sicon-box -->
 											</div>
 										</div>
@@ -757,7 +767,8 @@
 										class="wp-block-columns mb-0 align-items-center justify-content-center is-layout-flex wp-container-15">
 										<div class="wp-block-column is-layout-flow">
 											<h3 class="porto-heading mb-0 py-2 text-center text-sm-end"
-												style="font-size:2.25rem;line-height:1.15;color:#ffffff;">অস্থির মূল্য<br>ছাড় !!</h3>
+												style="font-size:2.25rem;line-height:1.15;color:#ffffff;">অস্থির
+												মূল্য<br>ছাড় !!</h3>
 										</div>
 
 
@@ -809,38 +820,32 @@
 		<figure
 			class="wp-block-gallery has-nested-images columns-6 pt-4 pb-2 brand-gallery wp-block-gallery-16 is-layout-flex">
 			<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="150" height="65"
-					src="{% static 'aa (1).png'%}" alt=""
-					class="wp-image-1953" /></figure>
+					src="{% static 'aa (1).png'%}" alt="" class="wp-image-1953" /></figure>
 
 
 
 			<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="150" height="65"
-					src="{% static 'aa (2).png'%}" alt=""
-					class="wp-image-1954" /></figure>
+					src="{% static 'aa (2).png'%}" alt="" class="wp-image-1954" /></figure>
 
 
 
 			<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="150" height="65"
-					src="{% static 'aa (33).png'%}" alt=""
-					class="wp-image-1949" /></figure>
+					src="{% static 'aa (33).png'%}" alt="" class="wp-image-1949" /></figure>
 
 
 
 			<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="150" height="65"
-					src="{% static 'aa (4).png'%}" alt=""
-					class="wp-image-1950" /></figure>
+					src="{% static 'aa (4).png'%}" alt="" class="wp-image-1950" /></figure>
 
 
 
 			<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="150" height="65"
-					src="{% static 'aa (5).png'%}" alt=""
-					class="wp-image-1951" /></figure>
+					src="{% static 'aa (5).png'%}" alt="" class="wp-image-1951" /></figure>
 
 
 
 			<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="150" height="65"
-					src="{% static 'aa (6).png'%}" alt=""
-					class="wp-image-1952" /></figure>
+					src="{% static 'aa (6).png'%}" alt="" class="wp-image-1952" /></figure>
 		</figure>
 
 	</div>
