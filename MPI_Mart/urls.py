@@ -29,6 +29,7 @@ urlpatterns = [
     path('Review/', include('Review.urls')),
     path('Stuff_Panel/', include('Stuff_Panel.urls')),
     path('Wishlist/', include('Wishlist.urls')),
+    path('Others/', include('Others.urls')),
 ]
 from django.conf import settings
 from django.conf.urls.static import static
