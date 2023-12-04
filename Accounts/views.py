@@ -117,7 +117,7 @@ def verify_otp(request):
 def verify(request, auth_token):
     #verify using auth token
     profile_obj = Profile.objects.filter(auth_token=auth_token).first()
-    profile_obj.is_verified = True
+    profile_obj.is_token_verified = True
     profile_obj.save()
     messages.success(request, 'Your mail is verified')
     return redirect('login')
