@@ -156,26 +156,26 @@
 
 										<div class="product-share">
 											<div class="share-links"><a
-													href="https://www.facebook.com/sharer.php?u=https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/circled-speaker/"
+													href="https://www.facebook.com/sharer.php?u="
 													target="_blank" rel="noopener noreferrer nofollow" data-bs-tooltip
 													data-bs-placement='bottom' title="Facebook"
 													class="share-facebook">Facebook</a>
-												<a href="https://twitter.com/intent/tweet?text=Circled+Ultimate+3D+Speaker&amp;url=https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/circled-speaker/"
+												<a href="https://twitter.com/intent/tweet?text=Circled+Ultimate+3D+Speaker&amp;url="
 													target="_blank" rel="noopener noreferrer nofollow" data-bs-tooltip
 													data-bs-placement='bottom' title="Twitter"
 													class="share-twitter">Twitter</a>
-												<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/circled-speaker/&amp;title=Circled+Ultimate+3D+Speaker"
+												<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url="
 													target="_blank" rel="noopener noreferrer nofollow" data-bs-tooltip
 													data-bs-placement='bottom' title="LinkedIn"
 													class="share-linkedin">LinkedIn</a>
-												<a href="https://plus.google.com/share?url=https://www.portotheme.com/wordpress/porto/gutenberg-shop4/product/circled-speaker/"
+												<a href="https://plus.google.com/share?url="
 													target="_blank" rel="noopener noreferrer nofollow" data-bs-tooltip
 													data-bs-placement='bottom' title="Google +"
 													class="share-googleplus">Google +</a>
-												<a href="https://www.portotheme.com/cdn-cgi/l/email-protection#0e317d7b6c646b6d7a334d677c6d626b6a255b627a67636f7a6b253d4a255d7e6b6f656b7c286f637e356c616a7733667a7a7e7d342121797979207e617c7a617a666b636b206d61632179617c6a7e7c6b7d7d217e617c7a6121697b7a6b606c6b7c69237d66617e3a217e7c616a7b6d7a216d677c6d626b6a237d7e6b6f656b7c21"
+												<!-- <a href="https://www.portotheme.com/cdn-cgi/l/email-protection#0e317d7b6c646b6d7a334d677c6d626b6a255b627a67636f7a6b253d4a255d7e6b6f656b7c286f637e356c616a7733667a7a7e7d342121797979207e617c7a617a666b636b206d61632179617c6a7e7c6b7d7d217e617c7a6121697b7a6b606c6b7c69237d66617e3a217e7c616a7b6d7a216d677c6d626b6a237d7e6b6f656b7c21"
 													target="_blank" rel="noopener noreferrer nofollow" data-bs-tooltip
 													data-bs-placement='bottom' title="Email"
-													class="share-email">Email</a>
+													class="share-email">Email</a> -->
 											</div>
 										</div>
 										<div
@@ -211,9 +211,9 @@
 									<li class="description_tab" id="tab-title-description" role="tab"
 												aria-controls="tab-description">
 												Description </li>
-										<li class="additional_information_tab" id="tab-title-additional_information"
+										<!-- <li class="additional_information_tab" id="tab-title-additional_information"
 										role="tab" aria-controls="tab-additional_information">
-										Additional information </li>
+										Additional information </li> -->
 									
 
 								</ul>
@@ -386,7 +386,7 @@
 									
 
 
-									<div class="tab-content" id="tab-additional_information">
+									<!-- <div class="tab-content" id="tab-additional_information">
 
 										<h2>Additional information</h2>
 
@@ -396,7 +396,7 @@
 												class="woocommerce-product-attributes-item woocommerce-product-attributes-item--weight">
 												<th class="woocommerce-product-attributes-item__label">Weight
 												</th>
-												<td class="woocommerce-product-attributes-item__value">23 kg
+												<td class="woocommerce-product-attributes-item__value">
 												</td>
 											</tr>
 											<tr
@@ -423,7 +423,7 @@
 											</tr>
 										</table>
 
-									</div>
+									</div> -->
 
 
 									
@@ -559,87 +559,98 @@
 					data-product_layout="product-default">
 
 
-
+					{% for i in show_relted_prod %}
 					<li
 						class="product-col product-default product type-product post-1365 status-publish first instock product_cat-caps product_cat-hoodies product_cat-shoes product_cat-t-shirts-fashion product_cat-watches product_tag-clothes product_tag-sweater has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
 						<div class="product-inner">
 
 							<div class="product-image">
 
-								<a href="../men-black-sports-shoes/index.html" aria-label="product">
+								<a href="{% url 'prod_view' i.id %}" aria-label="product">
 									<div class="labels">
-										<div class="onsale">-15%</div>
+										<!-- <div class="onsale">-15%</div> -->
 									</div>
 									<div class="inner"><img width="300" height="300"
-											src="../../wp-content/uploads/sites/116/2018/04/product-22-300x300.jpg"
+											src="{{i.prod_img.url}}"
 											class=" wp-post-image" alt="" decoding="async" loading="lazy" />
 									</div>
 								</a>
 							</div>
 
 							<div class="product-content">
-								<span class="category-list"><a href="../../product-category/accessories/caps/index.html"
-										rel="tag">Caps</a>, <a
-										href="../../product-category/dress/clothing/hoodies/index.html"
-										rel="tag">Hoodies</a>, <a href="../../product-category/fashion/shoes/index.html"
-										rel="tag">Shoes</a>, <a
-										href="../../product-category/fashion/t-shirts-fashion/index.html"
-										rel="tag">T-Shirts</a>, <a
-										href="../../product-category/accessories/watches/index.html"
-										rel="tag">Watches</a></span>
-								<a class="product-loop-title" href="../men-black-sports-shoes/index.html">
-									<h3 class="woocommerce-loop-product__title">Men Black Sports Shoes</h3>
+								
+								<a class="product-loop-title" href="{% url 'prod_view' i.id %}">
+									<h3 class="woocommerce-loop-product__title">{{i.name}}</h3>
 								</a>
 
 
 
-								<div class="rating-wrap">
+								<!-- <div class="rating-wrap">
 									<div class="rating-content">
 										<div class="star-rating" title="0"><span style="width:0%"><strong
 													class="rating">0</strong> out of 5</span></div>
 									</div>
-								</div>
+								</div> -->
+
+								{% if i.avg_rating_star %}
+                                            <div class="rating-wrap">
+                                                <div style="font-size: 18px;" title="0">
+                                                    {{i.avg_rating_star}}
+                                                    <!-- <span style="width:0%">
+																		<strong class="rating">0</strong> out of 5 </span> -->
+                                                </div>
+                                            </div>
+                                            {% else %}
+                                            <div class="rating-wrap">
+                                                <div class="rating-content">
+                                                    <div class="star-rating" title="0"><span style="width:0%"><strong
+                                                                class="rating">0</strong> out of
+                                                            5</span></div>
+                                                </div>
+                                            </div>
+                                            {% endif %}
 
 
-								<span class="price"><del aria-hidden="true"><span
-											class="woocommerce-Price-amount amount"><bdi><span
-													class="woocommerce-Price-currencySymbol">&#36;</span>1,999.00</bdi></span></del>
+								<span class="price">
 									<ins><span class="woocommerce-Price-amount amount"><bdi><span
-													class="woocommerce-Price-currencySymbol">&#36;</span>1,699.00</bdi></span></ins></span>
+													class="woocommerce-Price-currencySymbol">৳ </span>{{i.price}}</bdi></span></ins></span>
 
 								<div class="add-links-wrap">
-									<div class="add-links clearfix">
-										<a href="index5642.html?add-to-cart=1365" data-quantity="1"
-											class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
-											data-product_id="1365" data-product_sku="654613612"
-											aria-label="Add &ldquo;Men Black Sports Shoes&rdquo; to your cart"
-											aria-describedby="" rel="nofollow">Add to cart</a>
-										<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1365  wishlist-fragment on-first-load"
-											data-fragment-ref="1365"
-											data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:1365,&quot;parent_product_id&quot;:1365,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
+                                                <div class="add-links clearfix">
+                                                    <a href="{% url 'add_to_cart' i.id %}"
+                                                        class="viewcart-style-2 button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                        rel="nofollow">Add to cart</a>
+                                                    <div
+                                                        class="yith-wcwl-add-to-wishlist add-to-wishlist-1364  wishlist-fragment on-first-load">
 
-											<!-- ADD TO WISHLIST -->
 
-											<div class="yith-wcwl-add-button">
-												<a href="index1939.html?add_to_wishlist=1365&amp;_wpnonce=76b6f765c5"
-													class="add_to_wishlist single_add_to_wishlist"
-													data-product-id="1365" data-product-type="simple"
-													data-original-product-id="1365" data-title="Add to Wishlist"
-													rel="nofollow">
-													<span>Add to Wishlist</span>
-												</a>
-											</div>
+                                                        <div class="yith-wcwl-add-button">
 
-											<!-- COUNT TEXT -->
 
-										</div>
-										<div class="quickview" data-id="1365" title="Quick View">Quick View
-										</div>
-									</div>
-								</div>
+                                                            <a href="{% url 'add_to_wishlist' i.id %}"
+                                                                class="add_to_wishlist single_add_to_wishlist"
+                                                                data-product-id="1364" data-product-type="simple"
+                                                                data-original-product-id="1364"
+                                                                data-title="Add to Wishlist" rel="nofollow">
+                                                                <span>Add to Wishlist</span>
+                                                            </a>
+                                                        </div>
+
+
+                                                        <!-- COUNT TEXT -->
+
+                                                    </div>
+
+                                                    <!-- <div
+                                                             class="quickview" data-id="1364" title="Quick View">
+																Quick View
+                                                                </div> -->
+                                                </div>
+                                            </div>
 							</div>
 						</div>
 					</li>
+					{% endfor %}
 
 
 

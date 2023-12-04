@@ -56,7 +56,25 @@
                                             <form class="woocommerce-form woocommerce-form-login login " method="post">
                                                 {% csrf_token %}
                                                     
-                                                
+                                                {% if messages %}
+                                                        <ul class="messages">
+                                                            {% for message in messages %}
+                                                                <li {% if message.tags %}class="{{ message.tags }}" {% endif %}
+                                                                    style="{% if message.tags == 'success' %}color: green;{% elif message.tags == 'warning' %}color: red;{% endif %}">
+                                                                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                                                    {{ message }}
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    {% endif %}
+                                                    <script>
+                                                    setTimeout(function() {
+                                                    var messagesContainer = document.querySelector('.messages');
+                                                    if (messagesContainer) {
+                                                        messagesContainer.innerHTML = '';  // Clear the messages
+                                                    }
+                                                    }, 3000);
+                                                    </script>
                                                 <p
                                                     class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                                     <label class="mb-1 font-weight-medium" for="username">Enter your new password&nbsp;<span class="required">*</span></label>

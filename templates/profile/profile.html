@@ -18,12 +18,12 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Orders</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link" id="track-orders-tab" data-bs-toggle="tab" href="#track-orders" role="tab" aria-controls="track-orders" aria-selected="false"><i class="fi-rs-shopping-cart-check mr-10"></i>Track Your Order</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="address-tab" data-bs-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="true"><i class="fi-rs-marker mr-10"></i>My Address</a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
                                     </li>
@@ -214,6 +214,18 @@
                                                     {% endfor %}
                                                     </div>
                                                     <div class="form-group col-md-12">
+                                                        <label>Address <span class="required">*</span></label>
+                                                    {% for i in prof %}
+                                                        <input required="" value="{{i.Address1}}" class="form-control square" name="phone" >
+                                                    {% endfor %}
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label>Address 2<span class="required">*</span></label>
+                                                    {% for i in prof %}
+                                                        <input required="" value="{{i.Address2}}" class="form-control square" name="phone" >
+                                                    {% endfor %}
+                                                    </div>
+                                                    <!-- <div class="form-group col-md-12">
                                                         <label>New Password <span class="required">*</span></label>
                                                         <input required="" class="form-control square" name="npassword" type="password">
                                                     </div>
@@ -223,7 +235,7 @@
                                                     </div>
                                                     <div class="col-md-12">
                                                         <button type="submit" class="btn btn-fill-out submit" name="submit" value="Submit">Save</button>
-                                                    </div>
+                                                    </div> -->
                                                     
                                                 </div>
                                             </form>

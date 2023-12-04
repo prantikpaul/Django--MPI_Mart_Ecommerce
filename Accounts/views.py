@@ -101,12 +101,15 @@ def send_mail_registration(Email, token,otpp):
 def verify_otp(request):
     if request.method=='POST':
         otpp = request.POST['otp']
-        ppr=Profile.objects.get(otp=otpp)
-        if ppr :
-            ppr.sign_in_otp_verify= True
-            ppr.save()
-            messages.success(request,'Your Email Verified Successfully')
-            return redirect ('login')
+        try:
+            ppr=Profile.objects.get(otp=otpp)
+            if ppr :
+                ppr.sign_in_otp_verify= True
+                ppr.save()
+                messages.success(request,'Your Email Verified Successfully')
+                return redirect ('login')
+        except:
+             messages.warning(request,'OTP Didn"t match ! Please Try Again ... ')
             
 
     
@@ -139,20 +142,20 @@ def forget_pass(request):
                     rr = Profile.objects.get(user=pp) #username diye profile ber kora
                     rr.otp=otp
                     rr.save()
-                    # send_mail_forget_pass(email,otp)
+                    send_mail_forget_pass(email,otp)
                     
-                    print(rr)
+                    # print(rr)
 
                     return redirect('forget_pass_otp')
 
             except:
-                messages.warning(request,"No User Found !!")
+                messages.warning(request,"No User Found With This Email !!")
             
 
         
                 
         else:
-            messages.warning(request,"Email Didn't matached")
+            messages.warning(request,"Please Enter An Email !")
 
      
      return render (request,'account/forget_pass.html',locals())

@@ -59,9 +59,13 @@ def prod_view(request,id):
         pass
     
     #for search bar --------------------------------------------------------
-    
    
-    
+    #for show related product ----------------------------------
+    for i in show_signl_prod:
+        # print(i.category.id)
+        show_relted_prod=product.objects.filter(category=i.category.id).exclude(id=id) #.exclude bolte ekhane oi same product ta show korbe na ... 
+   
+     #for show related product ----------------------------------
         
 
 
