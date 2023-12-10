@@ -50,6 +50,7 @@ def register(request):
             Cpass=request.POST['cpass']
             Add1=request.POST['add1']
             Add2=request.POST['add2']
+            phone=request.POST['phn']
             print(Fname,Lname,Email,Uname,Pass,Cpass)
             if Pass==Cpass:
                 if User.objects.filter(username=Uname).exists():
@@ -73,12 +74,12 @@ def register(request):
                         auth_token = str(uuid.uuid4())
 
                         if Add2: # jodi Address 2 thake ->
-                            pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1,Address2=Add2) #creatig a profile on this user
+                            pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1,Address2=Add2,phone=phone) #creatig a profile on this user
                             pro_obj.save()
                             send_mail_registration(Email, auth_token,otpp)
                             return redirect ('verify_otp')
                         else:
-                            pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1) #creatig a profile on this user
+                            pro_obj = Profile.objects.create(user=pp, auth_token=auth_token,otp=otpp,Address1=Add1,phone=phone) #creatig a profile on this user
                             pro_obj.save()
                             send_mail_registration(Email, auth_token,otpp)
                             return redirect ('verify_otp')
