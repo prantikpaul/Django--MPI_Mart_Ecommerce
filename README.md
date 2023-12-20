@@ -11,7 +11,7 @@
   <h3 align="center">MPI Mart Ecommerce</h3>
 
   <p align="center">
-    An awesome ecommerce website to jumpstart your business !
+    An awesome ecommerce website to jumpstart your business !!
     <br />
     <strong>Explore the docs »</strong>
     <br />
